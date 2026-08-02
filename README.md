@@ -2,7 +2,7 @@
 
 > "I Design In Systems, Not Just Pixels – Product Designs That Feel Personal."
 
-A professional, fully responsive hero section built with React, HTML, CSS, and JavaScript following your Figma design specifications exactly.
+A professional, fully responsive hero section built with React, HTML, CSS, and JavaScript following my Figma design specifications exactly.
 
 ## ✨ Features
 
