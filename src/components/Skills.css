@@ -1,0 +1,648 @@
+/* ============================================================================
+   SKILLS SECTION
+   ============================================================================ */
+
+.skills-section {
+  position: relative;
+  z-index: 1;
+  width: 100%;
+  min-height: 1178.2px;
+  background-color: #1b1512;
+  padding: 40px;
+  margin-top: 120px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  scroll-margin-top: 70px;
+}
+
+/* ============================================================================
+   REVEAL ON SCROLL - each layer (heading pill, rows, tools) fades/slides
+   up independently as it enters the viewport
+   ============================================================================ */
+
+.sk-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.sk-reveal.sk-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .sk-reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
+   HEADING PILL - same open-border style as Case Studies
+   ============================================================================ */
+
+.skills-heading-pill {
+  position: relative;
+  width: fit-content;
+  height: 63px;
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  padding: 0 20px;
+  margin: 0 auto 56px;
+}
+
+.skills-heading-pill-border {
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: auto;
+}
+
+.skills-heading-pill span {
+  position: relative;
+  z-index: 1;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #f3eee8;
+}
+
+/* ============================================================================
+   SKILL ROWS
+   ============================================================================ */
+
+.skills-row {
+  width: 100%;
+  max-width: 974px;
+  display: flex;
+  align-items: stretch;
+  gap: 24px;
+}
+
+.skills-row-1 {
+  position: absolute;
+  left: 166px;
+  top: 163px;
+  width: 949px;
+  height: 300px;
+}
+
+.skill-card-uiux,
+.skill-card-wireframe {
+  position: absolute;
+  top: 0;
+  height: 300px;
+  box-sizing: border-box;
+  border: 1px dashed #f3eee8;
+  border-radius: 10px;
+}
+
+.skill-card-uiux {
+  left: 0;
+  width: 490px;
+}
+
+.skill-card-wireframe {
+  left: 459px;
+  width: 490px;
+}
+
+.skill-card-text-uiux,
+.skill-card-text-wireframe {
+  position: absolute;
+  top: 204px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card-text-uiux {
+  left: 31px;
+  width: 165px;
+  height: 61px;
+  gap: 11px;
+}
+
+.skill-card-text-wireframe {
+  left: 62px;
+  width: 285px;
+  height: 60px;
+  gap: 10px;
+}
+
+.skills-accent-bar-1 {
+  position: absolute;
+  left: 959px;
+  top: 6px;
+  width: 15px;
+  height: 288px;
+  background-color: #7b3636;
+  border-radius: 31px;
+}
+
+.skills-row-2 {
+  position: absolute;
+  left: 165px;
+  top: 523px;
+  width: 949px;
+  height: 300px;
+}
+
+.skill-card-research,
+.skill-card-webdev {
+  position: absolute;
+  top: 0;
+  height: 300px;
+  box-sizing: border-box;
+  border: 1px dashed #f3eee8;
+  border-radius: 10px;
+}
+
+.skill-card-research {
+  left: 0;
+  width: 490px;
+}
+
+.skill-card-webdev {
+  left: 459px;
+  width: 490px;
+}
+
+.skill-card-text-research,
+.skill-card-text-webdev {
+  position: absolute;
+  top: 204px;
+  display: flex;
+  flex-direction: column;
+}
+
+.skill-card-text-research {
+  left: 31px;
+  width: 165px;
+  height: 61px;
+  gap: 11px;
+}
+
+.skill-card-text-webdev {
+  left: 62px;
+  width: 428px;
+  height: 60px;
+  gap: 10px;
+}
+
+.skills-accent-bar-2 {
+  position: absolute;
+  left: -25px;
+  top: 8px;
+  width: 15px;
+  height: 288px;
+  background-color: #7b3636;
+  border-radius: 31px;
+}
+
+/* ============================================================================
+   SKILL CARD
+   ============================================================================ */
+
+.skill-card-text h3 {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-transform: capitalize;
+  color: #c2beba;
+}
+
+.skill-card-text p {
+  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 20px;
+  text-transform: capitalize;
+  color: #f3eee8;
+}
+
+
+/* ============================================================================
+   SKILL CARD GRAPHICS
+   ============================================================================ */
+
+.skill-graphic {
+  display: block;
+  object-fit: contain;
+  object-position: top left;
+}
+
+/* --- individual graphic slots (SVGs to be placed here) --- */
+.skill-graphic-uiux {
+  position: absolute;
+  left: 74.96px;
+  top: 24.48px;
+  width: 233.04px;
+  height: 146.12px;
+}
+
+.skill-graphic-wireframe {
+  position: absolute;
+  left: 103.7px;
+  top: 54.12px;
+  width: 326.16px;
+  height: 97.76px;
+}
+
+.skill-graphic-research {
+  position: absolute;
+  left: 74.96px;
+  top: 24.48px;
+  width: 233.04px;
+  height: 146.12px;
+}
+
+.skill-graphic-webdev {
+  position: absolute;
+  left: 164px;
+  top: 59px;
+  width: 169px;
+  height: 106px;
+}
+
+/* ============================================================================
+   TOOLS IN MY WORKFLOW
+   ============================================================================ */
+
+.tools-section {
+  position: absolute;
+  left: 309px;
+  top: 883px;
+  width: 632px;
+  height: 255.2px;
+}
+
+.tools-heading {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 273px;
+  height: 36px;
+}
+
+.tools-heading span:first-child {
+  display: block;
+  width: 100%;
+  height: 100%;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #f3eee8;
+  white-space: nowrap;
+}
+
+.tools-workflow-arrow {
+  position: absolute;
+  left: 5px;
+  top: 14px;
+  width: 350px;
+  max-width: none;
+  height: 139px;
+  pointer-events: none;
+}
+
+.tools-row {
+  position: absolute;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  padding: 10px;
+  gap: 10px;
+  width: 484.13px;
+  height: 71.2px;
+  box-sizing: border-box;
+}
+
+.tools-row-1 {
+  left: 111px;
+  top: 106px;
+}
+
+.tools-row-2 {
+  left: 142px;
+  top: 184px;
+}
+
+.tool-badge {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  padding: 10px;
+}
+
+.tool-icon {
+  object-fit: contain;
+  flex-shrink: 0;
+}
+
+.tool-icon-figma {
+  width: 31.2px;
+  height: 31.2px;
+}
+
+.tool-icon-claude {
+  width: 20.8px;
+  height: 20.8px;
+}
+
+.tool-icon-adobe {
+  width: 20.8px;
+  height: 20.8px;
+}
+
+.tool-icon-framer {
+  width: 17.33px;
+  height: 26px;
+}
+
+.tool-label {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #f3eee8;
+  white-space: nowrap;
+}
+
+.tools-accent-bar {
+  position: absolute;
+  left: 622px;
+  top: 127px;
+  width: 10px;
+  height: 110px;
+  background-color: #7b3636;
+  border-radius: 31px;
+}
+
+/* ============================================================================
+   RESPONSIVE - TABLET
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  .skills-row {
+    max-width: 100%;
+  }
+
+  .tools-section {
+    max-width: 100%;
+  }
+
+  .tools-accent-bar {
+    display: none;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE (stack everything)
+   ============================================================================ */
+
+
+@media (max-width: 768px) {
+  .skills-section {
+    min-height: 1364.86px;
+    padding: 30px 20px;
+    margin-top: 60px;
+    scroll-margin-top: 60px;
+  }
+
+  .skills-heading-pill {
+    margin-bottom: 40px;
+  }
+
+  .skills-heading-pill span {
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .skill-card-text h3 {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .skill-card-text p {
+    font-size: 14px;
+    line-height: 18px;
+  }
+
+  /* --- Row 1 (UI/UX + Wireframe), stacked and overlapping vertically --- */
+  .skills-row-1 {
+    left: 20px;
+    top: 133px;
+    width: calc(100% - 40px);
+    height: 494px;
+  }
+
+  .skill-card-uiux {
+    left: 0;
+    top: 0;
+    width: 94.286%;
+    height: 239px;
+    border-radius: 7.29965px;
+  }
+
+  .skill-card-wireframe {
+    left: 0;
+    top: 255px;
+    width: 94.286%;
+    height: 239px;
+    border-radius: 10px;
+  }
+
+  .skill-card-text-uiux {
+    left: 22.63px;
+    top: 148.91px;
+    width: 140px;
+    height: 50.03px;
+    gap: 8.03px;
+  }
+
+  .skill-card-text-wireframe {
+    left: 22.63px;
+    top: 148.91px;
+    width: 285px;
+    height: 52px;
+    gap: 10px;
+  }
+
+  .skill-graphic-uiux {
+    left: 54.72px;
+    top: 17.87px;
+    width: 170.13px;
+    height: 106.67px;
+  }
+
+  .skill-graphic-wireframe {
+    left: 51px;
+    top: 51.78px;
+    width: 228.31px;
+    height: 68.43px;
+  }
+
+  .skills-accent-bar-1 {
+    left: 97.143%;
+    top: 1px;
+    width: 10px;
+    height: 493px;
+  }
+
+  /* --- Row 2 (Ux Research + Web Dev), stacked and overlapping vertically,
+     bar sits on the left this time, cards inset to make room for it --- */
+  .skills-row-2 {
+    left: 20px;
+    top: 667px;
+    width: calc(100% - 40px);
+    height: 494px;
+  }
+
+  .skill-card-research {
+    left: 20px;
+    top: 0;
+    width: calc(100% - 20px);
+    height: 239px;
+  }
+
+  .skill-card-webdev {
+    left: 20px;
+    top: 255px;
+    width: calc(100% - 20px);
+    height: 239px;
+  }
+
+  .skill-card-text-research {
+    left: 31px;
+    top: 148.91px;
+    width: 165px;
+    height: 53px;
+    gap: 11px;
+  }
+
+  .skill-card-text-webdev {
+    left: 22.63px;
+    top: 148.91px;
+    width: 285px;
+    height: 52px;
+    gap: 10px;
+  }
+
+  .skill-graphic-research {
+    left: 69px;
+    top: 14.4px;
+    width: 191.43px;
+    height: 102.28px;
+  }
+
+  .skill-graphic-webdev {
+    left: 106px;
+    top: 54.68px;
+    width: 118.3px;
+    height: 74.2px;
+  }
+
+  .skills-accent-bar-2 {
+    left: 0;
+    top: 1px;
+    width: 10px;
+    height: 493px;
+  }
+
+  .tools-section {
+    left: calc(50% - 340.77px / 2 + 0.38px);
+    top: 1201px;
+    width: 340.77px;
+    height: 133.86px;
+  }
+
+  .tools-heading {
+    left: 0;
+    top: 0;
+    width: 185px;
+    height: 20.16px;
+  }
+
+  .tools-heading span:first-child {
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .tools-workflow-arrow {
+    left: 6.33px;
+    top: 9.33px;
+    width: 233.33px;
+    height: 92.67px;
+  }
+
+  .tools-row-2 {
+    display: none;
+  }
+
+  .tools-row-1 {
+    left: 66.87px;
+    top: 59.86px;
+    width: 264px;
+    height: 74px;
+    flex-wrap: wrap;
+    align-content: flex-start;
+    padding: 5.6px 5px;
+    gap: 5px;
+  }
+
+  .tool-badge {
+    padding: 5.6px;
+    gap: 5.6px;
+  }
+
+  .tool-icon-figma {
+    width: 17.47px;
+    height: 17.47px;
+  }
+
+  .tool-icon-claude {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tool-icon-adobe {
+    width: 16px;
+    height: 16px;
+  }
+
+  .tool-icon-framer {
+    width: 13px;
+    height: 16px;
+  }
+
+  .tool-label {
+    font-size: 14px;
+    line-height: 21px;
+  }
+
+  .tools-accent-bar {
+    display: block;
+    left: 331.78px;
+    top: 69.12px;
+    width: 6.09px;
+    height: 61.6px;
+    border-radius: 17.36px;
+  }
+}

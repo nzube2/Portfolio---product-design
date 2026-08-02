@@ -1,0 +1,232 @@
+/* ============================================================================
+   HEADER - fixed at the top across the entire page
+   ============================================================================ */
+
+.header {
+  width: 100%;
+  height: 70px;
+  background-color: var(--color-bg, #16110e);
+  padding: 0 40px;
+  display: flex;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  z-index: 500;
+  border-bottom: 1px solid rgba(243, 238, 232, 0.1);
+}
+
+.header-container {
+  width: 100%;
+  max-width: 1280px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 40px;
+}
+
+/* Logo */
+.logo {
+  flex-shrink: 0;
+}
+
+.logo span {
+  font-family: var(--font-logo, 'Fraunces', serif);
+  font-size: 24px;
+  font-weight: var(--weight-semibold, 600);
+  color: var(--color-text-primary, #f3efeb);
+  letter-spacing: 1px;
+}
+
+/* Desktop Navigation */
+.nav-desktop {
+  display: flex;
+  align-items: center;
+  gap: 32px;
+  flex: 1;
+  justify-content: flex-end;
+}
+
+.nav-link {
+  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-size: 16px;
+  font-weight: var(--weight-medium, 500);
+  color: var(--color-text-secondary, #c2beba);
+  text-decoration: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+  position: relative;
+}
+
+.nav-link:hover {
+  color: var(--color-text-primary, #f3efeb);
+}
+
+.nav-link::after {
+  content: '';
+  position: absolute;
+  bottom: -4px;
+  left: 0;
+  width: 0;
+  height: 2px;
+  background-color: var(--color-button-bg, #5d0606);
+  transition: width 0.3s ease;
+}
+
+.nav-link:hover::after {
+  width: 100%;
+}
+
+/* Contact Button */
+.btn-contact {
+  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-size: 16px;
+  font-weight: var(--weight-medium, 500);
+  color: var(--color-text-primary, #f3efeb);
+  background-color: var(--color-button-bg, #5d0606);
+  border: none;
+  border-radius: var(--radius-button, 10px);
+  cursor: pointer;
+  transition: var(--transition, all 0.3s ease);
+  width: 119px;
+  height: 43px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.btn-contact:hover {
+  background-color: #7a0707;
+  transform: translateY(-2px);
+}
+
+/* Menu Toggle (Mobile) */
+.menu-toggle {
+  display: none;
+  background: none;
+  border: none;
+  cursor: pointer;
+  padding: 8px;
+  align-items: center;
+  justify-content: center;
+}
+
+.menu-toggle:hover svg line {
+  stroke: var(--color-text-primary, #f3efeb);
+}
+
+/* Mobile Navigation */
+.nav-mobile {
+  display: none;
+}
+
+/* ============================================================================
+   RESPONSIVE - TABLET
+   ============================================================================ */
+
+@media (max-width: 1024px) {
+  .header {
+    padding: 0 32px;
+  }
+
+  .header-container {
+    gap: 24px;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .header {
+    padding: 0 20px;
+    height: 60px;
+  }
+
+  .header-container {
+    gap: 16px;
+  }
+
+  .logo span {
+    font-size: 19.2px;
+  }
+
+  .nav-desktop {
+    display: none;
+  }
+
+  .menu-toggle {
+    display: flex;
+    flex: 1;
+    justify-content: flex-end;
+  }
+
+  .menu-toggle svg {
+    width: 24px;
+    height: 12px;
+  }
+
+  .nav-mobile {
+    display: flex;
+    flex-direction: column;
+    position: absolute;
+    top: 60px;
+    left: 0;
+    right: 0;
+    background-color: rgba(27, 21, 18, 0.98);
+    padding: 24px 20px;
+    gap: 16px;
+    border-bottom: 1px solid rgba(243, 238, 232, 0.1);
+    animation: headerSlideDown 0.3s ease;
+  }
+
+  @keyframes headerSlideDown {
+    from {
+      opacity: 0;
+      transform: translateY(-10px);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(0);
+    }
+  }
+
+  .nav-mobile .nav-link {
+    color: var(--color-text-primary, #f3efeb);
+    font-size: 16px;
+  }
+
+  .nav-mobile .btn-contact {
+    width: 100%;
+  }
+}
+
+/* ============================================================================
+   RESPONSIVE - SMALL MOBILE
+   ============================================================================ */
+
+@media (max-width: 480px) {
+  .logo span {
+    font-size: 18px;
+  }
+
+  .header {
+    padding: 0 16px;
+  }
+}
+
+/* ============================================================================
+   PRINT
+   ============================================================================ */
+
+@media print {
+  .header,
+  .menu-toggle {
+    display: none;
+  }
+}

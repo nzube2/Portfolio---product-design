@@ -1,0 +1,41 @@
+{
+  "name": "valentina-portfolio",
+  "private": true,
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Valentina - Product Designer Portfolio - I Design In Systems, Not Just Pixels",
+  "author": "Valentina",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "preview": "vite preview",
+    "lint": "eslint src --ext js,jsx",
+    "lint:fix": "eslint src --ext js,jsx --fix"
+  },
+  "dependencies": {
+    "react": "^18.2.0",
+    "react-dom": "^18.2.0",
+    "react-router-dom": "^7.18.2"
+  },
+  "devDependencies": {
+    "@types/react": "^18.2.43",
+    "@types/react-dom": "^18.2.17",
+    "@vitejs/plugin-react": "^4.2.1",
+    "eslint": "^8.55.0",
+    "eslint-plugin-react": "^7.33.2",
+    "eslint-plugin-react-hooks": "^4.6.0",
+    "vite": "^5.0.0"
+  },
+  "engines": {
+    "node": ">=16.0.0",
+    "npm": ">=8.0.0"
+  },
+  "keywords": [
+    "portfolio",
+    "design",
+    "product design",
+    "UI design",
+    "React",
+    "responsive"
+  ]
+}

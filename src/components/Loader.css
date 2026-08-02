@@ -1,0 +1,155 @@
+/* ============================================================================
+   LOADING SCREEN - PAINT DRIP INTRO
+   Timeline (total ~2.72s):
+   0.01s delay -> 0.90s linear   bars grow from 12.5% to 50% width, ending
+                                 0.91s, bars meet at center
+   0.91s                        paint drop icon appears instantly at the
+                                 meeting point
+   0.01s delay -> 0.60s linear  drop moves down to vertical center
+                                 (0.92s -> 1.52s) - slowed down so it reads
+   0.60s                        figma icon eases in (1.52s -> 2.12s),
+                                 drop fades out over the same window -
+                                 slowed down so it reads
+   0.30s                        figma icon eases out (2.12s -> 2.42s)
+   0.15s                        brief pause, icon fully gone
+   0.30s                        hero eases in / loader fades (2.57s -> 2.87s)
+   ============================================================================ */
+
+.loader-overlay {
+  position: fixed;
+  inset: 0;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  background-color: #16110e;
+  z-index: 9999;
+  overflow: hidden;
+  animation: loader-hide 0.3s ease forwards;
+  animation-delay: 2.57s;
+}
+
+@keyframes loader-hide {
+  from {
+    opacity: 1;
+    visibility: visible;
+    pointer-events: auto;
+  }
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* ============================================================================
+   TOP BARS - anchored at each edge, grow in width (not sliding) until
+   they meet exactly at center. Percentage-based so they always meet
+   regardless of viewport width (160px/1280px = 12.5%, 640px/1280px = 50%).
+   ============================================================================ */
+
+.top-bar {
+  position: absolute;
+  top: 0;
+  height: 7px;
+  width: 12.5%;
+  animation: bar-grow 0.9s linear forwards;
+  animation-delay: 0.01s;
+}
+
+.top-bar-left {
+  left: 0;
+  background-color: #7b3636;
+}
+
+.top-bar-right {
+  right: 0;
+  background-color: #5d0606;
+}
+
+@keyframes bar-grow {
+  from {
+    width: 12.5%;
+  }
+  to {
+    width: 50%;
+  }
+}
+
+/* ============================================================================
+   PAINT DROP - appears instantly where the bars meet, then falls
+   straight down to the vertical center of the viewport
+   ============================================================================ */
+
+.loader-paint-drop {
+  position: absolute;
+  top: 7px;
+  left: 50%;
+  width: 37px;
+  height: 37px;
+  margin-left: -18.5px;
+  opacity: 0;
+  animation: drop-appear 0.01s linear forwards,
+    drop-fall 0.6s linear forwards, drop-fade 0.6s linear forwards;
+  animation-delay: 0.91s, 0.92s, 1.52s;
+}
+
+@keyframes drop-appear {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes drop-fall {
+  from {
+    transform: translateY(0);
+  }
+  to {
+    transform: translateY(calc(50vh - 16px));
+  }
+}
+
+@keyframes drop-fade {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}
+
+/* ============================================================================
+   FIGMA ICON - eases in, then eases out, centered in the viewport
+   ============================================================================ */
+
+.loader-figma-icon {
+  position: absolute;
+  width: 174.96px;
+  height: 174.96px;
+  left: calc(50% - 87.48px);
+  top: calc(50% - 87.48px - 9px);
+  opacity: 0;
+  animation: icon-ease-in 0.6s ease forwards,
+    icon-ease-out 0.3s ease forwards;
+  animation-delay: 1.52s, 2.12s;
+}
+
+@keyframes icon-ease-in {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes icon-ease-out {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+  }
+}

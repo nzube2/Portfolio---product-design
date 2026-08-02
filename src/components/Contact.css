@@ -1,0 +1,258 @@
+/* ============================================================================
+   CONTACT / FOOTER SECTION
+   ============================================================================ */
+
+.contact-section {
+  position: relative;
+  width: 1280px;
+  max-width: 100%;
+  height: 601px;
+  box-sizing: border-box;
+  background-color: #16110e;
+  margin-top: 120px;
+  scroll-margin-top: 70px;
+  overflow: hidden;
+}
+
+.contact-content {
+  position: absolute;
+  left: 220px;
+  top: 40px;
+  width: 809px;
+  height: 451px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 15px;
+}
+
+.contact-label {
+  align-self: stretch;
+  width: 809px;
+  height: 30px;
+  margin: 0;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #c2beba;
+}
+
+.contact-heading {
+  width: 425px;
+  height: 144px;
+  margin: 0;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 700;
+  font-size: 48px;
+  line-height: 72px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #f3eee8;
+}
+
+.contact-text {
+  width: 424px;
+  height: 120px;
+  margin: 0;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #c2beba;
+}
+
+.contact-email-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  gap: 10px;
+  padding: 15px 28px;
+  width: 312px;
+  height: 53px;
+  background-color: #5d0606;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.contact-email-btn:hover {
+  background-color: #7a0707;
+}
+
+.contact-email-icon {
+  width: 20px;
+  height: 16px;
+  color: #f3eee8;
+  flex-shrink: 0;
+}
+
+.contact-email-btn span {
+  width: 226px;
+  height: 23px;
+  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: #f3eee8;
+}
+
+.contact-socials {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 5px;
+  width: 368px;
+  height: 44px;
+}
+
+.contact-social-link {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  padding: 10px;
+  gap: 10px;
+  height: 44px;
+  transition: color 0.3s ease;
+}
+
+.contact-social-linkedin {
+  width: 118px;
+  justify-content: flex-end;
+  align-items: flex-start;
+}
+
+.contact-social-dribbble {
+  width: 118px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-social-github {
+  width: 122px;
+  justify-content: center;
+  align-items: center;
+}
+
+.contact-social-icon {
+  width: 20px;
+  height: 20px;
+  color: #c2beba;
+  flex-shrink: 0;
+}
+
+.contact-social-github .contact-social-icon {
+  width: 24px;
+  height: 24px;
+  color: #e1e3e8;
+}
+
+.contact-social-link span {
+  width: 68px;
+  height: 24px;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 24px;
+  text-transform: capitalize;
+  color: #c2beba;
+}
+
+.contact-social-link:hover span {
+  color: #f3eee8;
+}
+
+.contact-social-link:hover .contact-social-icon {
+  color: #f3eee8;
+}
+
+/* ============================================================================
+   FOOTER BAR
+   ============================================================================ */
+
+.contact-footer-bar {
+  box-sizing: border-box;
+  position: absolute;
+  left: 0;
+  top: 531px;
+  width: 1280px;
+  height: 70px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #1b1512;
+  border-top: 1px solid rgba(194, 190, 186, 0.15);
+}
+
+.contact-footer-text {
+  margin: 0;
+  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-weight: 400;
+  font-size: 14px;
+  text-align: center;
+  color: #c2beba;
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE (approximate, no spec given yet)
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .contact-section {
+    height: auto;
+    padding: 60px 20px 0;
+    overflow: visible;
+  }
+
+  .contact-content {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .contact-label {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+  }
+
+  .contact-heading {
+    width: 100%;
+    height: auto;
+    font-size: 32px;
+    line-height: 1.2;
+  }
+
+  .contact-text {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+  }
+
+  .contact-socials {
+    flex-wrap: wrap;
+    justify-content: center;
+    width: auto;
+    height: auto;
+  }
+
+  .contact-footer-bar {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: 80px;
+    margin-top: 60px;
+  }
+}
