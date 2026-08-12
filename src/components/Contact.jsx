@@ -55,17 +55,37 @@ const GithubIcon = ({ className }) => (
   </svg>
 );
 
+const PROCESS_STEPS = [
+  { number: '01', label: 'Define' },
+  { number: '02', label: 'Research' },
+  { number: '03', label: 'Wireframes' },
+  { number: '04', label: 'Design' },
+  { number: '05', label: 'Prototype' },
+  { number: '06', label: 'Test' },
+];
+
 const Contact = () => {
   return (
     <section className="contact-section" id="contact">
       <div className="contact-content">
         <span className="contact-label">Let&apos;s Work Together</span>
-        <h2 className="contact-heading">Ready To Build Something Epic?</h2>
         <p className="contact-text">
-          I Bring Systems Thinking, An Engineer&apos;s Understanding Of What
-          Ships, And Genuine Care For The People Using What I Design. Open
-          To Product Design Roles And Freelance Work.
+          Open To Product Design Roles And Freelance Work.
         </p>
+
+        <div className="contact-process">
+          <div className="contact-process-line" aria-hidden="true" />
+          <div className="contact-process-steps">
+            {PROCESS_STEPS.map((step) => (
+              <div className="contact-process-step" key={step.number}>
+                <div className="contact-process-circle">{step.number}</div>
+                <span className="contact-process-label">{step.label}</span>
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <h2 className="contact-heading">Ready To Build Something Epic?</h2>
 
         <a
           className="contact-email-btn"
@@ -78,7 +98,7 @@ const Contact = () => {
         <div className="contact-socials">
           <a
             className="contact-social-link contact-social-linkedin"
-            href="#"
+            href="https://www.linkedin.com/in/valentina-molokwu-730236278/"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -96,7 +116,7 @@ const Contact = () => {
           </a>
           <a
             className="contact-social-link contact-social-github"
-            href="#"
+            href="https://github.com/nzube2"
             target="_blank"
             rel="noopener noreferrer"
           >

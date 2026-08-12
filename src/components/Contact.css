@@ -6,7 +6,7 @@
   position: relative;
   width: 1280px;
   max-width: 100%;
-  height: 601px;
+  height: 688px;
   box-sizing: border-box;
   background-color: #16110e;
   margin-top: 120px;
@@ -17,9 +17,9 @@
 .contact-content {
   position: absolute;
   left: 220px;
-  top: 40px;
+  top: 115px;
   width: 809px;
-  height: 451px;
+  height: 463px;
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
@@ -41,6 +41,85 @@
   color: #c2beba;
 }
 
+.contact-text {
+  width: 424px;
+  height: 30px;
+  margin: 0;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 30px;
+  text-align: center;
+  text-transform: capitalize;
+  color: #c2beba;
+}
+
+/* ============================================================================
+   MY PROCESS — step tracker
+   ============================================================================ */
+
+.contact-process {
+  position: relative;
+  width: 706px;
+  height: 87px;
+  flex-shrink: 0;
+}
+
+.contact-process-line {
+  position: absolute;
+  left: 42px;
+  top: 26px;
+  width: 661.02px;
+  height: 0;
+  border-top: 1px solid #c2beba;
+  transform: rotate(0.43deg);
+}
+
+.contact-process-steps {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 706px;
+  height: 87px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.contact-process-step {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 13px;
+}
+
+.contact-process-circle {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+  background: #16110e;
+  border: 1px dashed #c2beba;
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #ffffff;
+}
+
+.contact-process-label {
+  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 24px;
+  color: #c2beba;
+  white-space: nowrap;
+}
+
 .contact-heading {
   width: 425px;
   height: 144px;
@@ -52,19 +131,6 @@
   text-align: center;
   text-transform: capitalize;
   color: #f3eee8;
-}
-
-.contact-text {
-  width: 424px;
-  height: 120px;
-  margin: 0;
-  font-family: var(--font-display, 'Poppins', sans-serif);
-  font-weight: 500;
-  font-size: 16px;
-  line-height: 30px;
-  text-align: center;
-  text-transform: capitalize;
-  color: #c2beba;
 }
 
 .contact-email-btn {
@@ -182,7 +248,7 @@
   box-sizing: border-box;
   position: absolute;
   left: 0;
-  top: 531px;
+  top: 618px;
   width: 1280px;
   height: 70px;
   display: flex;
@@ -227,17 +293,48 @@
     font-size: 14px;
   }
 
+  .contact-text {
+    width: 100%;
+    height: auto;
+    font-size: 14px;
+  }
+
+  .contact-process {
+    width: 100%;
+    height: auto;
+    padding: 10px 0 20px;
+  }
+
+  .contact-process-line {
+    display: none;
+  }
+
+  .contact-process-steps {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 20px 16px;
+  }
+
+  .contact-process-circle {
+    width: 40px;
+    height: 40px;
+    font-size: 14px;
+  }
+
+  .contact-process-label {
+    font-size: 14px;
+  }
+
   .contact-heading {
     width: 100%;
     height: auto;
     font-size: 32px;
     line-height: 1.2;
-  }
-
-  .contact-text {
-    width: 100%;
-    height: auto;
-    font-size: 14px;
   }
 
   .contact-socials {

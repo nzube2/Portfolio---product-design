@@ -33,8 +33,8 @@ body {
 .hero-reveal {
   opacity: 0;
   transform: translateY(20px);
-  animation: hero-ease-in 0.3s ease forwards;
-  animation-delay: 2.57s;
+  animation: hero-ease-in 0.17s ease forwards;
+  animation-delay: 1.41s;
 }
 
 .stack-about-experience {

@@ -9,7 +9,7 @@
   max-width: 100%;
   min-height: 594px;
   box-sizing: border-box;
-  background-color: #7b3636;
+  background-color: #1B1512;
   border-radius: 15px;
   padding: 40px;
   margin: 120px auto 0;
@@ -76,7 +76,7 @@
   width: 868px;
   height: 391px;
   box-sizing: border-box;
-  background-color: #5d0606;
+  background-color: #16110E;
   border-left: 1px solid #f3eee8;
   border-radius: 10px;
 }
@@ -88,7 +88,7 @@
   width: 65px;
   height: 21px;
   font-family: var(--font-nav, 'Be Vietnam', sans-serif);
-  color: #b89595;
+  color: #C2BEBA;
   transition: color 0.3s ease;
 }
 
@@ -142,7 +142,7 @@
   font-size: 14px;
   line-height: 40px;
   text-transform: capitalize;
-  color: #b89595;
+  color: #C2BEBA;
 }
 
 .exp-details {
@@ -193,7 +193,7 @@
   font-size: 14px;
   line-height: 20px;
   text-align: left;
-  color: #b89595;
+  color: #C2BEBA;
 }
 
 .exp-meta-value {
@@ -216,7 +216,7 @@
   font-size: 14px;
   line-height: 16px;
   text-transform: capitalize;
-  color: #b89595;
+  color: #C2BEBA;
 }
 
 .exp-what-list {

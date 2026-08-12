@@ -1,0 +1,2170 @@
+/* ============================================================================
+   THERMAL CASE STUDY PAGE (CS-02 detail)
+   Frame: 1280 x 635, background #191818
+   ============================================================================ */
+
+.thermal-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1b1512;
+  padding-top: 70px;
+}
+
+
+/* the content panel — sits on the darker page, same role as Guidely's
+   white body card */
+.thermal-body {
+  position: relative;
+  width: 1158px;
+  max-width: 100%;
+  min-height: 3727.44px;
+  margin: 0 auto;
+  background: #191818;
+  border-radius: 10px 10px 0 0;
+  box-sizing: border-box;
+  /* contains the blurred glow so it can't bleed onto the page background */
+  overflow: hidden;
+}
+
+.thermal-topbar {
+  width: 1158px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.thermal-topbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.thermal-back,
+.thermal-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #c2beba;
+  transition: color 0.3s ease;
+}
+
+.thermal-back:hover,
+.thermal-next:hover {
+  color: #f3eee8;
+}
+
+.thermal-id {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #928f8b;
+  margin-bottom: 24px;
+}
+
+/* ============================================================================
+   BODY GRADIENT — two heavily blurred conic ellipses behind the content
+   ============================================================================ */
+
+.thermal-gradient {
+  position: absolute;
+  left: calc(50% - 579.5px + 0.5px);
+  top: 940px;
+  width: 1159px;
+  height: 673px;
+  z-index: 0;
+  opacity: 0.32;
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+  /* deliberately NOT clipped here — the 200px blur has to spread past this
+     box to fade out. Clipping it produces hard edges, i.e. a coloured
+     rectangle. The panel's own overflow keeps it inside the card. */
+  pointer-events: none;
+}
+
+.thermal-gradient-2 {
+  left: calc(50% - 579.5px - 0.5px);
+  top: 2057px;
+}
+
+.thermal-gradient-3 {
+  left: calc(50% - 579.5px + 0.5px);
+  /* starts at "./Who Thermal is for" */
+  top: 2632.44px;
+}
+
+.thermal-gradient-4 {
+  left: calc(50% - 579.5px + 0.5px);
+  /* starts at "./Design Decisions" */
+  top: 3047.44px;
+  /* flipped relative to the other three — undoes the base horizontal
+     flip, so warm/cool swap sides compared to gradients 1-3 */
+  transform: none;
+}
+
+.thermal-gradient-5 {
+  left: calc(50% - 579.5px + 0.5px);
+  /* starts at "./Reflection" */
+  top: 7453.22px;
+  /* toggles back to the base flip, undoing gradient-4's flip — keeps the
+     warm/cool sides alternating section to section */
+  transform: matrix(-1, 0, 0, 1, 0, 0);
+}
+
+.thermal-gradient span {
+  position: absolute;
+  display: block;
+  width: 643px;
+  height: 165px;
+  border-radius: 50%;
+  filter: blur(200px);
+}
+
+.thermal-gradient-warm {
+  left: 619.44px;
+  top: 135px;
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    #ff2d00 0deg,
+    #ffd84d 180deg,
+    #ff7a00 360deg
+  );
+  transform: matrix(-0.77, 0.64, 0.64, 0.77, 0, 0);
+}
+
+.thermal-gradient-cool {
+  left: 197.95px;
+  top: 0;
+  background: conic-gradient(
+    from 90deg at 50% 50%,
+    #00cfff 0deg,
+    #aeebff 180deg,
+    #3aa6ff 360deg
+  );
+  transform: matrix(-0.67, 0.74, 0.74, 0.67, 0, 0);
+}
+
+/* ============================================================================
+   HERO
+   ============================================================================ */
+
+.thermal-hero {
+  position: relative;
+  width: 100%;
+  height: 635px;
+  overflow: hidden;
+}
+
+/* -- centered card + caption (Group 7) -- */
+
+.thermal-hero-card {
+  position: absolute;
+  left: calc(50% - 116.55px - 0.45px);
+  top: 130.75px;
+  width: 233.1px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+}
+
+/* box follows the video's own 366x220 ratio so nothing is cropped */
+.thermal-hero-card-img {
+  position: relative;
+  width: 100%;
+  height: auto;
+  aspect-ratio: 366 / 220;
+  border-radius: 6.75px;
+  object-fit: contain;
+  max-width: none;
+}
+
+/* -- title block -- */
+
+.thermal-hero-title {
+  position: absolute;
+  left: 39px;
+  top: 390.5px;
+  width: 687px;
+  height: 198px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.thermal-hero-eyebrow {
+  width: 201px;
+  height: 29px;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 20px;
+  line-height: 29px;
+  color: #ffffff;
+  opacity: 0.71;
+}
+
+.thermal-hero-heading {
+  width: 794px;
+  height: 96px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 48px;
+  text-transform: capitalize;
+  color: #dadada;
+}
+
+.thermal-hero-btn {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 15px 20px;
+  width: 169px;
+  height: 53px;
+  background: #5d0606;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: #f3eee8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.thermal-hero-btn:hover {
+  background: #7a0707;
+}
+
+/* ============================================================================
+   META CARD (Frame 1771)
+   1201px wide, overflows the 1158px panel on both sides by design
+   ============================================================================ */
+
+.thermal-meta-card {
+  box-sizing: border-box;
+  position: absolute;
+  left: 40px;
+  top: 635px;
+  width: calc(100% - 80px);
+  height: 116px;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 43px;
+  gap: 57px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.thermal-meta-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 15px;
+  height: 110.5px;
+}
+
+.thermal-meta-item-1 { width: 161.5px; }
+.thermal-meta-item-2 { width: 180px; height: 110px; }
+.thermal-meta-item-3 { width: 161.5px; }
+.thermal-meta-item-4 { width: 161.5px; }
+.thermal-meta-item-5 { width: 203px; }
+
+.thermal-meta-icon {
+  flex: none;
+  width: 25px;
+  height: 25px;
+  color: #000000;
+}
+
+.thermal-meta-icon-team {
+  width: 28px;
+  height: 28px;
+}
+
+.thermal-meta-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.thermal-meta-item-1 .thermal-meta-text { width: 95px; height: 51px; }
+.thermal-meta-item-2 .thermal-meta-text { width: 102px; height: 74px; }
+.thermal-meta-item-3 .thermal-meta-text { width: 43px; height: 51px; }
+.thermal-meta-item-4 .thermal-meta-text { width: 67px; height: 51px; }
+.thermal-meta-item-5 .thermal-meta-text { width: 105px; height: 51px; }
+
+.thermal-meta-label {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  text-align: center;
+  color: rgba(0, 0, 0, 0.5);
+}
+
+.thermal-meta-value {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* per-node widths from the spec — several differ from their column width */
+.thermal-meta-item-1 .thermal-meta-label { width: 95px; }
+.thermal-meta-item-1 .thermal-meta-value { width: 67px; text-align: center; }
+.thermal-meta-item-2 .thermal-meta-label { width: 59px; }
+.thermal-meta-item-2 .thermal-meta-value { width: 102px; text-align: center; }
+.thermal-meta-item-3 .thermal-meta-label { width: 43px; }
+.thermal-meta-item-3 .thermal-meta-value { width: 34px; text-align: center; }
+.thermal-meta-item-4 .thermal-meta-label { width: 67px; }
+.thermal-meta-item-4 .thermal-meta-value { width: 66px; }
+.thermal-meta-item-5 .thermal-meta-label { width: 41px; }
+.thermal-meta-item-5 .thermal-meta-value { width: 105px; }
+
+/* ============================================================================
+   SECTION — "What if you could find music..."
+   ============================================================================ */
+
+.thermal-question {
+  position: absolute;
+  left: calc(50% - 321.5px + 0.5px);
+  top: 876px;
+  width: 643px;
+  height: 72px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   SECTION — "./The Problem" (Frame 1780)
+   ============================================================================ */
+
+.thermal-problem {
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 495.5px + 0.5px);
+  top: 1024px;
+  width: 991px;
+  /* spec's 367px assumes the last paragraph wraps to two lines; sizing to
+     content keeps the 40px padding honest top and bottom */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.thermal-problem-title {
+  /* 17px is Figma's cap-height for this node; the spec's own box maths
+     (40 + 17 + 30 + 240 + 40) only adds up to 367 with this value */
+  width: 171px;
+  height: 17px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.thermal-problem-body {
+  width: 911px;
+  /* spec says 240px, but that assumes the last paragraph wraps to two
+     lines; let it size naturally so the card centres the content instead
+     of pooling the difference at the bottom */
+  height: auto;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  /* one blank line between paragraphs, matching the 24px line-height —
+     2 + 4 + 2 lines plus two gaps is exactly the spec's 240px */
+  gap: 24px;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.thermal-problem-body p {
+  margin: 0;
+}
+
+/* ============================================================================
+   SECTION — "./The Concept" (Frame 1781)
+   ============================================================================ */
+
+.thermal-concept {
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 327.5px - 252.5px + 60px);
+  /* 120px below "./The Problem"; standing rule: 120px between ./-prefixed
+     sections, 40px between subsections within one (see below) */
+  top: 1487px;
+  width: 655px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  /* explicit stacking above the gradient glow, plus a frosted-glass
+     treatment so the translucent fill separates from whatever's behind it
+     instead of reading as flat dark-on-dark */
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.thermal-concept-title {
+  width: 173px;
+  height: 17px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #f5f5f5;
+}
+
+.thermal-concept-body {
+  width: 575px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f5f5f5;
+}
+
+.thermal-link {
+  color: #6ec6ff;
+  text-decoration: underline;
+}
+
+.thermal-link:hover {
+  color: #ff7a00;
+}
+
+.thermal-concept-wordmark {
+  position: absolute;
+  left: 789px;
+  top: 1568px;
+  width: 235.5px;
+  height: 90px;
+  max-width: none;
+  object-fit: contain;
+  z-index: 2;
+}
+
+/* ============================================================================
+   SECTION — img row (laptop / phone / browser mockups)
+   ============================================================================ */
+
+.thermal-img-row {
+  /* purely organisational — deliberately not positioned, so the absolutely
+     positioned children resolve against .thermal-body (the nearest
+     positioned ancestor) using the same panel-relative coordinates as
+     every other section */
+}
+
+.thermal-mockup-1 {
+  position: absolute;
+  left: 22.4px;
+  top: 1818.58px;
+  width: 419.4px;
+  height: 230.4px;
+  object-fit: cover;
+  transform: rotate(-4.22deg);
+}
+
+.thermal-mockup-2 {
+  position: absolute;
+  left: 358.91px;
+  top: 1859.54px;
+  width: 90.06px;
+  height: 186.18px;
+  object-fit: cover;
+}
+
+.thermal-mockup-3 {
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 614.4px / 2 + 239.2px);
+  top: 1752px;
+  width: 614.4px;
+  height: 337.44px;
+  background: #191818;
+  border: 1px solid rgba(245, 245, 245, 0.2);
+  object-fit: cover;
+}
+
+/* ============================================================================
+   SECTION — "concept part 2" (quote card + playlist-wheel illustration)
+   ============================================================================ */
+
+.thermal-concept-2 {
+  /* purely organisational — deliberately not positioned, so children
+     resolve their absolute coordinates against .thermal-body directly,
+     same convention as .thermal-img-row above */
+}
+
+.thermal-concept-2-card {
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 655px / 2 - 222.5px);
+  /* 40px below the img-row subsection — standing rule: 40px between
+     subsections within a ./-prefixed section. thermal-wheel-group shifts
+     by the same amount to keep the two aligned as a row. */
+  top: 2129.44px;
+  width: 655px;
+  height: 383px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  /* same frosted-glass treatment as the concept card above, so this
+     translucent panel separates from the page instead of blending flat */
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.thermal-concept-2-body {
+  width: 575px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f5f5f5;
+}
+
+.thermal-quote {
+  box-sizing: border-box;
+  position: relative;
+  width: 487px;
+  height: 129px;
+  border: 1px solid #f5f5f5;
+  border-radius: 10px;
+}
+
+.thermal-quote-text {
+  box-sizing: border-box;
+  position: absolute;
+  left: 61px;
+  top: 32px;
+  width: 418px;
+  height: 75px;
+  margin: 0;
+  padding: 20px 10px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+.thermal-quote-mark {
+  position: absolute;
+  width: 46.25px;
+  height: 39px;
+  max-width: none;
+}
+
+.thermal-quote-mark-open {
+  left: 10px;
+  top: 24px;
+}
+
+.thermal-quote-mark-close {
+  left: 438.75px;
+  top: 94px;
+  transform: rotate(180deg);
+}
+
+/* -- playlist wheel illustration --
+   replaced by a looping video covering the same bounding box the
+   hand-built reconstruction occupied (Group 7: 256 x 242.76 @ 845,2213.28) */
+
+.thermal-wheel-group {
+  position: absolute;
+  left: 845px;
+  /* shifts with .thermal-concept-2-card, see its comment */
+  top: 2166.72px;
+  width: 256px;
+  height: 242.76px;
+  object-fit: contain;
+  max-width: none;
+  /* MP4 has no alpha channel, so true transparency isn't possible. The
+     video's own background is a near-black flat fill (~rgb(24,24,24)),
+     almost identical to the panel's own #191818 — "lighten" blending
+     takes the max of each channel against the panel behind it, so those
+     near-black pixels vanish into whatever's actually back there (including
+     the ambient glow) while the bright character/card artwork stays intact. */
+  mix-blend-mode: lighten;
+}
+
+/* ============================================================================
+   SECTION — "./Who Thermal is for" (Frame 1782)
+   ============================================================================ */
+
+.thermal-who-for {
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 991px / 2 + 0.5px);
+  /* 120px below "./The Concept" section (last subsection: the quote card) */
+  top: 2632.44px;
+  width: 991px;
+  /* spec's 343px assumes different line-wrapping than this renderer
+     produces — sized to content so the 40px padding stays honest, same
+     fix as "./The Problem" above */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.thermal-who-for-title {
+  width: 247px;
+  height: 17px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.thermal-who-for-body {
+  width: 911px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================================
+   SECTION — "./Design Decisions" (Frame: "design decisions")
+   Extensible: each numbered item (01, 02, ...) is a .thermal-decision-item;
+   only the section start gets the 120px ./-section gap, items inside keep
+   their own spec-derived gap (matches the Guidely "01-06" convention).
+   ============================================================================ */
+
+.thermal-design-decisions {
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 655px / 2 + 219.5px);
+  /* 120px below "./Who Thermal is for" — standing rule */
+  top: 3047.44px;
+  width: 655px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 40px 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  /* same frosted-glass treatment as the other translucent cards, so it
+     separates from the page instead of blending flat */
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.thermal-design-decisions-title {
+  width: 225px;
+  height: 17px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #f5f5f5;
+}
+
+.thermal-decision-item {
+  width: 575px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 10px;
+}
+
+.thermal-decision-title {
+  width: 575px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  text-transform: capitalize;
+  color: #ffffff;
+}
+
+.thermal-decision-body {
+  width: 575px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: #f5f5f5;
+}
+
+/* ============================================================================
+   SUBSECTION — "img 2 + labels" (Mood screen mockup, part of ./Design
+   Decisions — same 40px-between-subsections rule as ./The Concept)
+   ============================================================================ */
+
+.thermal-mood-group {
+  /* purely organisational — children use their own panel-relative
+     absolute coordinates, same convention as .thermal-img-row */
+}
+
+.thermal-mood-screen {
+  box-sizing: border-box;
+  position: absolute;
+  left: 60px;
+  /* 40px below ./Design Decisions — standing subsection rule */
+  top: 3330.44px;
+  width: 639px;
+  height: 366.5px;
+  background: #191818;
+  border: 1px solid rgba(245, 245, 245, 0.2);
+  border-radius: 10px;
+  overflow: hidden;
+}
+
+.thermal-mood-screen-img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.thermal-mood-vector {
+  position: absolute;
+  left: 440px;
+  top: 3460.94px;
+  width: 400.5px;
+  height: 206px;
+  max-width: none;
+}
+
+.thermal-mood-label {
+  position: absolute;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.thermal-mood-label-1 {
+  left: 861px;
+  top: 3464.44px;
+  width: 143px;
+}
+
+.thermal-mood-label-2 {
+  left: 843px;
+  top: 3638.44px;
+  width: 187px;
+}
+
+.thermal-mood-caption {
+  position: absolute;
+  left: 122px;
+  top: 3706.44px;
+  width: 539px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   DESIGN DECISIONS — additional copy card
+   ============================================================================ */
+
+@media (min-width: 769px) {
+  .thermal-body {
+    /* 40px trailing space below "./Reflection" — the panel's last section */
+    min-height: 7908.22px;
+  }
+}
+
+.thermal-decision-detail {
+  position: absolute;
+  left: calc(50% - 655px / 2 - 222.5px);
+  top: 3767.44px;
+  width: 655px;
+  height: 202px;
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 40px 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.thermal-decision-detail-content {
+  width: 575px;
+  height: 120px;
+  display: flex;
+  flex: none;
+  flex-direction: column;
+  align-items: flex-start;
+  order: 0;
+  gap: 10px;
+}
+
+.thermal-decision-detail-content p {
+  width: 575px;
+  height: 120px;
+  margin: 0;
+  flex: none;
+  order: 0;
+  flex-grow: 0;
+  color: #f5f5f5;
+  font-family: 'Be Vietnam', sans-serif;
+  font-size: 16px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 150%;
+}
+
+/* ============================================================================
+   DESIGN DECISIONS — similar music and artiste comparison
+   ============================================================================ */
+
+.thermal-discovery-subsection {
+  /* purely organisational — children use their own panel-relative
+     absolute coordinates, same convention as .thermal-mood-group.
+     Spec's literal sizes (562.32px each screen) total 1160.16px wide,
+     which exceeds the 1158px panel by design — pixel-verified against the
+     reference screenshot, not a transcription error. Per instruction,
+     both screens are scaled down (~94.6%, preserving aspect ratio and
+     relative gap) so they sit with an exact 30px margin on both sides;
+     the connector/label/caption shift up by the same delta the screens
+     lost in height, to keep their original gap from the screens' bottom. */
+}
+
+.thermal-discovery-screen {
+  position: absolute;
+  width: 532.19px;
+  height: 305.24px;
+  box-sizing: border-box;
+  border: 1px solid rgba(245, 245, 245, 0.2);
+  border-radius: 10px;
+  background: #191818;
+  object-fit: cover;
+}
+
+.thermal-discovery-music { left: 30px; top: 4009.49px; }
+.thermal-discovery-artiste { left: 595.81px; top: 4012.57px; }
+
+.thermal-discovery-connector {
+  position: absolute;
+  left: calc(50% - 651px / 2 + 0.5px);
+  top: 4329.22px;
+  width: 651px;
+  height: 53.5px;
+}
+
+.thermal-discovery-label,
+.thermal-discovery-caption {
+  position: absolute;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+}
+
+.thermal-discovery-label {
+  left: calc(50% - 275px / 2 + 0.5px);
+  top: 4397.22px;
+  width: 275px;
+  height: 21px;
+  color: rgba(255, 255, 255, 0.7);
+}
+
+.thermal-discovery-caption {
+  left: calc(50% - 636px / 2);
+  top: 4446.22px;
+  width: 636px;
+  height: 21px;
+  color: #ffffff;
+  text-align: center;
+}
+
+/* ============================================================================
+   DESIGN DECISIONS — "02" item card
+   ============================================================================ */
+
+.thermal-decision-2 {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal +249.5px offset pushed this 3px past the panel's right
+     edge; repositioned for an exact 30px right margin */
+  left: calc(50% - 655px / 2 + 221.5px);
+  /* 40px below the discovery-subsection — standing subsection rule */
+  top: 4507.2px;
+  width: 655px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 40px 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ============================================================================
+   "img 4 + label" — web app genre-selection screenshot
+   ============================================================================ */
+
+.thermal-webapp-group {
+  /* purely organisational — children use their own panel-relative
+     absolute coordinates, same convention as .thermal-mood-group */
+}
+
+.thermal-webapp-1 {
+  box-sizing: border-box;
+  position: absolute;
+  left: 166px;
+  /* sits beside the "02" card, not below it — reference screenshot shows
+     them at roughly the same vertical level (51.21px spec offset
+     preserved from decision-2's corrected top) */
+  top: 4558.41px;
+  width: 235px;
+  height: 416.07px;
+  object-fit: cover;
+  border-width: 1px 0 1px 1px;
+  border-style: solid;
+  border-color: rgba(245, 245, 245, 0.2);
+  border-radius: 10px 0 0 10px;
+}
+
+.thermal-webapp-caption {
+  position: absolute;
+  left: 427px;
+  top: 4940.2px;
+  width: 549px;
+  height: 21px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   DESIGN DECISIONS — "03" item card + Popular Choices crop
+   Same side-by-side relationship as "02": card and image sit at roughly
+   the same vertical level (spec's own relative offsets preserved), not
+   stacked — confirmed against the reference screenshot for "02" earlier.
+   ============================================================================ */
+
+.thermal-decision-3 {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal -252.5px offset left it flush against the panel's
+     left edge (0px margin) — repositioned for an exact 30px left margin */
+  left: calc(50% - 655px / 2 - 221.5px);
+  /* 40px below .thermal-webapp-group — standing subsection rule */
+  top: 5014.47px;
+  width: 655px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 40px 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.thermal-artiste-group {
+  /* purely organisational — children use their own panel-relative
+     absolute coordinates, same convention as .thermal-mood-group */
+}
+
+.thermal-artiste-popular {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal left overflowed the panel's right edge by 61px —
+     shifted left for an exact 30px right margin, same delta applied to
+     the caption below to preserve their relative position. Vertical
+     position sits beside .thermal-decision-3 (spec's own relative offset
+     preserved), same side-by-side relationship as "02". */
+  /* card(655) + image(444.4) leaves only 1098px between two 30px margins
+     — 1.4px short, causing a hairline overlap. Nudged right for a clean
+     20px gap after the card instead. */
+  left: 705px;
+  top: 5140.01px;
+  width: 444.4px;
+  height: 185.9px;
+  object-fit: cover;
+  border-width: 1.1px 0 1.1px 1.1px;
+  border-style: solid;
+  border-color: rgba(245, 245, 245, 0.2);
+  border-radius: 11px 0 0 11px;
+}
+
+.thermal-artiste-caption {
+  position: absolute;
+  left: 729.21px;
+  top: 5338.47px;
+  width: 400px;
+  height: 42px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  text-align: center;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   DESIGN DECISIONS — "04" item card + analysis waveform
+   Same side-by-side relationship as "02"/"03".
+   ============================================================================ */
+
+.thermal-decision-4 {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal +254.5px offset pushed this 3px past the panel's right
+     edge; repositioned for an exact 30px right margin, same fix as "02" */
+  left: calc(50% - 655px / 2 + 221.5px);
+  /* 40px below .thermal-artiste-group — standing subsection rule */
+  top: 5420.47px;
+  width: 655px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 40px 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+.thermal-waveform-group {
+  /* purely organisational — children use their own panel-relative
+     absolute coordinates, same convention as .thermal-mood-group */
+}
+
+.thermal-waveform-img {
+  position: absolute;
+  /* shifted -55px along with the caption, so the group's left edge sits
+     exactly 30px from the panel margin (was 85px) */
+  left: 118.13px;
+  /* sits beside the "04" card — spec's relative offset preserved */
+  top: 5552.38px;
+  width: 262.24px;
+  height: 136.69px;
+  object-fit: contain;
+}
+
+.thermal-waveform-caption {
+  position: absolute;
+  left: 30px;
+  top: 5721.47px;
+  width: 435px;
+  height: 21px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   DESIGN DECISIONS — "05" item card
+   ============================================================================ */
+
+.thermal-decision-5 {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal -252.5px offset left it flush against the panel's
+     left edge — repositioned for an exact 30px left margin, same fix as
+     "03" */
+  left: calc(50% - 655px / 2 - 221.5px);
+  /* 40px below .thermal-waveform-group — standing subsection rule */
+  top: 5782.47px;
+  width: 655px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 40px 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ============================================================================
+   "img 7 + labels" — results screen + header-banner crop
+   ============================================================================ */
+
+.thermal-results-group {
+  /* purely organisational — children use their own panel-relative
+     absolute coordinates, same convention as .thermal-mood-group */
+}
+
+.thermal-results-1 {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal +239.06px offset left only 0.9px right margin —
+     repositioned for an exact 30px right margin */
+  left: calc(50% - 678.12px / 2 + 209.94px);
+  /* 40px below "05" — standing subsection rule */
+  top: 6114.47px;
+  width: 678.12px;
+  height: 388.94px;
+  object-fit: cover;
+  border: 1.06px solid rgba(245, 245, 245, 0.2);
+  border-radius: 10.61px;
+}
+
+.thermal-results-2 {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal -357px offset gave 49px left margin — repositioned
+     for an exact 30px left margin, matching .thermal-results-1's fix */
+  left: calc(50% - 346px / 2 - 376px);
+  top: 6297.14px;
+  width: 346px;
+  height: 52px;
+  object-fit: cover;
+  border: 1px solid rgba(245, 245, 245, 0.2);
+  border-radius: 10px;
+}
+
+.thermal-results-caption {
+  position: absolute;
+  left: calc(50% - 674px / 2 - 202px);
+  top: 6524.14px;
+  width: 674px;
+  height: 21px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-style: italic;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #ffffff;
+}
+
+/* ============================================================================
+   DESIGN DECISIONS — "06" item card (final)
+   ============================================================================ */
+
+.thermal-decision-6 {
+  box-sizing: border-box;
+  position: absolute;
+  /* spec's literal +254.5px offset overflows the panel's right edge by
+     3px, same recurring issue as "02"/"04" — repositioned for an exact
+     30px right margin */
+  left: calc(50% - 655px / 2 + 221.5px);
+  /* 40px below .thermal-results-group — standing subsection rule */
+  top: 6585.14px;
+  width: 655px;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 42px 40px 40px;
+  gap: 30px;
+  background: rgba(25, 24, 24, 0.4);
+  border-radius: 10px;
+  z-index: 2;
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
+/* ============================================================================
+   "img 8" — closing cascade of hero/mood/results screenshots (final section)
+   Figma lists "result screen cool 3" first (top of layers panel = front-
+   most), so it's last in DOM to paint on top of the other two.
+   ============================================================================ */
+
+.thermal-closing-group {
+  /* purely organisational — children use their own panel-relative
+     absolute coordinates, same convention as .thermal-mood-group */
+}
+
+.thermal-closing-hero {
+  box-sizing: border-box;
+  position: absolute;
+  object-fit: cover;
+  border: 1px solid rgba(245, 245, 245, 0.2);
+  border-radius: 10px;
+  /* spec's literal 63px left margin nudged to an exact 30px, matching
+     the page's standing margin convention */
+  left: 30px;
+  top: 7164.5px;
+  width: 307.2px;
+  height: 168.72px;
+}
+
+.thermal-closing-mood {
+  box-sizing: border-box;
+  position: absolute;
+  object-fit: cover;
+  border: 1px solid rgba(245, 245, 245, 0.2);
+  border-radius: 10px;
+  left: 296px;
+  top: 7011.5px;
+  width: 511.2px;
+  height: 293.2px;
+}
+
+.thermal-closing-results {
+  box-sizing: border-box;
+  position: absolute;
+  object-fit: cover;
+  border: 1px solid rgba(245, 245, 245, 0.2);
+  border-radius: 10px;
+  /* spec's literal 583px left overflowed the panel's right edge by 64px
+     — repositioned for an exact 30px right margin. Top: 40px below
+     .thermal-decision-6 (this is the topmost of the three) */
+  left: 489px;
+  top: 6844.5px;
+  width: 639px;
+  height: 366.5px;
+}
+
+/* ============================================================================
+   ./REFLECTION — new top-level ./-section (120px gap rule, not 40px)
+   ============================================================================ */
+
+.thermal-reflection {
+  box-sizing: border-box;
+  position: absolute;
+  left: calc(50% - 991px / 2 + 11.5px);
+  /* 120px below the closing image cascade — standing ./-section rule */
+  top: 7453.22px;
+  width: 991px;
+  /* spec's 487px assumes different line-wrapping than this renderer
+     produces — sized to content, same fix as "./The Problem" */
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 40px;
+  gap: 30px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.thermal-reflection-title {
+  width: 140px;
+  height: 17px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.thermal-reflection-body {
+  width: 911px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================================
+   SEE NEXT CASE STUDY (outside the panel, same pattern as Guidely)
+   ============================================================================ */
+
+.thermal-next-case {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.thermal-next-label {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #c2beba;
+  margin-bottom: 20px;
+}
+
+.thermal-next-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.thermal-next-case:hover .thermal-next-card {
+  background-color: rgba(243, 238, 232, 0.06);
+}
+
+.thermal-next-image {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: none;
+}
+
+.thermal-next-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  text-transform: capitalize;
+  color: #f3eee8;
+}
+
+@media (max-width: 768px) {
+  .thermal-decision-detail {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+  }
+
+  .thermal-decision-detail-content,
+  .thermal-decision-detail-content p {
+    width: 100%;
+    height: auto;
+  }
+
+  .thermal-discovery-subsection {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 30px 60px;
+    box-sizing: border-box;
+  }
+
+  .thermal-discovery-screen,
+  .thermal-discovery-connector,
+  .thermal-discovery-label,
+  .thermal-discovery-caption {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+
+  .thermal-discovery-screen {
+    width: 100%;
+    max-width: 562.32px;
+    height: auto;
+    aspect-ratio: 562.32 / 322.52;
+  }
+
+  .thermal-discovery-connector { width: min(100%, 651px); height: auto; }
+  .thermal-discovery-label,
+  .thermal-discovery-caption { width: 100%; height: auto; text-align: center; }
+}
+
+/* -- placeholder styling (pending real assets) -- */
+
+.thermal-placeholder {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 8px;
+  background: linear-gradient(
+    135deg,
+    rgba(255, 122, 0, 0.15),
+    rgba(110, 198, 255, 0.15)
+  );
+  border: 1px dashed rgba(255, 122, 0, 0.5);
+  font-family: 'Be Vietnam', sans-serif;
+  font-size: 11px;
+  color: #928f8b;
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .thermal-page {
+    padding-top: 60px;
+  }
+
+  .thermal-topbar {
+    padding: 24px 30px 0;
+  }
+
+  /* standing rule: every element touching the page/panel edge on mobile
+     keeps a 30px margin — maintain this for future sections too */
+  .thermal-body {
+    width: calc(100% - 60px);
+    min-height: 0;
+    margin: 0 auto;
+  }
+
+  .thermal-meta-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center;
+    padding: 20px;
+    gap: 20px;
+  }
+
+  .thermal-meta-item,
+  .thermal-meta-item-1,
+  .thermal-meta-item-2,
+  .thermal-meta-item-3,
+  .thermal-meta-item-4 {
+    width: 100%;
+    height: auto;
+    padding: 0;
+    justify-content: flex-start;
+  }
+
+  .thermal-meta-item-5 {
+    grid-column: 1 / -1;
+    width: auto;
+    height: auto;
+    padding: 0;
+    justify-content: center;
+    justify-self: center;
+  }
+
+  .thermal-meta-item-1 .thermal-meta-text,
+  .thermal-meta-item-2 .thermal-meta-text,
+  .thermal-meta-item-3 .thermal-meta-text,
+  .thermal-meta-item-4 .thermal-meta-text,
+  .thermal-meta-item-5 .thermal-meta-text {
+    width: auto;
+    height: auto;
+    flex: 1;
+  }
+
+  .thermal-meta-label,
+  .thermal-meta-value,
+  .thermal-meta-item-1 .thermal-meta-label,
+  .thermal-meta-item-1 .thermal-meta-value,
+  .thermal-meta-item-2 .thermal-meta-label,
+  .thermal-meta-item-2 .thermal-meta-value,
+  .thermal-meta-item-3 .thermal-meta-label,
+  .thermal-meta-item-3 .thermal-meta-value,
+  .thermal-meta-item-4 .thermal-meta-label,
+  .thermal-meta-item-4 .thermal-meta-value,
+  .thermal-meta-item-5 .thermal-meta-label,
+  .thermal-meta-item-5 .thermal-meta-value {
+    width: auto;
+    text-align: left;
+  }
+
+  /* flow layout on mobile, so stretch the glow over the whole panel
+     instead of pinning it to a desktop offset */
+  .thermal-gradient {
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+  }
+
+  .thermal-hero {
+    height: auto;
+    padding: 30px 30px 60px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .thermal-hero-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 233.1px;
+    max-width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+  }
+
+  .thermal-hero-card-img {
+    width: 100%;
+    height: auto;
+    aspect-ratio: 366 / 220;
+  }
+
+  .thermal-hero-title {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    align-items: center;
+    text-align: center;
+  }
+
+  .thermal-question {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    padding: 0 30px;
+    margin: 60px 0;
+    box-sizing: border-box;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .thermal-problem {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .thermal-problem-title {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .thermal-problem-body {
+    width: 100%;
+    height: auto;
+  }
+
+  .thermal-concept {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 40px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .thermal-concept-title {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .thermal-concept-body {
+    width: 100%;
+  }
+
+  .thermal-concept-wordmark {
+    position: relative;
+    left: auto;
+    top: auto;
+    display: block;
+    width: 180px;
+    height: auto;
+    margin: 0 auto 60px;
+  }
+
+  .thermal-img-row {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 24px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-mockup-1,
+  .thermal-mockup-2,
+  .thermal-mockup-3 {
+    position: relative;
+    left: auto;
+    top: auto;
+    transform: none;
+  }
+
+  .thermal-mockup-3 {
+    width: 100%;
+    max-width: 420px;
+    height: auto;
+    aspect-ratio: 614.4 / 337.44;
+  }
+
+  .thermal-mockup-1 {
+    width: 100%;
+    max-width: 320px;
+    height: auto;
+    aspect-ratio: 419.4 / 230.4;
+  }
+
+  .thermal-mockup-2 {
+    width: 140px;
+    height: auto;
+    aspect-ratio: 90.06 / 186.18;
+  }
+
+  .thermal-concept-2 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 40px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-concept-2-card {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    padding: 24px 20px;
+    gap: 16px;
+  }
+
+  .thermal-concept-2-body {
+    width: 100%;
+  }
+
+  .thermal-quote {
+    width: 100%;
+    height: auto;
+    min-height: 129px;
+  }
+
+  .thermal-quote-text {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 24px auto;
+    font-size: 14px;
+  }
+
+  .thermal-quote-mark-open {
+    left: 10px;
+    top: 12px;
+  }
+
+  .thermal-quote-mark-close {
+    left: auto;
+    right: 10px;
+    top: auto;
+    bottom: 12px;
+  }
+
+  .thermal-wheel-group {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 220px;
+    height: auto;
+    aspect-ratio: 256 / 242.76;
+    margin: 0 auto;
+  }
+
+  .thermal-who-for {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 60px auto;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .thermal-who-for-title {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .thermal-who-for-body {
+    width: 100%;
+  }
+
+  .thermal-design-decisions {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .thermal-design-decisions-title {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .thermal-decision-item {
+    width: 100%;
+  }
+
+  .thermal-decision-title {
+    width: 100%;
+    font-size: 18px;
+  }
+
+  .thermal-decision-body {
+    width: 100%;
+  }
+
+  .thermal-decision-2 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .thermal-webapp-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-webapp-1 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 235px;
+    height: auto;
+    aspect-ratio: 235 / 416.07;
+    border-radius: 10px;
+  }
+
+  .thermal-webapp-caption {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .thermal-decision-3 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .thermal-artiste-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-artiste-popular {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 444.4px;
+    height: auto;
+    aspect-ratio: 444.4 / 185.9;
+    border-radius: 10px;
+  }
+
+  .thermal-artiste-caption {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .thermal-decision-4 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .thermal-waveform-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-waveform-img {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 262.24px;
+    max-width: 100%;
+    height: auto;
+    aspect-ratio: 262.24 / 136.69;
+  }
+
+  .thermal-waveform-caption {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .thermal-decision-5 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .thermal-results-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-results-1 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 678.12px;
+    height: auto;
+    aspect-ratio: 678.12 / 388.94;
+  }
+
+  .thermal-results-2 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    max-width: 346px;
+    height: auto;
+    aspect-ratio: 346 / 52;
+  }
+
+  .thermal-results-caption {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    text-align: center;
+  }
+
+  .thermal-decision-6 {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 0 auto 60px;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 24px;
+  }
+
+  .thermal-closing-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-closing-hero,
+  .thermal-closing-mood,
+  .thermal-closing-results {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+  }
+
+  .thermal-closing-hero {
+    max-width: 307.2px;
+    aspect-ratio: 307.2 / 168.72;
+  }
+
+  .thermal-closing-mood {
+    max-width: 511.2px;
+    aspect-ratio: 511.2 / 293.2;
+  }
+
+  .thermal-closing-results {
+    max-width: 639px;
+    aspect-ratio: 639 / 366.5;
+  }
+
+  .thermal-reflection {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: calc(100% - 60px);
+    height: auto;
+    margin: 60px auto;
+    padding: 24px 20px;
+    align-items: flex-start;
+    gap: 16px;
+  }
+
+  .thermal-reflection-title {
+    width: 100%;
+    height: auto;
+    font-size: 20px;
+    line-height: 30px;
+  }
+
+  .thermal-reflection-body {
+    width: 100%;
+  }
+
+  .thermal-next-case {
+    padding: 40px 20px;
+  }
+
+  .thermal-next-card {
+    gap: 14px;
+  }
+
+  .thermal-next-image {
+    width: 64px;
+    height: 50px;
+  }
+
+  .thermal-next-title {
+    font-size: 14px;
+  }
+
+  .thermal-mood-group {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 16px;
+    padding: 0 30px 60px;
+  }
+
+  .thermal-mood-screen {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 639 / 366.5;
+  }
+
+  /* the connector line and its 01/02 callouts point at specific desktop
+     pixel positions on the mockup image — meaningless once the layout
+     stacks, so they're desktop-only; the caption alone carries the point */
+  .thermal-mood-vector,
+  .thermal-mood-label {
+    display: none;
+  }
+
+  .thermal-mood-caption {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .thermal-hero-eyebrow {
+    width: 100%;
+    height: auto;
+    font-size: 16px;
+    line-height: 24px;
+  }
+
+  .thermal-hero-heading {
+    width: 100%;
+    height: auto;
+    font-size: 24px;
+    line-height: 36px;
+  }
+
+  .thermal-hero-btn {
+    align-items: center;
+  }
+}

@@ -1,116 +1,112 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-import guidelyLogo from '../assets/guidely-logo-transparent.svg';
-import dashedArrow from '../assets/dashed-arrow-transparent.svg';
+import guidelyLogo from '../assets/guidely-logo-transparent.png';
+import dashedArrow from '../assets/dashed-arrow-transparent.png';
 import section1Illustration from '../assets/guidely-section1-illustration.svg';
 import section2MockupImg from '../assets/guidely-section2-mockup.png';
 import typographyChartImg from '../assets/guidely-typography-chart.svg';
+import wireframesGalleryImg from '../assets/guidely-wireframes-gallery.svg';
+import quoteBlockImg from '../assets/guidely-quote-block.svg';
+import homeWelcomeImg from '../assets/guidely-home-welcome.png';
+import mockup1Img from '../assets/guidely-mockup-1.png';
+import interestsSelectionImg from '../assets/guidely-interests-selection.png';
+import eventFeedImg from '../assets/guidely-event-feed.png';
+import recommendedFeedImg from '../assets/guidely-recommended-feed.png';
+import personalizationArrow2 from '../assets/guidely-arrow-2.svg';
+import personalizationArrow1 from '../assets/guidely-arrow-1.svg';
+import arrowFeatured from '../assets/guidely-arrow-featured.svg';
+import arrowClubs from '../assets/guidely-arrow-clubs.svg';
+import arrowRecommended from '../assets/guidely-arrow-recommended.svg';
+import guestChoiceImg from '../assets/guidely-guest-choice.png';
+import accessLockedImg from '../assets/guidely-access-locked.png';
+import tourGuideImg from '../assets/guidely-tour-guide.png';
+import tourCard1Img from '../assets/guidely-tour-card-1.png';
+import tourCard2Img from '../assets/guidely-tour-card-2.png';
+import fourcardMockupImg from '../assets/guidely-fourcard-mockup.png';
+import fourcardVectorImg from '../assets/guidely-fourcard-vector.svg';
+import eventFormImg from '../assets/guidely-event-form.png';
+import iconSearchImg from '../assets/guidely-icon-search.svg';
+import iconComputerCheckImg from '../assets/guidely-icon-computer-check.svg';
+import iconBubbleChatImg from '../assets/guidely-icon-bubble-chat.svg';
+import quoteMarkImg from '../assets/guidely-quote-mark.svg';
+import caseStudies from '../data/caseStudies';
+import {
+  WorkIcon,
+  ToolsIcon,
+  HourglassIcon,
+  PersonIcon,
+  TeamIcon,
+} from '../components/MetaIcons';
 import './GuidelyCaseStudy.css';
 
-const WorkIcon = ({ className }) => (
+const GpsIcon = ({ className }) => (
   <svg
     className={className}
-    viewBox="0 0 25 25"
+    viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M3 8a2 2 0 0 1 2-2h15a2 2 0 0 1 2 2v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8Z"
-      fill="currentColor"
+      d="M30 15H26.9538C26.7167 12.4401 25.5919 10.0438 23.7741 8.22592C21.9562 6.40808 19.5599 5.28325 17 5.04625V2C17 1.73478 16.8946 1.48043 16.7071 1.29289C16.5196 1.10536 16.2652 1 16 1C15.7348 1 15.4804 1.10536 15.2929 1.29289C15.1054 1.48043 15 1.73478 15 2V5.04625C12.4401 5.28325 10.0438 6.40808 8.22592 8.22592C6.40808 10.0438 5.28325 12.4401 5.04625 15H2C1.73478 15 1.48043 15.1054 1.29289 15.2929C1.10536 15.4804 1 15.7348 1 16C1 16.2652 1.10536 16.5196 1.29289 16.7071C1.48043 16.8946 1.73478 17 2 17H5.04625C5.28325 19.5599 6.40808 21.9562 8.22592 23.7741C10.0438 25.5919 12.4401 26.7167 15 26.9538V30C15 30.2652 15.1054 30.5196 15.2929 30.7071C15.4804 30.8946 15.7348 31 16 31C16.2652 31 16.5196 30.8946 16.7071 30.7071C16.8946 30.5196 17 30.2652 17 30V26.9538C19.5599 26.7167 21.9562 25.5919 23.7741 23.7741C25.5919 21.9562 26.7167 19.5599 26.9538 17H30C30.2652 17 30.5196 16.8946 30.7071 16.7071C30.8946 16.5196 31 16.2652 31 16C31 15.7348 30.8946 15.4804 30.7071 15.2929C30.5196 15.1054 30.2652 15 30 15ZM16 25C14.22 25 12.4799 24.4722 10.9999 23.4832C9.51982 22.4943 8.36627 21.0887 7.68508 19.4442C7.0039 17.7996 6.82567 15.99 7.17293 14.2442C7.5202 12.4984 8.37737 10.8947 9.63604 9.63604C10.8947 8.37737 12.4984 7.5202 14.2442 7.17293C15.99 6.82567 17.7996 7.0039 19.4442 7.68508C21.0887 8.36627 22.4943 9.51982 23.4832 10.9999C24.4722 12.4799 25 14.22 25 16C24.9974 18.3861 24.0483 20.6738 22.361 22.361C20.6738 24.0483 18.3861 24.9974 16 25Z"
+      fill="#75B946"
     />
-    <path
-      d="M9 6V5a2 2 0 0 1 2-2h3a2 2 0 0 1 2 2v1"
-      stroke="currentColor"
-      strokeWidth="1.6"
-    />
-    <path d="M3 13h19" stroke="#fff" strokeWidth="1.2" />
   </svg>
 );
 
-const ToolsIcon = ({ className }) => (
+const MegaphoneIcon = ({ className }) => (
   <svg
     className={className}
-    viewBox="0 0 25 25"
+    viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M16.5 3.5a4 4 0 0 0-4.9 4.9L3 17l4 4 8.6-8.6a4 4 0 0 0 4.9-4.9l-2.9 2.9-2-2 2.9-2.9Z"
-      fill="currentColor"
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M10.2401 7.81117V14.9088L22.4001 18.2256V4.49437L10.2401 7.81117ZM8.64014 14.9088C8.64007 15.2599 8.75547 15.6012 8.96857 15.8802C9.18166 16.1593 9.48061 16.3604 9.81934 16.4528L21.9793 19.7696C22.2168 19.8343 22.4661 19.8434 22.7077 19.7961C22.9492 19.7488 23.1766 19.6463 23.3722 19.4968C23.5677 19.3472 23.7261 19.1546 23.835 18.9338C23.9439 18.7131 24.0004 18.4701 24.0001 18.224V4.49437C24.0002 4.24834 23.9435 4.00561 23.8345 3.78505C23.7255 3.56449 23.567 3.37204 23.3715 3.22267C23.176 3.0733 22.9487 2.97102 22.7073 2.9238C22.4658 2.87657 22.2167 2.88566 21.9793 2.95037L9.81934 6.26717C9.48061 6.3595 9.18166 6.56069 8.96857 6.83971C8.75547 7.11872 8.64007 7.46008 8.64014 7.81117V14.9088Z"
+      fill="#75B946"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M5.52964 14.8797H8.80004V7.83975H5.52484C4.69718 8.8262 4.24392 10.0729 4.2448 11.3606C4.24568 12.6483 4.70064 13.8944 5.52964 14.8797ZM8.80004 16.4797C9.22439 16.4797 9.63135 16.3112 9.93141 16.0111C10.2315 15.7111 10.4 15.3041 10.4 14.8797V7.83975C10.4 7.4154 10.2315 7.00843 9.93141 6.70838C9.63135 6.40832 9.22439 6.23975 8.80004 6.23975H5.20484C5.08505 6.23964 4.9665 6.264 4.85645 6.31132C4.7464 6.35864 4.64717 6.42793 4.56484 6.51495C2.00164 9.22055 2.01284 13.4797 4.56164 16.1981C4.64493 16.2866 4.74532 16.3571 4.85671 16.4055C4.96811 16.4539 5.08818 16.4792 5.20964 16.4797H8.80004Z"
+      fill="#75B946"
+    />
+    <path
+      fillRule="evenodd"
+      clipRule="evenodd"
+      d="M11.6305 17.3918L7.61446 16.9438L6.04966 23.1998H10.2673L11.6305 17.3918ZM7.79046 15.355C7.40579 15.312 7.01855 15.4099 6.70052 15.6305C6.38249 15.8512 6.15524 16.1796 6.06087 16.555L4.49767 22.811C4.43857 23.0469 4.43403 23.2932 4.48439 23.5312C4.53476 23.7691 4.6387 23.9924 4.78833 24.1842C4.93796 24.3759 5.12932 24.531 5.34789 24.6377C5.56645 24.7444 5.80646 24.7998 6.04966 24.7998H10.2673C10.6283 24.7999 10.9787 24.678 11.2617 24.4537C11.5446 24.2295 11.7434 23.9161 11.8257 23.5646L13.1889 17.7566C13.2407 17.5362 13.2452 17.3072 13.202 17.0849C13.1588 16.8626 13.0689 16.652 12.9382 16.467C12.8075 16.282 12.6391 16.1269 12.444 16.0119C12.2489 15.8969 12.0316 15.8246 11.8065 15.7998L7.79046 15.355ZM29.7857 5.15662C29.9031 5.33317 29.9457 5.54914 29.904 5.75705C29.8623 5.96496 29.7397 6.14781 29.5633 6.26542L27.1633 7.86542C27.076 7.92733 26.9771 7.97109 26.8726 7.9941C26.7681 8.01712 26.66 8.01893 26.5547 7.99942C26.4495 7.97991 26.3492 7.93949 26.2599 7.88053C26.1706 7.82158 26.094 7.7453 26.0347 7.65621C25.9753 7.56712 25.9345 7.46704 25.9145 7.36188C25.8946 7.25672 25.896 7.14863 25.9186 7.04401C25.9411 6.93939 25.9845 6.84036 26.046 6.75279C26.1076 6.66523 26.1861 6.5909 26.2769 6.53422L28.6769 4.93422C28.8534 4.81677 29.0694 4.77422 29.2773 4.81592C29.4852 4.85762 29.6681 4.98017 29.7857 5.15662ZM25.9201 11.3598C25.9201 11.1476 26.0044 10.9442 26.1544 10.7941C26.3044 10.6441 26.5079 10.5598 26.7201 10.5598H29.1201C29.3322 10.5598 29.5357 10.6441 29.6858 10.7941C29.8358 10.9442 29.9201 11.1476 29.9201 11.3598C29.9201 11.572 29.8358 11.7755 29.6858 11.9255C29.5357 12.0755 29.3322 12.1598 29.1201 12.1598H26.7201C26.5079 12.1598 26.3044 12.0755 26.1544 11.9255C26.0044 11.7755 25.9201 11.572 25.9201 11.3598ZM26.1073 14.9278C26.175 14.8474 26.2579 14.7811 26.3513 14.7327C26.4446 14.6844 26.5466 14.6549 26.6514 14.646C26.7561 14.6371 26.8616 14.6489 26.9618 14.6808C27.062 14.7127 27.1549 14.764 27.2353 14.8318L29.4433 16.6862C29.5969 16.8252 29.6906 17.0183 29.7047 17.2249C29.7188 17.4316 29.6522 17.6357 29.519 17.7942C29.3857 17.9528 29.1961 18.0535 28.9901 18.0751C28.7841 18.0967 28.5778 18.0376 28.4145 17.9102L26.2065 16.0542C26.044 15.9179 25.9424 15.7228 25.9238 15.5115C25.9052 15.3003 25.9712 15.0904 26.1073 14.9278Z"
+      fill="#75B946"
     />
   </svg>
 );
 
-const HourglassIcon = ({ className }) => (
+const CalendarIcon = ({ className }) => (
   <svg
     className={className}
-    viewBox="0 0 25 25"
+    viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M6 3.5h13M6 21.5h13M7 3.5v3.8c0 1.6 1 3.1 2.5 3.9l2.5 1.3 2.5-1.3c1.5-.8 2.5-2.3 2.5-3.9V3.5M7 21.5v-3.8c0-1.6 1-3.1 2.5-3.9l2.5-1.3 2.5 1.3c1.5.8 2.5 2.3 2.5 3.9v3.8"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-      strokeLinejoin="round"
+      d="M25.3334 5.33317H22.6667V3.99984C22.6667 3.64622 22.5263 3.30708 22.2762 3.05703C22.0262 2.80698 21.687 2.6665 21.3334 2.6665C20.9798 2.6665 20.6407 2.80698 20.3906 3.05703C20.1406 3.30708 20.0001 3.64622 20.0001 3.99984V5.33317H12.0001V3.99984C12.0001 3.64622 11.8596 3.30708 11.6096 3.05703C11.3595 2.80698 11.0204 2.6665 10.6667 2.6665C10.3131 2.6665 9.97399 2.80698 9.72394 3.05703C9.47389 3.30708 9.33341 3.64622 9.33341 3.99984V5.33317H6.66675C5.60588 5.33317 4.58847 5.7546 3.83832 6.50474C3.08818 7.25489 2.66675 8.2723 2.66675 9.33317V25.3332C2.66675 26.394 3.08818 27.4115 3.83832 28.1616C4.58847 28.9117 5.60588 29.3332 6.66675 29.3332H25.3334C26.3943 29.3332 27.4117 28.9117 28.1618 28.1616C28.912 27.4115 29.3334 26.394 29.3334 25.3332V9.33317C29.3334 8.2723 28.912 7.25489 28.1618 6.50474C27.4117 5.7546 26.3943 5.33317 25.3334 5.33317ZM26.6667 25.3332C26.6667 25.6868 26.5263 26.0259 26.2762 26.276C26.0262 26.526 25.687 26.6665 25.3334 26.6665H6.66675C6.31313 26.6665 5.97399 26.526 5.72394 26.276C5.47389 26.0259 5.33341 25.6868 5.33341 25.3332V15.9998H26.6667V25.3332ZM26.6667 13.3332H5.33341V9.33317C5.33341 8.97955 5.47389 8.64041 5.72394 8.39036C5.97399 8.14031 6.31313 7.99984 6.66675 7.99984H9.33341V9.33317C9.33341 9.68679 9.47389 10.0259 9.72394 10.276C9.97399 10.526 10.3131 10.6665 10.6667 10.6665C11.0204 10.6665 11.3595 10.526 11.6096 10.276C11.8596 10.0259 12.0001 9.68679 12.0001 9.33317V7.99984H20.0001V9.33317C20.0001 9.68679 20.1406 10.0259 20.3906 10.276C20.6407 10.526 20.9798 10.6665 21.3334 10.6665C21.687 10.6665 22.0262 10.526 22.2762 10.276C22.5263 10.0259 22.6667 9.68679 22.6667 9.33317V7.99984H25.3334C25.687 7.99984 26.0262 8.14031 26.2762 8.39036C26.5263 8.64041 26.6667 8.97955 26.6667 9.33317V13.3332Z"
+      fill="#75B946"
     />
   </svg>
 );
 
-const PersonIcon = ({ className }) => (
+const MoveDownIcon = ({ className }) => (
   <svg
     className={className}
-    viewBox="0 0 25 25"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="12.5" cy="8" r="4" stroke="currentColor" strokeWidth="1.5" />
-    <path
-      d="M4 21c0-4.1 3.8-7.5 8.5-7.5S21 16.9 21 21"
-      stroke="currentColor"
-      strokeWidth="1.5"
-      strokeLinecap="round"
-    />
-  </svg>
-);
-
-const TeamIcon = ({ className }) => (
-  <svg
-    className={className}
-    viewBox="0 0 28 28"
-    fill="none"
-    xmlns="http://www.w3.org/2000/svg"
-  >
-    <circle cx="9" cy="8" r="3.4" fill="currentColor" />
-    <circle cx="19" cy="8" r="3.4" fill="currentColor" />
-    <path
-      d="M2 22c0-3.8 3.1-6.4 7-6.4s7 2.6 7 6.4M12 22c0-3.8 3.1-6.4 7-6.4s7 2.6 7 6.4"
-      fill="currentColor"
-    />
-  </svg>
-);
-
-const QuoteMarkIcon = ({ className }) => (
-  <svg
-    className={className}
-    viewBox="0 0 47 39"
+    viewBox="0 0 32 32"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
-      d="M0 22.5C0 12.5 6.5 4.5 17 0l3 6C13 9 8.5 13.5 7.5 19.5c1-1 2.5-1.5 4.5-1.5 5 0 8.5 3.5 8.5 8.5S16.5 35 11.5 35C4.5 35 0 30 0 22.5Z"
-      fill="#274193"
-    />
-    <path
-      d="M25 22.5C25 12.5 31.5 4.5 42 0l3 6C38 9 33.5 13.5 32.5 19.5c1-1 2.5-1.5 4.5-1.5 5 0 8.5 3.5 8.5 8.5S41.5 35 36.5 35C29.5 35 25 30 25 22.5Z"
-      fill="#274193"
+      d="M4.01338 14.2935C3.92313 15.9078 4.42439 17.4996 5.42329 18.7709C6.42219 20.0423 7.85023 20.9059 9.44004 21.2002L8.38671 20.1468C8.26327 20.0234 8.16535 19.8768 8.09854 19.7156C8.03174 19.5543 7.99735 19.3814 7.99735 19.2068C7.99735 18.8543 8.13741 18.5161 8.38671 18.2668C8.63601 18.0175 8.97414 17.8775 9.32671 17.8775C9.67928 17.8775 10.0174 18.0175 10.2667 18.2668L13.72 21.7202C14.24 22.2402 14.24 23.0802 13.72 23.6002L10.28 27.0668C10.1566 27.1903 10.0101 27.2882 9.84877 27.355C9.68748 27.4218 9.51462 27.4562 9.34004 27.4562C9.16547 27.4562 8.99261 27.4218 8.83132 27.355C8.67004 27.2882 8.52349 27.1903 8.40004 27.0668C8.2766 26.9434 8.17868 26.7968 8.11188 26.6356C8.04507 26.4743 8.01068 26.3014 8.01068 26.1268C8.01068 25.9523 8.04507 25.7794 8.11188 25.6181C8.17868 25.4568 8.2766 25.3103 8.40004 25.1868L9.57338 24.0135V23.9335C7.18649 23.6499 5.00126 22.4557 3.47348 20.6C1.94571 18.7443 1.19336 16.3704 1.37338 13.9735C1.72004 9.04016 6.06671 5.3335 11.0134 5.3335H13.3334C14.0667 5.3335 14.6667 5.9335 14.6667 6.66683C14.6667 7.40016 14.0667 8.00016 13.3334 8.00016H10.96C7.36004 8.00016 4.20004 10.7202 4.01338 14.2935ZM20 14.6668H26.6667C28.1334 14.6668 29.3334 13.4668 29.3334 12.0002V8.00016C29.3334 6.5335 28.1334 5.3335 26.6667 5.3335H20C18.5334 5.3335 17.3334 6.5335 17.3334 8.00016V12.0002C17.3334 13.4668 18.5334 14.6668 20 14.6668ZM26.6667 12.0002H20V8.00016H26.6667V12.0002ZM26.6667 26.6668H20C18.5334 26.6668 17.3334 25.4668 17.3334 24.0002V20.0002C17.3334 18.5335 18.5334 17.3335 20 17.3335H26.6667C28.1334 17.3335 29.3334 18.5335 29.3334 20.0002V24.0002C29.3334 25.4668 28.1334 26.6668 26.6667 26.6668Z"
+      fill="#75B946"
     />
   </svg>
-);
-
-const VectorPlaceholder = ({ className }) => (
-  <span className={`guidely-vector-placeholder ${className || ''}`} />
 );
 
 const ResearchCard = ({ number, icon, title, body, className }) => (
@@ -120,6 +116,16 @@ const ResearchCard = ({ number, icon, title, body, className }) => (
       {icon}
       <h3 className="guidely-research-card-title">{title}</h3>
       <p className="guidely-research-card-body">{body}</p>
+    </div>
+  </div>
+);
+
+const ReflectionCard = ({ number, title, body, className }) => (
+  <div className={`guidely-reflection-card-group ${className}`}>
+    <span className="guidely-reflection-number">{number}</span>
+    <div className="guidely-reflection-card">
+      <h3 className="guidely-reflection-card-title">{title}</h3>
+      <p className="guidely-reflection-card-body">{body}</p>
     </div>
   </div>
 );
@@ -157,27 +163,50 @@ const MetaItem = ({ icon, className, label, value, valueCentered }) => (
 );
 
 const GuidelyCaseStudy = () => {
+  const nextCaseStudy = caseStudies[1];
+
   return (
     <div className="guidely-page">
       <div className="guidely-topbar">
-        <Link to="/#case-studies" className="guidely-back">
-          <svg
-            width="16"
-            height="16"
-            viewBox="0 0 16 16"
-            fill="none"
-            xmlns="http://www.w3.org/2000/svg"
-          >
-            <path
-              d="M10 12.5 5.5 8 10 3.5"
-              stroke="currentColor"
-              strokeWidth="1.4"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          Back To Case Studies
-        </Link>
+        <div className="guidely-topbar-nav">
+          <Link to="/#case-studies" className="guidely-back">
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M10 12.5 5.5 8 10 3.5"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+            Back To Case Studies
+          </Link>
+
+          <Link to="/case-studies/thermal" className="guidely-next">
+            Next
+            <svg
+              width="16"
+              height="16"
+              viewBox="0 0 16 16"
+              fill="none"
+              xmlns="http://www.w3.org/2000/svg"
+            >
+              <path
+                d="M6 3.5 10.5 8 6 12.5"
+                stroke="currentColor"
+                strokeWidth="1.4"
+                strokeLinecap="round"
+                strokeLinejoin="round"
+              />
+            </svg>
+          </Link>
+        </div>
         <span className="guidely-id">CS-01</span>
       </div>
 
@@ -287,19 +316,22 @@ const GuidelyCaseStudy = () => {
                 found a consistent pattern: apps that tried to do everything
                 ended up doing nothing particularly well. Students
                 weren&apos;t disengaged because they lacked features. They
-                were disengaged because the information was scattered. Our
-                reframe: This is a centralisation problem, not a features
-                problem. The question became:
+                were disengaged because the information was scattered.
+                <br />
+                Our reframe:{' '}
+                <span className="guidely-reframe-highlight">
+                  This is a centralisation problem, not a features problem.
+                </span>
+                <br />
+                The question became:
               </p>
 
               <div className="guidely-quote-block">
-                <QuoteMarkIcon className="guidely-quote-mark guidely-quote-mark-open" />
-                <p className="guidely-quote-text">
-                  How might we bring campus events, clubs, and orientation
-                  into one place, without building another social media
-                  distraction?
-                </p>
-                <QuoteMarkIcon className="guidely-quote-mark guidely-quote-mark-close" />
+                <img
+                  src={quoteBlockImg}
+                  alt="How might we bring campus events, clubs, and orientation into one place, without building another social media distraction?"
+                  className="guidely-quote-block-bg"
+                />
               </div>
 
               <p className="guidely-section-2-body-2">
@@ -317,7 +349,7 @@ const GuidelyCaseStudy = () => {
             <ResearchCard
               number="01"
               className="guidely-research-1"
-              icon={<VectorPlaceholder className="guidely-research-icon" />}
+              icon={<GpsIcon className="guidely-research-icon" />}
               title="GPS navigation creates more problems than it solves"
               body="Systems like UUM Navigate relied on continuous location tracking, which drained battery and broke down indoors. We replaced real-time navigation with a static campus map, simpler, faster, and genuinely usable day-to-day."
             />
@@ -325,7 +357,7 @@ const GuidelyCaseStudy = () => {
             <ResearchCard
               number="02"
               className="guidely-research-2"
-              icon={<VectorPlaceholder className="guidely-research-icon" />}
+              icon={<CalendarIcon className="guidely-research-icon" />}
               title="Event platforms fail without personalisation"
               body="Existing systems like CEMS centralised events but showed everyone the same feed. Students still didn't know which events were relevant to them. This pushed interest-based filtering to the top of our feature list."
             />
@@ -333,7 +365,7 @@ const GuidelyCaseStudy = () => {
             <ResearchCard
               number="03"
               className="guidely-research-3"
-              icon={<VectorPlaceholder className="guidely-research-icon" />}
+              icon={<MegaphoneIcon className="guidely-research-icon" />}
               title="Students need information to come to them"
               body="A usability study on the UniKL Link app found high task completion but low return visits because notifications were weak. Bookmarking and push notifications became non-negotiables."
             />
@@ -341,7 +373,7 @@ const GuidelyCaseStudy = () => {
             <ResearchCard
               number="04"
               className="guidely-research-4"
-              icon={<VectorPlaceholder className="guidely-research-icon" />}
+              icon={<MoveDownIcon className="guidely-research-icon" />}
               title="Cross-platform wasn't optional"
               body="Several comparable apps were Android-only, immediately excluding part of their own campus. React Native with Expo let us build once for both iOS and Android."
             />
@@ -432,26 +464,64 @@ const GuidelyCaseStudy = () => {
               them.
             </p>
 
-            <div className="guidely-personalization-frame guidely-placeholder">
-              <span>Screenshot placeholder</span>
-            </div>
+            <img
+              src={homeWelcomeImg}
+              alt="Home screen welcoming the student"
+              className="guidely-personalization-frame"
+            />
 
-            <div className="guidely-personalization-mockup guidely-personalization-mockup-1 guidely-placeholder">
-              <span>Phone screen placeholder</span>
-            </div>
-            <div className="guidely-personalization-mockup guidely-personalization-mockup-2 guidely-placeholder">
-              <span>Phone screen placeholder</span>
-            </div>
-            <div className="guidely-personalization-mockup guidely-personalization-mockup-3 guidely-placeholder">
-              <span>Phone screen placeholder</span>
-            </div>
+            <img
+              src={mockup1Img}
+              alt="Phone mockup"
+              className="guidely-personalization-mockup guidely-personalization-mockup-1"
+            />
+            <img
+              src={interestsSelectionImg}
+              alt="Getting Started interest selection screen"
+              className="guidely-personalization-mockup guidely-personalization-mockup-2"
+            />
+            <img
+              src={eventFeedImg}
+              alt="Event feed screen with Featured and Clubs You Follow sections"
+              className="guidely-personalization-mockup guidely-personalization-mockup-3"
+            />
 
-            <div className="guidely-personalization-arrow-2" />
-            <div className="guidely-personalization-arrow-1" />
+            <img
+              src={personalizationArrow2}
+              alt=""
+              className="guidely-personalization-arrow-2"
+              aria-hidden="true"
+            />
+            <img
+              src={personalizationArrow1}
+              alt=""
+              className="guidely-personalization-arrow-1"
+              aria-hidden="true"
+            />
+            <img
+              src={arrowFeatured}
+              alt=""
+              className="guidely-arrow-featured"
+              aria-hidden="true"
+            />
+            <img
+              src={arrowClubs}
+              alt=""
+              className="guidely-arrow-clubs"
+              aria-hidden="true"
+            />
+            <img
+              src={arrowRecommended}
+              alt=""
+              className="guidely-arrow-recommended"
+              aria-hidden="true"
+            />
 
-            <div className="guidely-personalization-frame-2 guidely-placeholder">
-              <span>Screenshot placeholder</span>
-            </div>
+            <img
+              src={recommendedFeedImg}
+              alt="Event feed screen with the Recommended For You section"
+              className="guidely-personalization-frame-2"
+            />
           </section>
 
           <section className="guidely-section-3-4">
@@ -476,12 +546,16 @@ const GuidelyCaseStudy = () => {
               have created a negative first impression.
             </p>
 
-            <div className="guidely-access-mockup guidely-access-mockup-1 guidely-placeholder">
-              <span>Phone screen placeholder</span>
-            </div>
-            <div className="guidely-access-mockup guidely-access-mockup-2 guidely-placeholder">
-              <span>Phone screen placeholder</span>
-            </div>
+            <img
+              src={guestChoiceImg}
+              alt="Guest vs student login choice screen"
+              className="guidely-access-mockup guidely-access-mockup-1"
+            />
+            <img
+              src={accessLockedImg}
+              alt="Locked content screen prompting student login"
+              className="guidely-access-mockup guidely-access-mockup-2"
+            />
           </section>
 
           <section className="guidely-section-3-5">
@@ -489,9 +563,11 @@ const GuidelyCaseStudy = () => {
               The Virtual Tour - 04
             </h2>
 
-            <div className="guidely-tour-mockup guidely-placeholder">
-              <span>Phone screen placeholder</span>
-            </div>
+            <img
+              src={tourGuideImg}
+              alt="Tour Guide screen listing School Blocks, Student Centre, and Hostels"
+              className="guidely-tour-mockup"
+            />
 
             <p className="guidely-tour-body-1">
               The virtual tour caters to those unable to physically attend,
@@ -514,12 +590,18 @@ const GuidelyCaseStudy = () => {
               model.
             </p>
 
-            <div className="guidely-tour-card guidely-tour-card-1 guidely-placeholder">
-              <span>Virtual tour screen placeholder</span>
+            <div className="guidely-tour-card guidely-tour-card-1">
+              <img
+                src={tourCard1Img}
+                alt="Welcome To Campus virtual tour slide"
+                className="guidely-tour-card-img"
+              />
             </div>
-            <div className="guidely-tour-card guidely-tour-card-2 guidely-placeholder">
-              <span>Virtual tour screen placeholder</span>
-            </div>
+            <img
+              src={tourCard2Img}
+              alt="Swipe To Explore virtual tour slide"
+              className="guidely-tour-card guidely-tour-card-2"
+            />
           </section>
 
           <section className="guidely-section-3-6">
@@ -540,11 +622,18 @@ const GuidelyCaseStudy = () => {
               just from looking at it.
             </p>
 
-            <div className="guidely-fourcard-mockup guidely-placeholder">
-              <span>Phone screen placeholder</span>
-            </div>
+            <img
+              src={fourcardMockupImg}
+              alt="Home screen with a 2x2 grid of image cards"
+              className="guidely-fourcard-mockup"
+            />
 
-            <div className="guidely-fourcard-vector" />
+            <img
+              src={fourcardVectorImg}
+              alt=""
+              className="guidely-fourcard-vector"
+              aria-hidden="true"
+            />
           </section>
 
           <section className="guidely-section-3-7">
@@ -565,9 +654,11 @@ const GuidelyCaseStudy = () => {
               to be empty.
             </p>
 
-            <div className="guidely-expire-form guidely-placeholder">
-              <span>Form UI placeholder</span>
-            </div>
+            <img
+              src={eventFormImg}
+              alt="Event creation form with name, location, description, date, time, and category fields"
+              className="guidely-expire-form"
+            />
           </section>
 
           <section className="guidely-section-4">
@@ -587,7 +678,12 @@ const GuidelyCaseStudy = () => {
               decision we made.
             </p>
 
-            <div className="guidely-section-4-icon guidely-vector-placeholder" />
+            <img
+              src={iconSearchImg}
+              alt=""
+              className="guidely-section-4-icon"
+              aria-hidden="true"
+            />
           </section>
 
           <section className="guidely-section-5">
@@ -607,7 +703,12 @@ const GuidelyCaseStudy = () => {
               submission.
             </p>
 
-            <div className="guidely-section-5-icon guidely-vector-placeholder" />
+            <img
+              src={iconComputerCheckImg}
+              alt=""
+              className="guidely-section-5-icon"
+              aria-hidden="true"
+            />
           </section>
 
           <section className="guidely-section-6">
@@ -625,18 +726,93 @@ const GuidelyCaseStudy = () => {
             </p>
 
             <div className="guidely-quote-block guidely-quote-block-2">
-              <QuoteMarkIcon className="guidely-quote-mark guidely-quote-mark-open" />
+              <img
+                src={quoteMarkImg}
+                alt=""
+                className="guidely-quote-mark guidely-quote-mark-open"
+                aria-hidden="true"
+              />
               <p className="guidely-quote-text">
                 The project might not have everything we first imagined,
                 but what we did build already makes a real difference.
               </p>
-              <QuoteMarkIcon className="guidely-quote-mark guidely-quote-mark-close" />
+              <img
+                src={quoteMarkImg}
+                alt=""
+                className="guidely-quote-mark guidely-quote-mark-close"
+                aria-hidden="true"
+              />
             </div>
 
-            <div className="guidely-section-6-icon guidely-vector-placeholder" />
+            <img
+              src={iconBubbleChatImg}
+              alt=""
+              className="guidely-section-6-icon"
+              aria-hidden="true"
+            />
+          </section>
+
+          <section className="guidely-section-7">
+            <h2 className="guidely-section-7-title">./Reflection</h2>
+            <h3 className="guidely-reflection-subtitle">
+              What I&apos;d do differently
+            </h3>
+
+            <div className="guidely-reflection-groups">
+              <ReflectionCard
+                number="01"
+                className="guidely-reflection-1"
+                title="The onboarding experience needed more thought"
+                body="The recommendation engine is powered straight from the interest selection screen after signup. However, it was intended as a form to be completed rather than an experience that demonstrated what users were receiving in return. If a student misses it or picks carelessly, their feed becomes less useful from the start. I'd rework that screen to give them an early glimpse of what the personalized feed will look like depending on their choices - make the value visible before they touch next."
+              />
+
+              <ReflectionCard
+                number="02"
+                className="guidely-reflection-2"
+                title="I'd test the gate screen with real guests"
+                body="The screen which prevents guest users and encourages them to log in was intended to be inclusive and welcoming, not obstructive. However, we tested with people who understood the situation. I would like to test it with someone coming in completely cold, a prospective student on their phone checking us out and make sure they get what we want from the message."
+              />
+
+              <ReflectionCard
+                number="03"
+                className="guidely-reflection-3"
+                title="Club discovery is too flat"
+                body="Clubs page is just a list with a search. That functions, yes, but places the onus on the user to figure out what they're looking for. I'd experiment with a category-browsing approach - let them select what interests they have and browse the club listings within those interests. Especially for a first-year who has no frame of reference of what clubs are available, just a list of club names is completely meaningless."
+              />
+
+              <ReflectionCard
+                number="04"
+                className="guidely-reflection-4"
+                title="I'd push the personalisation further"
+                body="Welcome messages and an interest-based feed are great starting point. The app currently pulls the same campus map and virtual tour for everybody. Imagine being able to pop-up things like 'Buildings relevant to your department' for new computer science students or display relevant clubs in your faculty when you open the app. The personalization that we engineered was legit – we can go further."
+              />
+            </div>
+          </section>
+
+          <section className="guidely-section-8">
+            <img
+              src={wireframesGalleryImg}
+              alt="Guidely wireframes gallery"
+              className="guidely-wireframes-img"
+            />
           </section>
         </div>
       </div>
+
+      <Link
+        to={`/case-studies/${nextCaseStudy.slug}`}
+        className="guidely-next-case"
+      >
+        <span className="guidely-next-label">See Next Case Study</span>
+        <div className="guidely-next-card">
+          <img
+            src={nextCaseStudy.image}
+            alt={`${nextCaseStudy.id} preview`}
+            className="guidely-next-image"
+          />
+          <span className="guidely-next-title">{nextCaseStudy.title}</span>
+        </div>
+      </Link>
     </div>
   );
 };

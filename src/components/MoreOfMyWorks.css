@@ -48,58 +48,77 @@
   color: #f3eee8;
 }
 
-.more-works-icon {
+.more-works-icon-link {
   position: relative;
   z-index: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+  color: #f3eee8;
+  transition: opacity 0.2s ease;
+}
+
+.more-works-icon-link:hover {
+  opacity: 0.7;
+}
+
+.more-works-icon {
   width: 20px;
   height: 20px;
-  color: #f3eee8;
+  color: inherit;
   flex-shrink: 0;
 }
 
 /* ============================================================================
-   PREVIEW / VIDEO PLACEHOLDER
+   VIDEO
    ============================================================================ */
 
-.more-works-preview {
-  width: 100%;
-  min-height: 537px;
-  box-sizing: border-box;
-  background-color: #d9d9d9;
+.more-works-video-wrap {
+  position: relative;
+  width: 1034px;
+  max-width: 100%;
+  aspect-ratio: 1034 / 500;
+  margin: 0 auto;
   border-radius: 10px;
-  padding: 32px;
-  display: flex;
-  flex-direction: column;
+  overflow: hidden;
+  background-color: #1b1512;
 }
 
-.more-works-preview-header {
+.more-works-video {
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  display: block;
+  border-radius: 10px;
+}
+
+.more-works-mute-btn {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 40px;
+  height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  gap: 8px;
-  margin-bottom: auto;
-  font-family: var(--font-display, 'Poppins', sans-serif);
-  font-weight: 700;
-  font-size: 20px;
-  letter-spacing: 0.05em;
-  color: #1b1512;
+  border: none;
+  border-radius: 50%;
+  background-color: rgba(27, 21, 18, 0.55);
+  backdrop-filter: blur(8px);
+  -webkit-backdrop-filter: blur(8px);
+  cursor: pointer;
+  transition: background-color 0.2s ease;
 }
 
-.more-works-preview-icon {
+.more-works-mute-btn:hover {
+  background-color: rgba(27, 21, 18, 0.75);
+}
+
+.more-works-mute-icon {
   width: 20px;
   height: 20px;
-  color: #1b1512;
-}
-
-.more-works-preview-body {
-  flex: 1;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  font-family: var(--font-display, 'Poppins', sans-serif);
-  font-weight: 700;
-  font-size: 20px;
-  color: #1b1512;
+  color: #f3eee8;
 }
 
 /* ============================================================================
@@ -122,8 +141,15 @@
     line-height: 30px;
   }
 
-  .more-works-preview {
-    min-height: 300px;
-    padding: 20px;
+  .more-works-mute-btn {
+    width: 34px;
+    height: 34px;
+    top: 12px;
+    right: 12px;
+  }
+
+  .more-works-mute-icon {
+    width: 17px;
+    height: 17px;
   }
 }

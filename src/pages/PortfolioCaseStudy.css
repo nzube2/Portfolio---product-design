@@ -1,0 +1,309 @@
+/* ============================================================================
+   PORTFOLIO CASE STUDY PAGE (CS-03 detail)
+   NOTE: built from a reference screenshot, not a Figma Dev Mode spec like
+   the Guidely/Thermal pages — spacing/sizing below are best-effort visual
+   estimates using the site's established conventions (1158px panel, 30px
+   edge margins, 120px gaps between ./-prefixed sections). Revisit with
+   exact values if/when Dev Mode specs are available.
+   ============================================================================ */
+
+.portfolio-page {
+  width: 100%;
+  min-height: 100vh;
+  background-color: #1b1512;
+  padding-top: 70px;
+}
+
+.portfolio-body {
+  position: relative;
+  width: 1158px;
+  max-width: 100%;
+  margin: 0 auto;
+  background: #16110e;
+  border-radius: 10px 10px 0 0;
+  box-sizing: border-box;
+  padding-bottom: 120px;
+  overflow: hidden;
+}
+
+.portfolio-topbar {
+  width: 1158px;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 40px 0 0;
+  display: flex;
+  flex-direction: column;
+  box-sizing: border-box;
+}
+
+.portfolio-topbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.portfolio-back,
+.portfolio-next {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  width: fit-content;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #c2beba;
+  transition: color 0.3s ease;
+}
+
+.portfolio-back:hover,
+.portfolio-next:hover {
+  color: #f3eee8;
+}
+
+.portfolio-id {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 14px;
+  letter-spacing: 0.05em;
+  text-transform: uppercase;
+  color: #928f8b;
+  margin-bottom: 24px;
+}
+
+/* ============================================================================
+   HERO
+   ============================================================================ */
+
+.portfolio-hero {
+  position: relative;
+  width: 100%;
+  box-sizing: border-box;
+  padding: 130px 40px 100px;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  background:
+    radial-gradient(60% 90% at 30% 20%, rgba(150, 20, 20, 0.55) 0%, rgba(150, 20, 20, 0) 70%),
+    radial-gradient(70% 100% at 80% 0%, rgba(93, 6, 6, 0.65) 0%, rgba(93, 6, 6, 0) 65%),
+    #2a1210;
+}
+
+.portfolio-hero-eyebrow {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: #ffffff;
+  opacity: 0.71;
+}
+
+.portfolio-hero-heading {
+  max-width: 660px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+  line-height: 44px;
+  color: #f3eee8;
+}
+
+.portfolio-hero-btn {
+  box-sizing: border-box;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 15px 20px;
+  width: fit-content;
+  background: #5d0606;
+  border: none;
+  border-radius: 10px;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: #f3eee8;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-hero-btn:hover {
+  background: #7a0707;
+}
+
+/* ============================================================================
+   META CARD — same structure as Thermal's, values swapped for this project
+   ============================================================================ */
+
+.portfolio-meta-card {
+  box-sizing: border-box;
+  position: relative;
+  z-index: 1;
+  width: calc(100% - 80px);
+  margin: -58px auto 0;
+  display: flex;
+  flex-direction: row;
+  align-items: flex-start;
+  justify-content: center;
+  padding: 0 43px;
+  gap: 57px;
+  background: #ffffff;
+  border-radius: 10px;
+}
+
+.portfolio-meta-item {
+  box-sizing: border-box;
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  align-items: center;
+  padding: 10px;
+  gap: 15px;
+  height: 110.5px;
+}
+
+.portfolio-meta-item-1 { width: 161.5px; }
+.portfolio-meta-item-2 { width: 180px; height: 110px; }
+.portfolio-meta-item-3 { width: 161.5px; }
+.portfolio-meta-item-4 { width: 161.5px; }
+.portfolio-meta-item-5 { width: 203px; }
+
+.portfolio-meta-icon {
+  flex: none;
+  width: 25px;
+  height: 25px;
+  color: #000000;
+}
+
+.portfolio-meta-icon-team {
+  width: 28px;
+  height: 28px;
+}
+
+.portfolio-meta-text {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 5px;
+}
+
+.portfolio-meta-label {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 16px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.5);
+  white-space: nowrap;
+}
+
+.portfolio-meta-value {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.7);
+  white-space: nowrap;
+}
+
+/* ============================================================================
+   ./ SECTIONS — centered text, thin accent line alternating sides
+   ============================================================================ */
+
+.portfolio-section {
+  position: relative;
+  width: 630px;
+  max-width: calc(100% - 60px);
+  margin: 120px auto 0;
+  box-sizing: border-box;
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 24px;
+}
+
+.portfolio-body > .portfolio-section:first-of-type {
+  margin-top: 140px;
+}
+
+.portfolio-section-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 1px;
+  background: rgba(243, 238, 232, 0.18);
+}
+
+.portfolio-section-accent-left .portfolio-section-line {
+  left: -90px;
+}
+
+.portfolio-section-accent-right .portfolio-section-line {
+  right: -90px;
+}
+
+.portfolio-section-title {
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: #f3eee8;
+}
+
+.portfolio-section-body {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(243, 238, 232, 0.7);
+}
+
+.portfolio-section-body p {
+  margin: 0;
+}
+
+/* ============================================================================
+   RESPONSIVE - MOBILE
+   ============================================================================ */
+
+@media (max-width: 768px) {
+  .portfolio-hero {
+    padding: 100px 24px 80px;
+    gap: 14px;
+  }
+
+  .portfolio-hero-heading {
+    font-size: 26px;
+    line-height: 36px;
+  }
+
+  .portfolio-meta-card {
+    flex-wrap: wrap;
+    gap: 24px;
+    padding: 20px;
+    margin-top: -30px;
+    border-radius: 10px;
+  }
+
+  .portfolio-section {
+    max-width: calc(100% - 40px);
+    margin-top: 60px;
+  }
+
+  .portfolio-body > .portfolio-section:first-of-type {
+    margin-top: 70px;
+  }
+
+  .portfolio-section-accent-left .portfolio-section-line,
+  .portfolio-section-accent-right .portfolio-section-line {
+    display: none;
+  }
+
+  .portfolio-section-title {
+    font-size: 20px;
+    line-height: 30px;
+  }
+}

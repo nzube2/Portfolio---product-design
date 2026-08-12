@@ -19,12 +19,19 @@
   box-sizing: border-box;
 }
 
-.guidely-back {
+.guidely-topbar-nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-bottom: 24px;
+}
+
+.guidely-back,
+.guidely-next {
   display: inline-flex;
   align-items: center;
   gap: 8px;
   width: fit-content;
-  margin-bottom: 24px;
   font-family: 'Be Vietnam', sans-serif;
   font-weight: 500;
   font-size: 14px;
@@ -32,7 +39,8 @@
   transition: color 0.3s ease;
 }
 
-.guidely-back:hover {
+.guidely-back:hover,
+.guidely-next:hover {
   color: #f3eee8;
 }
 
@@ -50,7 +58,7 @@
   position: relative;
   width: 1158px;
   max-width: 100%;
-  height: 10212px;
+  height: 9770px;
   margin: 0 auto;
   background: #ffffff;
   border-radius: 10px 10px 0 0;
@@ -82,12 +90,12 @@
 .guidely-hero-arrow {
   position: absolute;
   left: calc(50% - 314.445px);
-  top: 166.24px;
+  top: 196.24px;
   width: 290.39px;
   height: 187.52px;
   max-width: none;
   opacity: 0.71;
-  transform: matrix(-0.98, 0.21, 0.21, 0.98, 0, 0);
+  transform: matrix(0.98, 0.21, -0.21, 0.98, 0, 0);
 }
 
 .guidely-hero-title {
@@ -122,6 +130,7 @@
   font-weight: 600;
   font-size: 32px;
   line-height: 48px;
+  text-transform: capitalize;
   color: #dadada;
 }
 
@@ -430,10 +439,14 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
+.guidely-reframe-highlight {
+  color: #75b946;
+}
+
 .guidely-section-2-body-2 {
   position: absolute;
   left: 0;
-  top: 504px;
+  top: 436px;
   width: 529px;
   margin: 0;
   font-family: 'Be Vietnam', sans-serif;
@@ -447,11 +460,18 @@
   box-sizing: border-box;
   position: absolute;
   left: 18px;
-  top: 350px;
+  top: 287px;
   width: 487px;
   height: 129px;
-  border: 1px solid #274193;
-  border-radius: 10px;
+}
+
+.guidely-quote-block-bg {
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  max-width: none;
 }
 
 .guidely-quote-text {
@@ -472,22 +492,6 @@
   color: rgba(0, 0, 0, 0.7);
 }
 
-.guidely-quote-mark {
-  position: absolute;
-  width: 46.25px;
-  height: 39px;
-}
-
-.guidely-quote-mark-open {
-  left: 10px;
-  top: 22px;
-}
-
-.guidely-quote-mark-close {
-  left: 438.75px;
-  top: 92px;
-  transform: rotate(180deg);
-}
 
 /* ============================================================================
    SECTION 3 - "Research"
@@ -498,7 +502,7 @@
   width: 1035px;
   max-width: 100%;
   min-height: 612px;
-  margin: 126px 0 0 38px;
+  margin: 120px 0 0 38px;
 }
 
 .guidely-section-3-title {
@@ -593,14 +597,6 @@
   height: 32px;
 }
 
-.guidely-vector-placeholder {
-  box-sizing: border-box;
-  display: block;
-  border: 1.5px dashed #75b946;
-  border-radius: 4px;
-  background: rgba(117, 185, 70, 0.08);
-}
-
 .guidely-research-card-title {
   align-self: stretch;
   margin: 0;
@@ -630,7 +626,7 @@
   width: 1092px;
   max-width: 100%;
   min-height: 752px;
-  margin: 146px 0 0 38px;
+  margin: 120px 0 0 38px;
 }
 
 .guidely-section-3-2-title {
@@ -884,6 +880,8 @@
   width: 229px;
   height: 221px;
   border-radius: 0 0 19px 19px;
+  object-fit: cover;
+  max-width: none;
 }
 
 .guidely-personalization-mockup {
@@ -891,7 +889,8 @@
   position: absolute;
   width: 196.8px;
   height: 398.4px;
-  border-radius: 20px;
+  max-width: none;
+  object-fit: contain;
 }
 
 .guidely-personalization-mockup-1 {
@@ -910,31 +909,59 @@
 }
 
 .guidely-personalization-arrow-2 {
-  box-sizing: border-box;
   position: absolute;
   left: 214px;
   top: 267.5px;
   width: 390px;
   height: 47.5px;
-  border: 2px solid #75b946;
+  max-width: none;
 }
 
 .guidely-personalization-arrow-1 {
-  box-sizing: border-box;
   position: absolute;
   left: 220px;
   top: 516px;
   width: 47px;
-  height: 0;
-  border-top: 2px solid #75b946;
+  height: 15px;
+  max-width: none;
+}
+
+.guidely-arrow-featured {
+  position: absolute;
+  left: 515px;
+  top: 436px;
+  width: 43px;
+  height: 217px;
+  max-width: none;
+}
+
+.guidely-arrow-clubs {
+  position: absolute;
+  left: 769.4px;
+  top: 514px;
+  width: 31px;
+  height: 330px;
+  max-width: none;
+}
+
+.guidely-arrow-recommended {
+  position: absolute;
+  left: 842px;
+  top: 507px;
+  width: 28px;
+  height: 257px;
+  max-width: none;
 }
 
 .guidely-personalization-frame-2 {
+  box-sizing: border-box;
   position: absolute;
   left: 841px;
   top: 531px;
   width: 238.5px;
   height: 386px;
+  max-width: none;
+  object-fit: cover;
 }
 
 /* ============================================================================
@@ -980,7 +1007,8 @@
   position: absolute;
   width: 196.8px;
   height: 398.4px;
-  border-radius: 20px;
+  max-width: none;
+  object-fit: contain;
 }
 
 .guidely-access-mockup-1 {
@@ -1001,7 +1029,7 @@
   position: relative;
   width: 1059.5px;
   max-width: 100%;
-  min-height: 758.25px;
+  min-height: 644px;
   margin: 75.8px 0 0 38px;
 }
 
@@ -1025,7 +1053,8 @@
   top: 14px;
   width: 196.8px;
   height: 398.4px;
-  border-radius: 20px;
+  max-width: none;
+  object-fit: contain;
 }
 
 .guidely-tour-body-1 {
@@ -1057,20 +1086,30 @@
 .guidely-tour-card {
   box-sizing: border-box;
   position: absolute;
-  width: 195px;
-  height: 423.5px;
+  width: 423.5px;
+  height: 195px;
   border-radius: 12px;
-  transform: rotate(-90deg);
+  overflow: hidden;
 }
 
-.guidely-tour-card span {
-  display: inline-block;
-  transform: rotate(90deg);
+.guidely-tour-card-img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
 }
 
 .guidely-tour-card-1 {
   left: 12.6px;
   top: 346px;
+}
+
+.guidely-tour-card-1::after {
+  content: '';
+  position: absolute;
+  inset: 0;
+  background: rgba(78, 77, 54, 0.2);
+  pointer-events: none;
 }
 
 .guidely-tour-card-2 {
@@ -1118,23 +1157,22 @@
 }
 
 .guidely-fourcard-mockup {
-  box-sizing: border-box;
   position: absolute;
   left: 0;
   top: 26.14px;
   width: 196.8px;
   height: 388.62px;
-  border-radius: 20px;
+  max-width: none;
+  object-fit: contain;
 }
 
 .guidely-fourcard-vector {
-  box-sizing: border-box;
   position: absolute;
   left: 196.4px;
   top: 215.57px;
   width: 278px;
   height: 113.15px;
-  border: 1px solid #75b946;
+  max-width: none;
 }
 
 /* ============================================================================
@@ -1183,6 +1221,9 @@
   top: 0;
   width: 215px;
   height: 339.31px;
+  max-width: none;
+  padding: 10px;
+  object-fit: contain;
   border: 1px solid rgba(0, 0, 0, 0.7);
   border-radius: 10px;
 }
@@ -1196,7 +1237,7 @@
   width: 831.44px;
   max-width: 100%;
   min-height: 303px;
-  margin: 78.04px 0 0 38px;
+  margin: 120px 0 0 38px;
 }
 
 .guidely-section-4-title {
@@ -1231,7 +1272,7 @@
   top: 66.56px;
   width: 122.88px;
   height: 122.88px;
-  border-radius: 50%;
+  max-width: none;
 }
 
 /* ============================================================================
@@ -1243,7 +1284,7 @@
   width: 935.9px;
   max-width: 100%;
   min-height: 278px;
-  margin: 98px 0 0 192.1px;
+  margin: 120px 0 0 192.1px;
 }
 
 .guidely-section-5-title {
@@ -1278,7 +1319,7 @@
   top: 99.1px;
   width: 110.59px;
   height: 110.59px;
-  border-radius: 50%;
+  max-width: none;
 }
 
 /* ============================================================================
@@ -1289,8 +1330,8 @@
   position: relative;
   width: 865.79px;
   max-width: 100%;
-  min-height: 406px;
-  margin: 129px 0 0 38px;
+  min-height: 345px;
+  margin: 120px 0 0 38px;
 }
 
 .guidely-section-6-title {
@@ -1321,7 +1362,27 @@
 
 .guidely-quote-block-2 {
   left: 6px;
-  top: 277px;
+  top: 216px;
+  border: 1px solid #274193;
+  border-radius: 10px;
+}
+
+.guidely-quote-mark {
+  position: absolute;
+  width: 46.25px;
+  height: 39px;
+  max-width: none;
+}
+
+.guidely-quote-mark-open {
+  left: 10px;
+  top: 22px;
+}
+
+.guidely-quote-mark-close {
+  left: 438.75px;
+  top: 92px;
+  transform: rotate(180deg);
 }
 
 .guidely-section-6-icon {
@@ -1330,7 +1391,198 @@
   top: 118.85px;
   width: 98.3px;
   height: 98.3px;
-  border-radius: 50%;
+  max-width: none;
+}
+
+/* ============================================================================
+   SECTION 7 - "Reflection"
+   ============================================================================ */
+
+.guidely-section-7 {
+  position: relative;
+  width: 778px;
+  max-width: 100%;
+  min-height: 1053px;
+  margin: 120px auto 0;
+}
+
+.guidely-section-7-title {
+  position: absolute;
+  left: 323px;
+  top: 0;
+  width: 140px;
+  margin: 0;
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 24px;
+  line-height: 36px;
+  color: rgba(39, 65, 147, 0.9);
+}
+
+.guidely-reflection-subtitle {
+  position: absolute;
+  left: 283px;
+  top: 53px;
+  width: 215px;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 29px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.guidely-reflection-groups {
+  position: absolute;
+  left: 0;
+  top: 110px;
+  width: 778px;
+  height: 943px;
+}
+
+.guidely-reflection-card-group {
+  position: absolute;
+  left: 0;
+  width: 778px;
+}
+
+.guidely-reflection-1 {
+  top: 0;
+  height: 213px;
+}
+
+.guidely-reflection-2 {
+  top: 273px;
+  height: 168px;
+}
+
+.guidely-reflection-3 {
+  top: 501px;
+  height: 191px;
+}
+
+.guidely-reflection-4 {
+  top: 752px;
+  height: 191px;
+}
+
+.guidely-reflection-number {
+  position: absolute;
+  left: 32px;
+  top: 0;
+  z-index: 1;
+  font-family: 'Kumbh Sans', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 25px;
+  color: #274193;
+  background: #ffffff;
+  padding: 0 4px;
+}
+
+.guidely-reflection-card {
+  box-sizing: border-box;
+  margin-top: 8px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 25px 20px;
+  gap: 18px;
+  width: 778px;
+  border-width: 0 2px 2px 2px;
+  border-style: solid;
+  border-color: rgba(39, 65, 147, 0.9);
+  border-radius: 10px;
+}
+
+.guidely-reflection-card-title {
+  align-self: stretch;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+.guidely-reflection-card-body {
+  align-self: stretch;
+  margin: 0;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 23px;
+  color: rgba(0, 0, 0, 0.7);
+}
+
+/* ============================================================================
+   SECTION 8 - Wireframes Gallery
+   ============================================================================ */
+
+.guidely-section-8 {
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  margin: 120px 0 100px;
+}
+
+.guidely-wireframes-img {
+  width: 100%;
+  max-width: 700px;
+  height: auto;
+}
+
+/* ============================================================================
+   NEXT CASE STUDY
+   ============================================================================ */
+
+.guidely-next-case {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.guidely-next-label {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #c2beba;
+  margin-bottom: 20px;
+}
+
+.guidely-next-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.guidely-next-case:hover .guidely-next-card {
+  background-color: rgba(243, 238, 232, 0.06);
+}
+
+.guidely-next-image {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: none;
+}
+
+.guidely-next-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  text-transform: capitalize;
+  color: #f3eee8;
 }
 
 /* ============================================================================
@@ -1412,7 +1664,7 @@
     margin-top: -20px;
     display: grid;
     grid-template-columns: 1fr 1fr;
-    align-items: start;
+    align-items: center;
     padding: 20px;
     gap: 20px;
     border-width: 1px;
@@ -1584,22 +1836,11 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 100px);
+    width: calc(100% - 130px);
     height: auto;
     margin: 20px auto;
   }
 
-  .guidely-quote-mark-open {
-    left: 10px;
-    top: 15px;
-  }
-
-  .guidely-quote-mark-close {
-    left: auto;
-    right: 10px;
-    bottom: 15px;
-    top: auto;
-  }
 
   .guidely-section-2-body-2 {
     position: relative;
@@ -1756,7 +1997,10 @@
   }
 
   .guidely-personalization-arrow-2,
-  .guidely-personalization-arrow-1 {
+  .guidely-personalization-arrow-1,
+  .guidely-arrow-featured,
+  .guidely-arrow-clubs,
+  .guidely-arrow-recommended {
     display: none;
   }
 
@@ -1862,15 +2106,11 @@
     position: relative;
     left: auto !important;
     top: auto !important;
-    width: 140px;
-    height: 304px;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 423.5 / 195;
     margin: 24px auto 0;
-    transform: none;
     order: 0;
-  }
-
-  .guidely-tour-card span {
-    transform: none;
   }
 
   .guidely-section-3-6 {
@@ -1939,8 +2179,11 @@
     left: auto;
     top: auto;
     width: 100%;
-    height: 260px;
-    margin-top: 24px;
+    max-width: 260px;
+    height: auto;
+    aspect-ratio: 215 / 339.31;
+    margin: 24px auto 0;
+    display: block;
   }
 
   .guidely-section-4 {
@@ -2044,6 +2287,18 @@
     top: auto;
   }
 
+  .guidely-quote-mark-open {
+    left: 10px;
+    top: 15px;
+  }
+
+  .guidely-quote-mark-close {
+    left: auto;
+    right: 10px;
+    top: auto;
+    bottom: 15px;
+  }
+
   .guidely-section-6-icon {
     position: relative;
     left: auto;
@@ -2051,5 +2306,80 @@
     width: 64px;
     height: 64px;
     margin: 24px auto 0;
+  }
+
+  .guidely-section-7 {
+    width: 100%;
+    min-height: 0;
+    margin: 60px 0 0;
+  }
+
+  .guidely-section-7-title {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+  }
+
+  .guidely-reflection-subtitle {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    text-align: center;
+    margin-top: 16px;
+  }
+
+  .guidely-reflection-groups {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: 100%;
+    height: auto;
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+    gap: 24px;
+  }
+
+  .guidely-reflection-card-group {
+    position: relative;
+    left: auto !important;
+    top: auto !important;
+    width: 100%;
+    height: auto !important;
+  }
+
+  .guidely-reflection-card {
+    width: 100%;
+    padding: 20px;
+  }
+
+  .guidely-section-8 {
+    margin: 60px 0 60px;
+    padding: 0 20px;
+    box-sizing: border-box;
+  }
+
+  .guidely-wireframes-img {
+    max-width: 100%;
+  }
+
+  .guidely-next-case {
+    padding: 40px 20px;
+  }
+
+  .guidely-next-card {
+    gap: 14px;
+  }
+
+  .guidely-next-image {
+    width: 64px;
+    height: 50px;
+  }
+
+  .guidely-next-title {
+    font-size: 14px;
   }
 }
