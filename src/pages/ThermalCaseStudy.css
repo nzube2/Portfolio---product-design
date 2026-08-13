@@ -1529,13 +1529,14 @@
   }
 
   .thermal-topbar {
-    padding: 24px 30px 0;
+    padding: 24px 10px 0;
   }
 
-  /* standing rule: every element touching the page/panel edge on mobile
-     keeps a 30px margin — maintain this for future sections too */
+  /* matches Guidely's panel width convention (10px inset from the
+     viewport) — individual sections below keep their own 30px insets
+     from the panel edge independently of this */
   .thermal-body {
-    width: calc(100% - 60px);
+    width: calc(100% - 20px);
     min-height: 0;
     margin: 0 auto;
   }

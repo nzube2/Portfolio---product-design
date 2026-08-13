@@ -206,13 +206,27 @@
   }
 
   .more-works-media {
-    max-width: calc(100% - 46px);
+    /* icon moves above the container on mobile instead of sitting
+       beside it, so no horizontal room needs to be reserved for it */
+    width: 100%;
+    max-width: 100%;
+  }
+
+  .more-works-video-wrap {
+    /* mobile-only: full width (the section's own 20px padding gives the
+       20px side margins), fixed height matching one Skills card
+       (.skill-card-uiux/.skill-card-wireframe, 300px). Drops the
+       aspect-ratio hug-content sizing used on desktop, so the video
+       (object-fit: cover) fills this box exactly instead. */
+    aspect-ratio: auto;
+    height: 300px;
   }
 
   .more-works-mute-btn {
     width: 34px;
     height: 34px;
-    right: -46px;
+    top: -46px;
+    right: 0;
   }
 
   .more-works-mute-icon {

@@ -217,6 +217,7 @@ const MoreOfMyWorks = () => {
             muted
             loop
             playsInline
+            preload="metadata"
           />
 
           <a
