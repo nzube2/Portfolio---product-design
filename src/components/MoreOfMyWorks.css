@@ -14,6 +14,31 @@
 }
 
 /* ============================================================================
+   REVEAL ON SCROLL - same fade/slide-up treatment as the Skills section
+   ============================================================================ */
+
+.more-works-reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.6s ease-out,
+    transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+  will-change: transform, opacity;
+}
+
+.more-works-reveal.more-works-revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .more-works-reveal {
+    transition: none;
+    transform: none;
+    opacity: 1;
+  }
+}
+
+/* ============================================================================
    HEADING PILL - open-border style, with external link icon
    ============================================================================ */
 
@@ -74,12 +99,20 @@
    VIDEO
    ============================================================================ */
 
+.more-works-media {
+  position: relative;
+  /* container scaled to 90% of the card-width convention (1034px * 0.9) */
+  width: 930.6px;
+  max-width: calc(100% - 64px);
+  margin: 0 auto;
+}
+
 .more-works-video-wrap {
   position: relative;
-  width: 1034px;
-  max-width: 100%;
-  aspect-ratio: 1034 / 500;
-  margin: 0 auto;
+  width: 100%;
+  /* hugs the video's own native ratio (1400x788) instead of a fixed
+     16:9-ish box, so there's no letterbox gutter around the content */
+  aspect-ratio: 1400 / 788;
   border-radius: 10px;
   overflow: hidden;
   background-color: #1b1512;
@@ -88,21 +121,23 @@
 .more-works-video {
   width: 100%;
   height: 100%;
-  object-fit: contain;
+  object-fit: cover;
   display: block;
   border-radius: 10px;
 }
 
 .more-works-mute-btn {
   position: absolute;
-  top: 16px;
-  right: 16px;
+  /* beside the container, outside it, top-aligned with its top edge —
+     the container stays centered on its own, unaffected by the icon */
+  top: 0;
+  right: -64px;
   width: 40px;
   height: 40px;
   display: flex;
   align-items: center;
   justify-content: center;
-  border: none;
+  border: 1px solid #f3eee8;
   border-radius: 50%;
   background-color: rgba(27, 21, 18, 0.55);
   backdrop-filter: blur(8px);
@@ -121,6 +156,35 @@
   color: #f3eee8;
 }
 
+.more-works-see-more {
+  position: absolute;
+  /* left/top are set inline via JS on mousemove, tracking the cursor;
+     these are just the fallback before the first move event */
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  padding: 12px 24px;
+  background: #5d0606;
+  border-radius: 10px;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 500;
+  font-size: 14px;
+  color: #f3eee8;
+  white-space: nowrap;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.25s ease, background-color 0.2s ease;
+}
+
+.more-works-video-wrap:hover .more-works-see-more {
+  opacity: 1;
+  pointer-events: auto;
+}
+
+.more-works-see-more:hover {
+  background: #7a0707;
+}
+
 /* ============================================================================
    RESPONSIVE - MOBILE
    ============================================================================ */
@@ -133,7 +197,7 @@
   }
 
   .more-works-pill {
-    margin-bottom: 40px;
+    margin-bottom: 50px;
   }
 
   .more-works-pill span {
@@ -141,11 +205,14 @@
     line-height: 30px;
   }
 
+  .more-works-media {
+    max-width: calc(100% - 46px);
+  }
+
   .more-works-mute-btn {
     width: 34px;
     height: 34px;
-    top: 12px;
-    right: 12px;
+    right: -46px;
   }
 
   .more-works-mute-icon {

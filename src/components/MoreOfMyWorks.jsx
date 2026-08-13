@@ -80,34 +80,100 @@ const SpeakerOffIcon = ({ className }) => (
   </svg>
 );
 
-const MoreOfMyWorks = () => {
-  const sectionRef = useRef(null);
-  const videoRef = useRef(null);
-  const audioRef = useRef(null);
-  const [audioEnabled, setAudioEnabled] = useState(false);
+const useRevealOnScroll = () => {
+  const ref = useRef(null);
 
   useEffect(() => {
-    const section = sectionRef.current;
-    const v = videoRef.current;
-    if (!section || !v) return;
-
-    v.muted = true;
-    v.setAttribute('muted', '');
+    const node = ref.current;
+    if (!node) return undefined;
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (entry.isIntersecting) {
-          const playVideo = v.play();
-          if (playVideo && typeof playVideo.catch === 'function') playVideo.catch(() => {});
-          observer.unobserve(section);
-        }
+        node.classList.toggle('more-works-revealed', entry.isIntersecting);
       },
       { threshold: 0.15 }
     );
 
-    observer.observe(section);
+    observer.observe(node);
     return () => observer.disconnect();
   }, []);
+
+  return ref;
+};
+
+const MoreOfMyWorks = () => {
+  const pillRef = useRevealOnScroll();
+  const videoWrapRef = useRevealOnScroll();
+  const videoRef = useRef(null);
+  const audioRef = useRef(null);
+  const seeMoreRef = useRef(null);
+  const hasPlayedRef = useRef(false);
+  const [audioEnabled, setAudioEnabled] = useState(false);
+
+  // Positions the "See More" pill at the cursor directly via the DOM node
+  // rather than React state, so it tracks smoothly without re-rendering on
+  // every mousemove.
+  const handleVideoMouseMove = (event) => {
+    const el = seeMoreRef.current;
+    if (!el) return;
+    const rect = event.currentTarget.getBoundingClientRect();
+    el.style.left = `${event.clientX - rect.left}px`;
+    el.style.top = `${event.clientY - rect.top}px`;
+  };
+
+  useEffect(() => {
+    const v = videoRef.current;
+    if (!v) return;
+    v.muted = true;
+    v.setAttribute('muted', '');
+  }, []);
+
+  // The video and audio should only start once the reveal animation has
+  // actually finished, not the instant the section scrolls into view.
+  // Timed to the .6s duration of .more-works-reveal rather than a
+  // transitionend listener, since that duration is skipped entirely under
+  // prefers-reduced-motion and transitionend would then never fire.
+  useEffect(() => {
+    const wrap = videoWrapRef.current;
+    const v = videoRef.current;
+    const a = audioRef.current;
+    if (!wrap || !v) return undefined;
+
+    let timeoutId;
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry.isIntersecting || hasPlayedRef.current) return;
+        hasPlayedRef.current = true;
+        observer.disconnect();
+        timeoutId = setTimeout(() => {
+          const playVideo = v.play();
+          if (playVideo && typeof playVideo.catch === 'function') playVideo.catch(() => {});
+
+          if (a) {
+            const playAudio = a.play();
+            if (playAudio && typeof playAudio.catch === 'function') {
+              playAudio
+                .then(() => setAudioEnabled(true))
+                // browsers may still block unmuted autoplay without a user
+                // gesture — leave audioEnabled false so the button offers
+                // to start it manually instead of showing a state that
+                // isn't actually playing
+                .catch(() => setAudioEnabled(false));
+            } else {
+              setAudioEnabled(true);
+            }
+          }
+        }, 600);
+      },
+      { threshold: 0.15 }
+    );
+
+    observer.observe(wrap);
+    return () => {
+      observer.disconnect();
+      clearTimeout(timeoutId);
+    };
+  }, [videoWrapRef]);
 
   const toggleAudio = () => {
     const a = audioRef.current;
@@ -123,8 +189,8 @@ const MoreOfMyWorks = () => {
   };
 
   return (
-    <section className="more-works-section" id="more-of-my-works" ref={sectionRef}>
-      <div className="more-works-pill">
+    <section className="more-works-section" id="more-of-my-works">
+      <div className="more-works-pill more-works-reveal" ref={pillRef}>
         <HeadingBorder className="more-works-pill-border" />
         <span>./More of My Works(Preview)</span>
         <a
@@ -138,15 +204,32 @@ const MoreOfMyWorks = () => {
         </a>
       </div>
 
-      <div className="more-works-video-wrap">
-        <video
-          ref={videoRef}
-          className="more-works-video"
-          src="/videos/more-works-preview.mp4"
-          muted
-          loop
-          playsInline
-        />
+      <div className="more-works-media">
+        <div
+          className="more-works-video-wrap more-works-reveal"
+          ref={videoWrapRef}
+          onMouseMove={handleVideoMouseMove}
+        >
+          <video
+            ref={videoRef}
+            className="more-works-video"
+            src="/videos/more-works-preview.mp4"
+            muted
+            loop
+            playsInline
+          />
+
+          <a
+            href="https://dribbble.com/nzube-molokwu"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="more-works-see-more"
+            ref={seeMoreRef}
+          >
+            See More
+          </a>
+        </div>
+
         <audio ref={audioRef} src="/audio/more-works-preview.m4a" loop />
         <button
           type="button"

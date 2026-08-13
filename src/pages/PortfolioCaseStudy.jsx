@@ -127,15 +127,17 @@ const PortfolioCaseStudy = () => {
 
         <Section accent="left" title="./Colour and visuals for a cinematic feel">
           <p>
-            You can see this most clearly in the About section, the
-            illustration of a girl stepping onto a mountain sits right where
-            I&apos;m talking about foundation. It&apos;s not decoration,
-            it&apos;s the same idea said twice, once in the image and once in
-            the words. Same thing happens in the hero. The floating mockups
-            start with Figma, then move into actual designs – the tool
-            first, then what it becomes. That order wasn&apos;t random.
-            It&apos;s the story of how I actually work, shown before I&apos;ve
-            said a single word about it.
+            The dark colour scheme on the site wasn&apos;t merely a matter of
+            style; it was intended to have a cinematic effect, making the
+            experience more like watching something than simply scrolling
+            through it. The animations adhere to this principle as well. I
+            wanted each section to unfold in the way a scene does in a
+            presentation, rather than just appearing when you&apos;ve
+            scrolled far enough. This is also the reason why there is a video
+            preview of previous work at the end instead of another series of
+            screenshots and text; a thirty-second clip conveys more and
+            quicker than someone scrolling past five static images in an
+            attempt to work out what a project actually does.
           </p>
         </Section>
 

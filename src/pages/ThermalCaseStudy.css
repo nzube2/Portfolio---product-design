@@ -185,6 +185,12 @@
   border-radius: 6.75px;
   object-fit: contain;
   max-width: none;
+  /* same situation as .thermal-wheel-group: MP4 has no alpha, and this
+     video's own background (~rgb(24,24,24)) is almost identical to the
+     panel's #191818 — "lighten" blending lets those near-black pixels
+     vanish into whatever's actually behind it instead of reading as a
+     visibly separate dark rectangle */
+  mix-blend-mode: lighten;
 }
 
 /* -- title block -- */
