@@ -1,5 +1,6 @@
 import React, { Suspense, lazy } from 'react';
 import { Routes, Route } from 'react-router-dom';
+import { Analytics } from '@vercel/analytics/react';
 import Header from './components/Header';
 import Loader from './components/Loader';
 import ScrollToTop from './components/ScrollToTop';
@@ -29,6 +30,7 @@ function App() {
           <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
         </Routes>
       </Suspense>
+      <Analytics />
     </div>
   );
 }
