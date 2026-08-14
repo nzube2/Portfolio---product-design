@@ -69,7 +69,14 @@ const Hero = () => {
             <a href="#case-studies" className="btn-primary">
               View Case Studies
             </a>
-            <button className="btn-secondary">View Resume</button>
+            <a
+              href="https://drive.google.com/file/d/1pclocrpsM3sVOQq0Cg0433XQNfhL-8JJ/view?usp=sharing"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="btn-secondary"
+            >
+              View Resume
+            </a>
           </div>
         </div>
 
