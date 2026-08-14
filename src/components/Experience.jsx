@@ -108,15 +108,27 @@ const Experience = () => {
       </div>
 
       <div className="exp-card">
-        <a
-          className="exp-github-link"
-          href="#"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          <ExternalLinkIcon className="exp-github-icon" />
-          <span>github</span>
-        </a>
+        <div className="exp-links-row">
+          <a
+            className="exp-github-link"
+            href="https://github.com/nzube2/market-tracker.git"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ExternalLinkIcon className="exp-github-icon" />
+            <span>github</span>
+          </a>
+
+          <a
+            className="exp-prototype-link"
+            href="https://drive.google.com/file/d/1qgtVUWVNqUcXz8MuevcxUSI0_kER0uHx/view?usp=sharing"
+            target="_blank"
+            rel="noopener noreferrer"
+          >
+            <ExternalLinkIcon className="exp-prototype-icon" />
+            <span>prototype</span>
+          </a>
+        </div>
 
         <h3 className="exp-title">Ifythel Lights &amp; Accessories.</h3>
         <p className="exp-dates">Jun 2023 - Sept 2024</p>

@@ -115,6 +115,41 @@
   text-decoration-line: underline;
 }
 
+.exp-prototype-link {
+  position: absolute;
+  /* sits beside the github link: its left (40) + width (65) + 20px gap */
+  left: 125px;
+  top: 40px;
+  width: 80px;
+  height: 21px;
+  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  color: #c2beba;
+  transition: color 0.3s ease;
+}
+
+.exp-prototype-link:hover {
+  color: #f3eee8;
+}
+
+.exp-prototype-icon {
+  position: absolute;
+  left: 0;
+  top: 5px;
+  width: 16px;
+  height: 16px;
+}
+
+.exp-prototype-link span {
+  position: absolute;
+  left: 21px;
+  top: 0;
+  width: 59px;
+  height: 21px;
+  font-size: 14px;
+  line-height: 150%;
+  text-decoration-line: underline;
+}
+
 .exp-title {
   position: absolute;
   left: 40px;
@@ -301,6 +336,39 @@
   }
 
   .exp-github-link span {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: auto;
+    height: auto;
+  }
+
+  .exp-links-row {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+  }
+
+  .exp-prototype-link {
+    position: relative;
+    left: auto;
+    top: auto;
+    width: fit-content;
+    height: auto;
+    display: inline-flex;
+    align-items: center;
+    gap: 6px;
+  }
+
+  .exp-prototype-icon {
+    position: relative;
+    left: auto;
+    top: auto;
+  }
+
+  .exp-prototype-link span {
     position: relative;
     left: auto;
     top: auto;
