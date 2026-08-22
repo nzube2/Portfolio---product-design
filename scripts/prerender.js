@@ -7,7 +7,6 @@
 // crawlers/bots that don't execute JS now see real content instead of an
 // empty <div id="root"></div> shell.
 import { preview } from 'vite';
-import puppeteer from 'puppeteer';
 import { mkdir, writeFile } from 'fs/promises';
 import path from 'path';
 import { fileURLToPath } from 'url';
@@ -15,6 +14,32 @@ import { fileURLToPath } from 'url';
 const __dirname = path.dirname(fileURLToPath(import.meta.url));
 const root = path.resolve(__dirname, '..');
 const distDir = path.join(root, 'dist');
+
+// Vercel's build image is missing several shared libraries the full
+// `puppeteer` package's bundled Chromium needs, so it fails to launch
+// there even though it works fine locally. Vercel sets VERCEL=1 during
+// both build and runtime, so use that to pick a serverless-compatible
+// Chromium (puppeteer-core + @sparticuz/chromium) only when actually
+// building on Vercel, and the regular full `puppeteer` package (which
+// downloads its own known-good Chrome build) everywhere else.
+async function launchBrowser() {
+  if (process.env.VERCEL) {
+    const [{ default: puppeteerCore }, { default: chromium }] =
+      await Promise.all([
+        import('puppeteer-core'),
+        import('@sparticuz/chromium'),
+      ]);
+    return puppeteerCore.launch({
+      args: chromium.args,
+      defaultViewport: chromium.defaultViewport,
+      executablePath: await chromium.executablePath(),
+      headless: chromium.headless,
+    });
+  }
+
+  const { default: puppeteer } = await import('puppeteer');
+  return puppeteer.launch({ headless: true });
+}
 
 // Each route paired with a selector that only exists once that route's
 // actual content has rendered (lazy-loaded case study pages show an empty
@@ -45,7 +70,7 @@ async function main() {
   const baseUrl = resolvedUrl.replace(/\/$/, '');
   console.log(`Prerender server running at ${baseUrl}`);
 
-  const browser = await puppeteer.launch({ headless: true });
+  const browser = await launchBrowser();
 
   try {
     for (const route of routes) {
