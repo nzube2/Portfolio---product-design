@@ -7,7 +7,9 @@
   "author": "Valentina",
   "scripts": {
     "dev": "vite",
-    "build": "vite build",
+    "build": "vite build && node scripts/prerender.js",
+    "build:no-prerender": "vite build",
+    "prerender": "node scripts/prerender.js",
     "preview": "vite preview",
     "lint": "eslint src --ext js,jsx",
     "lint:fix": "eslint src --ext js,jsx --fix",
@@ -25,6 +27,7 @@
     "eslint": "^8.55.0",
     "eslint-plugin-react": "^7.33.2",
     "eslint-plugin-react-hooks": "^4.6.0",
+    "puppeteer": "^25.8.0",
     "sharp": "^0.35.3",
     "svgo": "^4.0.2",
     "vite": "^5.0.0"

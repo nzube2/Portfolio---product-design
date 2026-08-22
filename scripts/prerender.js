@@ -1,0 +1,82 @@
+#!/usr/bin/env node
+// Post-build prerender step. Serves the already-built `dist/` folder with
+// Vite's preview server, then uses Puppeteer to visit each route and save
+// the fully-rendered DOM back into dist/<route>/index.html. This runs
+// *after* `vite build`, not instead of it — the SPA bundle (JS/CSS) is
+// untouched, so the app still hydrates and works interactively once loaded;
+// crawlers/bots that don't execute JS now see real content instead of an
+// empty <div id="root"></div> shell.
+import { preview } from 'vite';
+import puppeteer from 'puppeteer';
+import { mkdir, writeFile } from 'fs/promises';
+import path from 'path';
+import { fileURLToPath } from 'url';
+
+const __dirname = path.dirname(fileURLToPath(import.meta.url));
+const root = path.resolve(__dirname, '..');
+const distDir = path.join(root, 'dist');
+
+// Each route paired with a selector that only exists once that route's
+// actual content has rendered (lazy-loaded case study pages show an empty
+// <div className="route-fallback" /> via Suspense until their chunk loads,
+// so waiting on the route root alone isn't enough).
+const routes = [
+  { url: '/', waitFor: '#case-studies' },
+  { url: '/case-studies/guidely', waitFor: '.guidely-hero-heading' },
+  { url: '/case-studies/thermal', waitFor: '.thermal-hero-heading' },
+  { url: '/case-studies/portfolio', waitFor: '.portfolio-hero-heading' },
+];
+
+const outputPathFor = (routeUrl) =>
+  routeUrl === '/'
+    ? path.join(distDir, 'index.html')
+    : path.join(distDir, routeUrl.replace(/^\//, ''), 'index.html');
+
+async function main() {
+  const server = await preview({
+    root,
+    preview: { port: 0, open: false, strictPort: false },
+  });
+
+  const resolvedUrl = server.resolvedUrls?.local?.[0];
+  if (!resolvedUrl) {
+    throw new Error('Could not resolve preview server URL.');
+  }
+  const baseUrl = resolvedUrl.replace(/\/$/, '');
+  console.log(`Prerender server running at ${baseUrl}`);
+
+  const browser = await puppeteer.launch({ headless: true });
+
+  try {
+    for (const route of routes) {
+      const page = await browser.newPage();
+      const target = `${baseUrl}${route.url}`;
+      console.log(`Rendering ${route.url} ...`);
+
+      await page.goto(target, { waitUntil: 'networkidle0' });
+      await page.waitForSelector(route.waitFor, { timeout: 15000 });
+
+      const html = await page.content();
+      const outPath = outputPathFor(route.url);
+      await mkdir(path.dirname(outPath), { recursive: true });
+      await writeFile(outPath, html, 'utf-8');
+
+      console.log(
+        `  wrote ${path.relative(root, outPath)} (${html.length} bytes)`
+      );
+      await page.close();
+    }
+  } finally {
+    await browser.close();
+    await new Promise((resolve, reject) => {
+      server.httpServer.close((err) => (err ? reject(err) : resolve()));
+    });
+  }
+
+  console.log('Prerender complete.');
+}
+
+main().catch((err) => {
+  console.error('Prerender failed:', err);
+  process.exitCode = 1;
+});
