@@ -78,8 +78,18 @@ async function main() {
       const target = `${baseUrl}${route.url}`;
       console.log(`Rendering ${route.url} ...`);
 
-      await page.goto(target, { waitUntil: 'networkidle0' });
-      await page.waitForSelector(route.waitFor, { timeout: 15000 });
+      // `networkidle0` waits for zero in-flight requests for 500ms, but
+      // several pages here have autoplaying/looping <video>/<audio>
+      // elements that can keep the network "busy" indefinitely — that
+      // condition may simply never be met, hanging the build instead of
+      // failing it. `domcontentloaded` fires as soon as the HTML/JS has
+      // loaded and run; `waitForSelector` below is the real signal that
+      // the route's actual content has rendered, so it's what matters.
+      await page.goto(target, {
+        waitUntil: 'domcontentloaded',
+        timeout: 30000,
+      });
+      await page.waitForSelector(route.waitFor, { timeout: 20000 });
 
       const html = await page.content();
       const outPath = outputPathFor(route.url);
@@ -101,7 +111,19 @@ async function main() {
   console.log('Prerender complete.');
 }
 
-main().catch((err) => {
-  console.error('Prerender failed:', err);
-  process.exitCode = 1;
-});
+// Hard ceiling on the whole script, independent of the per-step timeouts
+// above — if anything else unexpected hangs (e.g. the Chromium binary
+// failing to extract, or the preview server never starting), fail loudly
+// after 2 minutes instead of silently eating the Vercel build's time limit.
+const watchdog = setTimeout(() => {
+  console.error('Prerender timed out after 120s — forcing exit.');
+  process.exit(1);
+}, 120000);
+watchdog.unref?.();
+
+main()
+  .catch((err) => {
+    console.error('Prerender failed:', err);
+    process.exitCode = 1;
+  })
+  .finally(() => clearTimeout(watchdog));
