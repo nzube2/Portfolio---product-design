@@ -121,7 +121,7 @@ const Experience = () => {
 
           <a
             className="exp-prototype-link"
-            href="https://drive.google.com/file/d/1qgtVUWVNqUcXz8MuevcxUSI0_kER0uHx/view?usp=sharing"
+            href="https://www.loom.com/share/aeff9793ba7f423193972d26cb93a6cd"
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -137,7 +137,7 @@ const Experience = () => {
           <div className="exp-details exp-details-1">
             <BriefcaseIcon className="exp-meta-icon" />
             <div className="exp-meta-text">
-              <span className="exp-meta-label">Compant Type:</span>
+              <span className="exp-meta-label">Company Type:</span>
               <span className="exp-meta-value">Small Business</span>
             </div>
           </div>
