@@ -36,7 +36,7 @@ const MetaItem = ({ icon, className, label, value }) => (
 );
 
 const ThermalCaseStudy = () => {
-  const nextCaseStudy = caseStudies[2];
+  const nextCaseStudy = caseStudies.find((cs) => cs.slug === 'portfolio');
   const heroVideoRef = useRef(null);
   const illustrationVideoRef = useRef(null);
 

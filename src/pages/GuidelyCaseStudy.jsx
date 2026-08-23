@@ -163,7 +163,7 @@ const MetaItem = ({ icon, className, label, value, valueCentered }) => (
 );
 
 const GuidelyCaseStudy = () => {
-  const nextCaseStudy = caseStudies[1];
+  const nextCaseStudy = caseStudies.find((cs) => cs.slug === 'thermal');
 
   return (
     <div className="guidely-page">

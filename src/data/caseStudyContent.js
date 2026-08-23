@@ -9,7 +9,10 @@
 //   id           display id shown in the topbar, e.g. "CS-03"
 //   prevSlug     slug for the "Previous" nav link, or null to hide it
 //   nextSlug     slug for the "Next" nav link, or null to hide it
-//   hero         { eyebrow, heading, ctaLabel, ctaHref?, image?, video? }
+//   hero         { eyebrow, heading, ctaLabel, ctaHref?, image?, video?, bg? }
+//                bg is optional: a CSS color for the hero section itself
+//                (default is Portfolio's dark red-brown theme) — shows in
+//                the margins around the video and in its letterbox area
 //                ctaHref is optional: if set, the CTA button renders as an
 //                external link (target="_blank") instead of an inert
 //                button — e.g. a Loom walkthrough
@@ -31,9 +34,29 @@
 //                Thermal's card treatment, instead of Portfolio's plain
 //                centered-text style
 //   sections     array of { accent: 'left' | 'right', title, subheading?,
-//                body, list?, image?, images?, imagePlaceholder?, subItem? }
+//                narrow?, icon?, iconRounded?, iconSize?, body, list?,
+//                image?, images?, imagePlaceholder?, subItem? }
+//                icon is optional: one of 'search' | 'computer-check' |
+//                'chat' (recolored #3B82F6 copies of Guidely's own section
+//                icons) | 'problem' (custom icon) | 'mlogo' (the
+//                MarketTrack brand mark) — floated in the empty space
+//                beside a narrow card (opposite whichever edge it's
+//                pinned to), or closer to the edge on a regular
+//                (non-narrow) card, where there's much less room
+//                iconRounded is optional true — adds border-radius to the
+//                icon (for image-based icons like 'mlogo' rather than flat
+//                line-icon SVGs)
+//                iconSize is optional: pixel size overriding the default
+//                120px — on a narrow card the icon is re-centered in the
+//                473px gap automatically to match
 //                body is a string (one paragraph) or an array of strings
 //                (multiple paragraphs, rendered in order)
+//                narrow is optional true — only meaningful with glassCards:
+//                shrinks the card to 655px (matching Thermal's smaller dark
+//                cards, e.g. .thermal-concept-body) and pins it 30px off
+//                the edge matching its accent (left accent → left edge,
+//                right accent → right edge) instead of centering it,
+//                producing the same left/right zigzag Thermal's cards have
 //                subheading is optional true — for a numbered sub-decision
 //                rendered as its OWN card (e.g. "02 — The Sales Page"):
 //                renders the title smaller/in a different family so it
@@ -83,6 +106,9 @@ const caseStudyContent = {
       {
         accent: 'left',
         title: './Problem',
+        narrow: true,
+        icon: 'problem',
+        iconSize: 144,
         body: [
           "Ifythel Lights & Accessories, a small electrical business, was running its entire operation on paper. Stock counts were scattered across notebooks with no consistent system, expenses were tracked from memory, and receipts were handwritten and kept as hardcopies, making it time-consuming to find past records or understand actual profit. Warehouse items had no SKU system, so locating specific stock meant physically searching shelves.",
           "The business had no reliable way to answer basic questions like what's actually selling, what they're spending, and what stock they have and where it is. Every answer required digging through handwritten records or relying on memory, which meant decisions were being made without real data.",
@@ -91,6 +117,9 @@ const caseStudyContent = {
       {
         accent: 'right',
         title: './Research',
+        narrow: true,
+        icon: 'mlogo',
+        iconRounded: true,
         body: "I started by identifying the business's core pain points directly from how the store operated day to day: scattered stock records, no profit visibility, expenses tracked from memory, and no SKU system for locating warehouse items. From there, I translated these into clear goals: give the business a system to track inventory, sales, and expenses in one place, with real records instead of memory and handwriting.",
       },
       {
@@ -121,18 +150,26 @@ const caseStudyContent = {
         title: '03 — The Expense Page',
         subheading: true,
         body: 'The expense page tracks spending and generates expense reports.',
-        imagePlaceholder: 'Expense page screenshot — spending & expense reports',
+        image: {
+          src: '/images/markettrack-expense-page.png',
+          alt: 'MarketTrack expense page — today/week/month/year totals, category breakdown, and profit summary',
+        },
       },
       {
         accent: 'right',
         title: '04 — The Dashboard',
         subheading: true,
         body: 'The dashboard brings it together as the entry point into the system.',
-        imagePlaceholder: 'Dashboard screenshot — entry point overview',
+        image: {
+          src: '/images/markettrack-dashboard.png',
+          alt: 'MarketTrack dashboard — revenue, cost of goods, expenses, net profit, top selling products, and low stock alerts',
+        },
       },
       {
         accent: 'left',
         title: './Testing & Iteration',
+        narrow: true,
+        icon: 'computer-check',
         body: 'During testing, a few real gaps showed up and shaped further decisions:',
         list: [
           'Search on the product page only worked by product name, so I added SKU search as well',
@@ -144,6 +181,8 @@ const caseStudyContent = {
       {
         accent: 'right',
         title: './Outcome',
+        narrow: true,
+        icon: 'chat',
         body: "MarketTrack is in active use at Ifythel Lights & Accessories today. It's not publicly accessible since it was built specifically for the store's internal operations, but it replaced a fully paper-based system with real digital records, giving the business visibility into inventory, sales, and expenses that it didn't have before.",
       },
       {

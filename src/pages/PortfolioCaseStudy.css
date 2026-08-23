@@ -145,11 +145,12 @@
    the 20px side margins) plus the video's own aspect-ratio height (1280:580,
    its native encode size), so there's no forced box and nothing gets
    cropped. The video sits inset 20px off each side, flush with the
-   bottom, in a container sharing the body's own background color. */
+   bottom, in a container sharing the hero's own background color
+   (hero.bg, falling back to the body's color, then the default theme). */
 .portfolio-hero-has-video {
   height: auto;
   padding: 20px 0 0;
-  background: var(--case-bg, #1b1512);
+  background: var(--hero-bg, var(--case-bg, #1b1512));
   overflow: hidden;
 }
 
@@ -160,7 +161,7 @@
   aspect-ratio: 1280 / 580;
   border-radius: 12px;
   overflow: hidden;
-  background: var(--case-bg, #1b1512);
+  background: var(--hero-bg, var(--case-bg, #1b1512));
 }
 
 .portfolio-hero-video {
@@ -291,6 +292,15 @@
   margin-top: 140px;
 }
 
+/* Subsection spacing (e.g. "02 — The Sales Page" following "./Design
+   Decisions") — 40px, not the 120px reserved for a new top-level
+   "./"-section, matching Thermal's own standing rule (see its CSS
+   comments: "120px between ./-prefixed sections, 40px between
+   subsections within one"). */
+.portfolio-section-subsection {
+  margin-top: 40px;
+}
+
 /* Sub-decision merged into its parent card (e.g. "01 — The Product Page"
    sitting inside the "./Design Decisions" card), matching Thermal's
    .thermal-decision-item sitting inside .thermal-design-decisions */
@@ -318,6 +328,66 @@
   box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
   backdrop-filter: blur(24px);
   -webkit-backdrop-filter: blur(24px);
+}
+
+/* Narrow variant, matching the width of Thermal's smaller dark cards
+   (.thermal-concept-body etc: 655px) instead of the 991px white-card
+   width — alternates to a 30px margin on the accent's side (left accent
+   hugs the left edge, right accent hugs the right edge) instead of
+   staying centered, creating the same left/right zigzag Thermal's cards
+   have. */
+.portfolio-section-narrow {
+  width: 655px;
+}
+
+.portfolio-section-narrow.portfolio-section-accent-left {
+  margin-left: 30px;
+  margin-right: auto;
+}
+
+.portfolio-section-narrow.portfolio-section-accent-right {
+  margin-left: auto;
+  margin-right: 30px;
+}
+
+/* Icon sitting in the empty space beside a narrow card — centered in the
+   ~473px gap left over on the side opposite the card (card hugs one edge,
+   icon floats in the open space toward the other edge) */
+.portfolio-section-icon {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  width: 120px;
+  height: 120px;
+  object-fit: cover;
+}
+
+.portfolio-section-icon-rounded {
+  border-radius: 12px;
+}
+
+/* centered in the 473px gap: (473 - 120) / 2 = 176.5px off the card edge */
+.portfolio-section-narrow.portfolio-section-accent-left .portfolio-section-icon {
+  left: calc(100% + 176.5px);
+}
+
+.portfolio-section-narrow.portfolio-section-accent-right .portfolio-section-icon {
+  right: calc(100% + 176.5px);
+}
+
+/* Non-narrow cards only have an ~84px margin to work with (991px card in
+   the 1158px panel), so the icon sits smaller and closer to the edge here
+   than in a narrow card's much roomier ~473px gap */
+.portfolio-section-accent-right:not(.portfolio-section-narrow) .portfolio-section-icon {
+  right: -111px;
+  width: 96px;
+  height: 96px;
+}
+
+.portfolio-section-accent-left:not(.portfolio-section-narrow) .portfolio-section-icon {
+  left: -111px;
+  width: 96px;
+  height: 96px;
 }
 
 .portfolio-section-line {
@@ -448,6 +518,61 @@
 }
 
 /* ============================================================================
+   NEXT CASE STUDY PREVIEW — sits below the panel, on the page's own
+   background, matching Guidely's/Thermal's .guidely-next-case /
+   .thermal-next-case exactly
+   ============================================================================ */
+
+.portfolio-next-case {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  padding: 60px 40px;
+  box-sizing: border-box;
+}
+
+.portfolio-next-label {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: #c2beba;
+  margin-bottom: 20px;
+}
+
+.portfolio-next-card {
+  display: flex;
+  align-items: center;
+  gap: 20px;
+  max-width: 500px;
+  padding: 12px;
+  border-radius: 10px;
+  transition: background-color 0.3s ease;
+}
+
+.portfolio-next-case:hover .portfolio-next-card {
+  background-color: rgba(243, 238, 232, 0.06);
+}
+
+.portfolio-next-image {
+  width: 90px;
+  height: 70px;
+  object-fit: cover;
+  border-radius: 8px;
+  flex: none;
+}
+
+.portfolio-next-title {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 600;
+  font-size: 16px;
+  line-height: 1.4;
+  text-transform: capitalize;
+  color: #f3eee8;
+}
+
+/* ============================================================================
    RESPONSIVE - MOBILE
    ============================================================================ */
 
@@ -546,5 +671,36 @@
 
   .portfolio-section-glass {
     padding: 24px;
+  }
+
+  .portfolio-section-narrow {
+    width: 100%;
+  }
+
+  .portfolio-section-narrow.portfolio-section-accent-left,
+  .portfolio-section-narrow.portfolio-section-accent-right {
+    margin-left: auto;
+    margin-right: auto;
+  }
+
+  .portfolio-section-icon {
+    display: none;
+  }
+
+  .portfolio-next-case {
+    padding: 40px 20px;
+  }
+
+  .portfolio-next-card {
+    gap: 14px;
+  }
+
+  .portfolio-next-image {
+    width: 64px;
+    height: 50px;
+  }
+
+  .portfolio-next-title {
+    font-size: 14px;
   }
 }

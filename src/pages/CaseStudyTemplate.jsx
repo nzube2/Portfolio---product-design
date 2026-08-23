@@ -8,6 +8,11 @@ import {
   TeamIcon,
 } from '../components/MetaIcons';
 import caseStudyContent from '../data/caseStudyContent';
+import caseStudies from '../data/caseStudies';
+import searchIcon from '../assets/markettrack-icon-search.svg';
+import computerCheckIcon from '../assets/markettrack-icon-computer-check.svg';
+import bubbleChatIcon from '../assets/markettrack-icon-bubble-chat.svg';
+import problemIcon from '../assets/markettrack-icon-problem.svg';
 import './PortfolioCaseStudy.css';
 
 const META_ICONS = {
@@ -16,6 +21,19 @@ const META_ICONS = {
   hourglass: HourglassIcon,
   person: PersonIcon,
   team: TeamIcon,
+};
+
+// Recolored (#3B82F6) copies of Guidely's own section icons
+// (guidely-icon-search/computer-check/bubble-chat.svg) — separate files so
+// Guidely's originals (#75B946 green) stay untouched.
+const SECTION_ICONS = {
+  search: searchIcon,
+  'computer-check': computerCheckIcon,
+  chat: bubbleChatIcon,
+  problem: problemIcon,
+  // the MarketTrack brand mark itself, not a bundled asset — already
+  // living in public/images/ as the homepage carousel card image
+  mlogo: '/images/cs-00.png',
 };
 
 // Hero background video (sits inset within the hero section behind the
@@ -133,16 +151,47 @@ const Section = ({
   images,
   imagePlaceholder,
   glass,
+  narrow,
+  icon,
+  iconRounded,
+  iconSize,
   subItem,
 }) => {
   const paragraphs = Array.isArray(body) ? body : [body];
+  const IconSrc = icon && SECTION_ICONS[icon];
+  // Icon stays centered in the narrow card's ~473px side gap even when
+  // iconSize overrides the default 120px — the CSS left/right offset was
+  // only tuned for that default, so recentre explicitly here instead.
+  const iconStyle =
+    IconSrc && iconSize && narrow
+      ? {
+          width: iconSize,
+          height: iconSize,
+          [accent === 'left' ? 'left' : 'right']: `calc(100% + ${(473 - iconSize) / 2}px)`,
+        }
+      : IconSrc && iconSize
+      ? { width: iconSize, height: iconSize }
+      : undefined;
   return (
     <section
       className={`portfolio-section portfolio-section-accent-${accent}${
         glass ? ' portfolio-section-glass' : ''
+      }${narrow ? ' portfolio-section-narrow' : ''}${
+        subheading ? ' portfolio-section-subsection' : ''
       }`}
     >
       <span className="portfolio-section-line" aria-hidden="true" />
+      {IconSrc && (
+        <img
+          src={IconSrc}
+          alt=""
+          aria-hidden="true"
+          style={iconStyle}
+          className={`portfolio-section-icon${
+            iconRounded ? ' portfolio-section-icon-rounded' : ''
+          }`}
+        />
+      )}
       <h3
         className={`portfolio-section-title${
           subheading ? ' portfolio-section-title-sub' : ''
@@ -211,6 +260,7 @@ const CaseStudyTemplate = () => {
   }
 
   const { id, prevSlug, nextSlug, hero, meta, sections, bodyBg, glassCards } = data;
+  const nextCaseStudy = caseStudies.find((cs) => cs.slug === nextSlug);
 
   return (
     <div className="portfolio-page">
@@ -243,6 +293,7 @@ const CaseStudyTemplate = () => {
       >
         <section
           className={`portfolio-hero${hero.video ? ' portfolio-hero-has-video' : ''}`}
+          style={hero.bg ? { '--hero-bg': hero.bg } : undefined}
         >
           {hero.video && <HeroVideo src={hero.video} />}
           {hero.video ? (
@@ -291,10 +342,32 @@ const CaseStudyTemplate = () => {
             images={section.images}
             imagePlaceholder={section.imagePlaceholder}
             glass={glassCards}
+            narrow={section.narrow}
+            icon={section.icon}
+            iconRounded={section.iconRounded}
+            iconSize={section.iconSize}
             subItem={section.subItem}
           />
         ))}
       </div>
+
+      {nextCaseStudy && (
+        <Link
+          to={`/case-studies/${nextCaseStudy.slug}`}
+          className="portfolio-next-case"
+        >
+          <span className="portfolio-next-label">See Next Case Study</span>
+          <div className="portfolio-next-card">
+            <img
+              src={nextCaseStudy.image}
+              alt={`${nextCaseStudy.id} preview`}
+              className="portfolio-next-image"
+              loading="lazy"
+            />
+            <span className="portfolio-next-title">{nextCaseStudy.title}</span>
+          </div>
+        </Link>
+      )}
     </div>
   );
 };
