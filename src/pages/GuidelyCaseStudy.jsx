@@ -169,7 +169,7 @@ const GuidelyCaseStudy = () => {
     <div className="guidely-page">
       <div className="guidely-topbar">
         <div className="guidely-topbar-nav">
-          <Link to="/#case-studies" className="guidely-back">
+          <Link to="/case-studies/markettrack" className="guidely-back">
             <svg
               width="16"
               height="16"
@@ -185,7 +185,7 @@ const GuidelyCaseStudy = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            Back To Case Studies
+            Previous
           </Link>
 
           <Link to="/case-studies/thermal" className="guidely-next">
@@ -207,7 +207,7 @@ const GuidelyCaseStudy = () => {
             </svg>
           </Link>
         </div>
-        <span className="guidely-id">CS-01</span>
+        <span className="guidely-id">CS-02</span>
       </div>
 
       <div className="guidely-body">

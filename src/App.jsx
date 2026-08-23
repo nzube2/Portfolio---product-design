@@ -9,10 +9,14 @@ import './App.css';
 // Code-split per case-study route: each one's JS/CSS (and the images/videos
 // it imports) only downloads when that route is actually visited, instead
 // of shipping with every page load including the homepage.
-const CaseStudyDetail = lazy(() => import('./pages/CaseStudyDetail'));
+// Guidely and Thermal have bespoke, hand-built layouts (unique image
+// galleries/mockup sections) so they keep their own page components.
+// CaseStudyTemplate is the generic "CMS" path: it looks up any other slug
+// in src/data/caseStudyContent.js and renders it through one shared layout,
+// so adding a new case study there needs no route/component changes here.
 const GuidelyCaseStudy = lazy(() => import('./pages/GuidelyCaseStudy'));
 const ThermalCaseStudy = lazy(() => import('./pages/ThermalCaseStudy'));
-const PortfolioCaseStudy = lazy(() => import('./pages/PortfolioCaseStudy'));
+const CaseStudyTemplate = lazy(() => import('./pages/CaseStudyTemplate'));
 
 function App() {
   return (
@@ -25,8 +29,7 @@ function App() {
           <Route path="/" element={<Home />} />
           <Route path="/case-studies/guidely" element={<GuidelyCaseStudy />} />
           <Route path="/case-studies/thermal" element={<ThermalCaseStudy />} />
-          <Route path="/case-studies/portfolio" element={<PortfolioCaseStudy />} />
-          <Route path="/case-studies/:slug" element={<CaseStudyDetail />} />
+          <Route path="/case-studies/:slug" element={<CaseStudyTemplate />} />
         </Routes>
       </Suspense>
     </div>

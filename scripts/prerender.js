@@ -47,6 +47,7 @@ async function launchBrowser() {
 // so waiting on the route root alone isn't enough).
 const routes = [
   { url: '/', waitFor: '#case-studies' },
+  { url: '/case-studies/markettrack', waitFor: '.portfolio-hero-heading' },
   { url: '/case-studies/guidely', waitFor: '.guidely-hero-heading' },
   { url: '/case-studies/thermal', waitFor: '.thermal-hero-heading' },
   { url: '/case-studies/portfolio', waitFor: '.portfolio-hero-heading' },

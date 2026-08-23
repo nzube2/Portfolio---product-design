@@ -19,7 +19,7 @@
   width: 1158px;
   max-width: 100%;
   margin: 0 auto;
-  background: #16110e;
+  background: var(--case-bg, #16110e);
   border-radius: 10px 10px 0 0;
   box-sizing: border-box;
   padding-bottom: 120px;
@@ -132,6 +132,69 @@
   background: #7a0707;
 }
 
+.portfolio-hero-image {
+  width: 100%;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-top: 8px;
+}
+
+/* Video background mode, replacing the red gradient entirely: the hero's
+   height is driven purely by the video itself — 20px padding-top (matching
+   the 20px side margins) plus the video's own aspect-ratio height (1280:580,
+   its native encode size), so there's no forced box and nothing gets
+   cropped. The video sits inset 20px off each side, flush with the
+   bottom, in a container sharing the body's own background color. */
+.portfolio-hero-has-video {
+  height: auto;
+  padding: 20px 0 0;
+  background: var(--case-bg, #1b1512);
+  overflow: hidden;
+}
+
+.portfolio-hero-video-wrap {
+  position: relative;
+  width: calc(100% - 40px);
+  margin: 0 20px;
+  aspect-ratio: 1280 / 580;
+  border-radius: 12px;
+  overflow: hidden;
+  background: var(--case-bg, #1b1512);
+}
+
+.portfolio-hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* Title block position matches Guidely's .guidely-hero-title (left:
+   35.32px), anchored to the bottom instead of a fixed top offset since
+   this hero's height is now video-driven rather than fixed like Guidely's */
+.portfolio-hero-title {
+  position: absolute;
+  left: 35.32px;
+  bottom: 106px;
+  z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: 16px;
+  max-width: calc(100% - 70px);
+}
+
+/* Dark scrim over the video so the eyebrow/heading/button stay legible
+   regardless of what's playing behind them — a flat tint rather than a
+   gradient, since the title block can sit anywhere in the video's middle
+   third depending on content, not just at one fixed edge */
+.portfolio-hero-video-scrim {
+  position: absolute;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.55);
+}
+
 /* ============================================================================
    META CARD — same structure as Thermal's, values swapped for this project
    ============================================================================ */
@@ -228,6 +291,35 @@
   margin-top: 140px;
 }
 
+/* Sub-decision merged into its parent card (e.g. "01 — The Product Page"
+   sitting inside the "./Design Decisions" card), matching Thermal's
+   .thermal-decision-item sitting inside .thermal-design-decisions */
+.portfolio-subitem {
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 16px;
+}
+
+/* Glass-card treatment, opt-in per case study (matches Thermal's frosted
+   panels — translucent fill + blur, so text separates from the page
+   background instead of reading as flat dark-on-dark). Width/centering
+   matches Thermal's white cards (.thermal-problem, .thermal-who-for, etc:
+   991px, centered) — this modifier just keeps the dark glass fill instead
+   of their opaque white one. */
+.portfolio-section-glass {
+  width: 991px;
+  align-items: flex-start;
+  text-align: left;
+  padding: 40px;
+  background: rgba(31, 36, 53, 0.4);
+  border: 1px solid rgba(255, 255, 255, 0.08);
+  border-radius: 10px;
+  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
+  backdrop-filter: blur(24px);
+  -webkit-backdrop-filter: blur(24px);
+}
+
 .portfolio-section-line {
   position: absolute;
   top: 0;
@@ -253,6 +345,17 @@
   color: #f3eee8;
 }
 
+/* Numbered sub-decision heading (e.g. "01 — The Product Page") — matches
+   Thermal's .thermal-decision-title: smaller and a different family than
+   the top-level section title it sits under, so it reads as subordinate */
+.portfolio-section-title-sub {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+  line-height: 150%;
+  text-transform: capitalize;
+}
+
 .portfolio-section-body {
   font-family: 'Be Vietnam', sans-serif;
   font-weight: 400;
@@ -265,6 +368,85 @@
   margin: 0;
 }
 
+.portfolio-section-list {
+  width: 100%;
+  max-width: 520px;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  text-align: left;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.portfolio-section-list li {
+  position: relative;
+  padding-left: 20px;
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+  line-height: 150%;
+  color: rgba(243, 238, 232, 0.7);
+}
+
+.portfolio-section-list li::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 10px;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: rgba(243, 238, 232, 0.5);
+}
+
+.portfolio-section-image {
+  width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+  margin-top: 8px;
+}
+
+.portfolio-section-gallery {
+  width: 100%;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  gap: 16px;
+  margin-top: 8px;
+}
+
+.portfolio-section-gallery-image {
+  flex: 1 1 260px;
+  max-width: 100%;
+  border-radius: 12px;
+  object-fit: cover;
+}
+
+.portfolio-section-image-placeholder {
+  box-sizing: border-box;
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  border: 1px dashed rgba(243, 238, 232, 0.3);
+  border-radius: 12px;
+  background: rgba(243, 238, 232, 0.04);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 24px;
+  margin-top: 8px;
+}
+
+.portfolio-section-image-placeholder span {
+  font-family: 'Be Vietnam', sans-serif;
+  font-weight: 400;
+  font-size: 14px;
+  line-height: 150%;
+  color: rgba(243, 238, 232, 0.4);
+  text-align: center;
+}
+
 /* ============================================================================
    RESPONSIVE - MOBILE
    ============================================================================ */
@@ -273,6 +455,17 @@
   .portfolio-hero {
     padding: 100px 24px 80px;
     gap: 14px;
+  }
+
+  .portfolio-hero-title {
+    position: relative;
+    left: auto;
+    bottom: auto;
+    width: 100%;
+    max-width: 100%;
+    align-items: center;
+    text-align: center;
+    padding: 20px 24px;
   }
 
   .portfolio-hero-heading {
@@ -349,5 +542,9 @@
   .portfolio-section-title {
     font-size: 20px;
     line-height: 30px;
+  }
+
+  .portfolio-section-glass {
+    padding: 24px;
   }
 }

@@ -105,7 +105,7 @@ const ThermalCaseStudy = () => {
             </svg>
           </Link>
         </div>
-        <span className="thermal-id">CS-02</span>
+        <span className="thermal-id">CS-03</span>
       </div>
 
       <div className="thermal-body">

@@ -1,6 +1,17 @@
 const caseStudies = [
   {
     id: 'CS-01',
+    slug: 'markettrack',
+    image: '/images/cs-00.png',
+    title:
+      'MarketTrack — an inventory, sales, and expense tracking system for a small electrical business.',
+    brief:
+      'Ifythel Lights & Accessories was running its operations entirely on paper, scattered stock records, memory-tracked expenses, and no SKU system, making it hard to track profit or find inventory.',
+    whatIDid:
+      'I mapped out a system architecture with Claude, then designed a dashboard, product, sales, and expense pages to replace the paper system. Testing surfaced real gaps, like missing SKU search and manual entry for new stock, which I fixed before launch. MarketTrack is now in active use at Ifythel, giving the business real visibility into inventory, sales, and expenses for the first time.',
+  },
+  {
+    id: 'CS-02',
     slug: 'guidely',
     image: '/images/cs-01.png',
     title:
@@ -11,7 +22,7 @@ const caseStudies = [
       'I designed and led the UI/UX for Guidely, an app that consolidated campus life for students and prospectives unable to visit physically. It featured guest-to-student access, interest-based recommendations, and an offline-friendly virtual tour.',
   },
   {
-    id: 'CS-02',
+    id: 'CS-03',
     slug: 'thermal',
     image: '/images/cs-02.png',
     title:
@@ -22,7 +33,7 @@ const caseStudies = [
       'I designed Thermal - an AI music discovery web app inspired by a hot-to-cold temperature analogy relating to energy and emotion. I designed the end to end customer journey from: the landing page, input form, the vibe settings, an AI anlysis in between and final results, building a unified experience where temperature affects everything not only the music choice itself.',
   },
   {
-    id: 'CS-03',
+    id: 'CS-04',
     slug: 'portfolio',
     image: '/images/cs-03.png',
     title:
