@@ -256,7 +256,7 @@ const GuidelyCaseStudy = () => {
             icon={<PersonIcon className="guidely-meta-icon" />}
             className="guidely-meta-item-4"
             label="Role"
-            value="UI/UX Designer/ Front-end Dev"
+            value="Lead UI/UX Designer"
           />
           <MetaItem
             icon={

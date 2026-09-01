@@ -97,9 +97,9 @@ const caseStudyContent = {
     },
     meta: [
       { icon: 'work', label: 'Project Type', value: 'Client Project' },
-      { icon: 'person', label: 'My Role', value: 'Product Designer' },
+      { icon: 'person', label: 'My Role', value: 'Owned Product Design' },
       { icon: 'team', label: 'Team', value: 'Solo' },
-      { icon: 'hourglass', label: 'Timeline', value: 'June 2025 - Sept 2025' },
+      { icon: 'hourglass', label: 'Timeline', value: 'June 2025 - Oct 2025' },
       { icon: 'tools', label: 'Tools', value: 'Figma, Claude Code' },
     ],
     sections: [
