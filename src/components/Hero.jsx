@@ -60,8 +60,7 @@ const Hero = () => {
         {/* Display Text */}
         <div className="display-text-wrapper">
           <h1 className="display-text">
-            I Design In Systems, Not Just Pixels – Product Designs That Feel
-            Personal.
+            I Design Cool Software Products, Sometimes I Code Them Too.
           </h1>
 
           {/* CTA Buttons */}
