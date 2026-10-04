@@ -578,3 +578,6 @@
 :root { --hero-center-stamp-mobile: 72px; --hero-center-stamp-text: 0.625rem; }
 :root { --hero-stacked-portrait: 144px; }
 :root { --hero-split-refined: clamp(2rem, 4.5vw, 4rem); }
+/* Shared page rhythm: major groups breathe; related text stays together. */
+:root { --section-space: 120px; --section-inner-space: 60px; }
+@media(max-width:768px) { :root { --section-space: 72px; --section-inner-space: 32px; } }

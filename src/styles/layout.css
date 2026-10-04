@@ -527,3 +527,28 @@ main,
 .process-steps a { display: block; margin-top: var(--space-2); font-size: var(--text-small); font-weight: 400; color: var(--color-text-secondary); text-decoration: underline; }
 @media(min-width:769px) { .hero-composition { gap: var(--space-2); } .hero-composition .hero-half { font-size: var(--hero-split-refined); } }
 @media(max-width:768px) { .process-steps { grid-template-columns: 1fr; } }
+/* Major section and content-group spacing. */
+.hero-body { padding-top: var(--section-inner-space); padding-bottom: var(--section-space); }
+.hero-composition { gap: var(--space-3); margin-block: var(--section-inner-space); }
+.section-heading { margin-bottom: var(--section-inner-space); }
+.project-list { gap: var(--section-inner-space); }
+.project-content { padding: var(--space-6); }
+.about-section { padding: var(--section-inner-space); }
+.about-top-row { gap: var(--section-inner-space); }
+.skills-heading-pill, .exp-heading-pill, .more-works-pill { margin-bottom: var(--section-inner-space); }
+.skills-row-1 { margin-bottom: var(--section-inner-space); }
+.skills-row-2 { margin-bottom: 0; }
+.skill-card-uiux, .skill-card-wireframe, .skill-card-research, .skill-card-webdev { padding: var(--space-5); }
+.tools-section { margin-top: var(--section-inner-space); }
+.tools-heading { margin-bottom: var(--section-inner-space); }
+.process-panel { margin-top: var(--section-inner-space); padding-top: var(--section-inner-space); padding-bottom: 0; }
+.process-steps { margin-top: var(--section-inner-space); }
+.exp-card { padding: var(--section-inner-space); gap: var(--space-4); }
+.exp-what-list { gap: var(--space-5); }
+.contact-content { padding-block: var(--section-space); }
+@media(max-width:768px) {
+  .hero-composition { gap: var(--section-inner-space); }
+  .project-content, .about-section, .exp-card { padding: var(--space-3); }
+  .skill-card-uiux, .skill-card-wireframe, .skill-card-research, .skill-card-webdev { padding: var(--space-3); }
+  .hero-copy .hero-subhead { margin-bottom: var(--space-2); }
+}
