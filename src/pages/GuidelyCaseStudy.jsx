@@ -171,7 +171,7 @@ const GuidelyCaseStudy = () => {
     <div className="guidely-page">
       <div className="guidely-topbar">
         <div className="guidely-topbar-nav">
-          <Link to="/case-studies/markettrack" className="guidely-back">
+          <Link to="/#case-studies" className="guidely-back">
             <svg
               width="16"
               height="16"
@@ -187,7 +187,7 @@ const GuidelyCaseStudy = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            Previous
+            Back to case studies
           </Link>
 
           <Link to="/case-studies/thermal" className="guidely-next">

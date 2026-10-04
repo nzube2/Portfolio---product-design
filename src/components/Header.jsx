@@ -30,18 +30,18 @@ const Header = () => {
   }, [open]);
   const links = (
     <>
-      <a href="/#case-studies" className="nav-link">
+      <Link to="/#case-studies" className="nav-link">
         Work
-      </a>
-      <a href="/#about" className="nav-link">
+      </Link>
+      <Link to="/#about" className="nav-link">
         About
-      </a>
-      <a href="/#skills" className="nav-link">
+      </Link>
+      <Link to="/#skills" className="nav-link">
         Skills
-      </a>
-      <a href="/#contact" className="btn-contact">
+      </Link>
+      <Link to="/#contact" className="btn-contact">
         Contact <span aria-hidden="true">↗</span>
-      </a>
+      </Link>
     </>
   );
   return (

@@ -69,7 +69,7 @@ const ThermalCaseStudy = () => {
     <div className="thermal-page">
       <div className="thermal-topbar">
         <div className="thermal-topbar-nav">
-          <Link to="/case-studies/guidely" className="thermal-back">
+          <Link to="/#case-studies" className="thermal-back">
             <svg
               width="16"
               height="16"
@@ -85,7 +85,7 @@ const ThermalCaseStudy = () => {
                 strokeLinejoin="round"
               />
             </svg>
-            Previous
+            Back to case studies
           </Link>
 
           <Link to="/case-studies/portfolio" className="thermal-next">
