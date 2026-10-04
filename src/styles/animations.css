@@ -86,3 +86,6 @@
   }
 }
 @keyframes tools-scroll { to { transform: translateX(-50%); } }
+.hero-composition .display-text { animation: none; }
+.hero-half { animation: enter var(--motion-enter) var(--ease-out) both; }
+@media(prefers-reduced-motion:reduce) { .hero-half { animation: none; } }

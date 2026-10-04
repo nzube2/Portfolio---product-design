@@ -574,3 +574,5 @@
 
 :root { --mt-title: clamp(2.25rem, 4vw, 3.5rem); --mt-anchor-offset: 112px; }
 
+:root { --hero-center-width: clamp(200px, 22vw, 280px); --hero-center-mobile: clamp(88px, 25vw, 160px); --hero-split-title: clamp(2rem, 5vw, 4.5rem); --hero-split-mobile: clamp(1.125rem, 3.6vw, 1.75rem); }
+:root { --hero-center-stamp-mobile: 72px; --hero-center-stamp-text: 0.625rem; }
