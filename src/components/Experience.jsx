@@ -116,7 +116,7 @@ const Experience = () => {
             rel="noopener noreferrer"
           >
             <ExternalLinkIcon className="exp-github-icon" />
-            <span>github</span>
+            <span>View code</span>
           </a>
 
           <a
@@ -126,12 +126,12 @@ const Experience = () => {
             rel="noopener noreferrer"
           >
             <ExternalLinkIcon className="exp-prototype-icon" />
-            <span>prototype</span>
+            <span>Watch product demo</span>
           </a>
         </div>
 
         <h3 className="exp-title">Ifythel Lights &amp; Accessories.</h3>
-        <p className="exp-dates">Jun 2023 - Sept 2024</p>
+        <p className="exp-dates">Jun 2023 – Oct 2025</p>
 
         <div className="exp-details-row">
           <div className="exp-details exp-details-1">
@@ -145,22 +145,17 @@ const Experience = () => {
             <PersonIcon className="exp-meta-icon" />
             <div className="exp-meta-text">
               <span className="exp-meta-label">Position:</span>
-              <span className="exp-meta-value">Intern</span>
+              <span className="exp-meta-value">Product Designer</span>
             </div>
           </div>
         </div>
 
-        <span className="exp-what-label">What I Did</span>
+        <span className="exp-what-label">Design & delivery</span>
         <ul className="exp-what-list">
-          <li>
-            ・ Contributed to the company&apos;s digital rebranding,
-            designing user journeys and performing interface prototyping.
-          </li>
-          <li>
-            ・ Designed and implemented a market tracking system, for
-            inventory, sales(showed best selling products ) and expenses
-            across various timelines.
-          </li>
+          <li><h4>Business operations product</h4><p>Owned the design and implementation of MarketTrack, moving inventory, sales, and expense management from paper records into a working digital system.</p></li>
+          <li><h4>From flows to a shipped interface</h4><p>Mapped user flows, created wireframes and high-fidelity UI, developed interactive prototypes, and translated design specifications into the product.</p></li>
+          <li><h4>Testing & iteration</h4><p>Conducted usability testing and refined SKU search, manual inventory entry, and sales editing. The system is actively used in the business’s daily operations.</p></li>
+          <li><h4>Company website & visual identity</h4><p>Led UX and interface design for the company landing page with a focus on SEO. Designed the company logo and supporting graphic design assets.</p></li>
         </ul>
       </div>
     </section>
