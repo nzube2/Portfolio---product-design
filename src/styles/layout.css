@@ -513,3 +513,13 @@ main,
 @media(prefers-reduced-motion:reduce) { .tools-track .tool-badge[aria-hidden] { display: none; } }
 
 
+@media (max-width: 768px) {
+  .hero-composition { grid-template-columns: 1fr; gap: var(--space-4); }
+  .hero-composition .display-text { display: block; grid-column: 1; grid-row: 1; margin: 0; max-width: var(--hero-measure); margin-inline: auto; font-size: var(--hero-heading-mobile-with-photo); }
+  .hero-composition .hero-half { display: inline; font-size: inherit; text-align: center; }
+  .hero-composition .hero-half br { display: none; }
+  .hero-composition .hero-half-last::before { content: ' '; }
+  .hero-composition .hero-portrait { grid-column: 1; grid-row: 2; width: var(--hero-stacked-portrait); margin-inline: auto; }
+  .hero-copy .hero-subhead { margin-bottom: var(--space-2); }
+  .hero-copy .cta-buttons { margin-top: 0; }
+}
