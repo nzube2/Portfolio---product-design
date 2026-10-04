@@ -150,7 +150,7 @@
   font-weight: 500;
   font-size: var(--text-body);
   line-height: var(--layout-detail-40);
-  color: var(--color-text-primary);
+  color: var(--color-on-accent);
   cursor: pointer;
   transition: none;
 }
@@ -2385,5 +2385,5 @@
 }
 
 .guidely-page {padding-top: var(--header-height);}
-.guidely-hero-btn {color: var(--color-ink); min-height: var(--space-6);}
+.guidely-hero-btn {color: var(--color-on-accent); min-height: var(--space-6);}
 #guidely-problem {scroll-margin-top: var(--space-3);}

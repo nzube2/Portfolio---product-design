@@ -169,7 +169,7 @@
   font-family: var(--font-body);
   font-weight: 500;
   font-size: var(--text-small);
-  color: var(--color-text-primary);
+  color: var(--color-on-accent);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;

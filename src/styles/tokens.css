@@ -1,13 +1,16 @@
 :root {
-  --color-bg: #191917;
-  --color-surface: #222320;
-  --color-text-primary: #f5f2eb;
-  --color-text-secondary: #c1c1b7;
-  --color-accent: #f2a58c;
-  --color-ink: #222320;
-  --color-paper: #f5f2eb;
+  --color-bg: #16110e;
+  --color-surface: #1b1512;
+  --color-text-primary: #f3eee8;
+  --color-text-secondary: #c2beba;
+  --color-accent: #5d0606;
+  --color-on-accent: #f3eee8;
+  --color-accent-text: #f3eee8;
+  --color-focus: #b85c5c;
+  --color-ink: #1b1512;
+  --color-paper: #f3eee8;
   --color-muted-ink: #575b52;
-  --color-border-alpha: #41443b;
+  --color-border-alpha: #4d3934;
   --font-body: "Manrope", system-ui, sans-serif;
   --text-small: 0.875rem;
   --text-body: 1rem;
@@ -510,7 +513,7 @@
 :root {
   --text-title: 1.5rem;
   --text-section: 2rem;
-  --case-scrim: #191917d9;
+  --case-scrim: #16110ed9;
 }
 
 /* Documented project palette swatches, not site UI colors. */
