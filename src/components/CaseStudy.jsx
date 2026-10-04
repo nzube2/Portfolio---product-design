@@ -74,7 +74,7 @@ const CaseStudy = () => (
             </Link>
             <div className="project-content">
               <p className="eyebrow">
-                0{i + 1} / {summary.role}
+                {project.id} / {summary.role}
               </p>
               <h3>
                 <Link to={`/case-studies/${project.slug}`}>{summary.name}</Link>
@@ -115,3 +115,4 @@ const CaseStudy = () => (
   </section>
 );
 export default CaseStudy;
+
