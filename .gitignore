@@ -50,3 +50,7 @@ logs/
 
 # Claude Code local settings
 .claude/settings.local.json
+
+# Local design verification screenshots and temporary preview capture
+artifacts/*.png
+preview-home.png

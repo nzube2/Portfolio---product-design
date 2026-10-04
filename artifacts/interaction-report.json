@@ -1,0 +1,46 @@
+[
+  {
+    "name": "Skip link is the first keyboard target",
+    "pass": true
+  },
+  {
+    "name": "Skip link reaches main",
+    "pass": true
+  },
+  {
+    "name": "Mobile menu announces expanded state",
+    "pass": true
+  },
+  {
+    "name": "Escape closes menu and returns focus",
+    "pass": true
+  },
+  {
+    "name": "Selecting an anchor closes mobile menu",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion disables hero entrance",
+    "pass": true
+  },
+  {
+    "name": "Reduced motion prevents decorative video playback",
+    "pass": true
+  },
+  {
+    "name": "Project link reaches preserved route",
+    "pass": true
+  },
+  {
+    "name": "Next-project navigation works",
+    "pass": true
+  },
+  {
+    "name": "Project reveal becomes visible",
+    "pass": true
+  },
+  {
+    "name": "Reveals remain visible after leaving viewport",
+    "pass": true
+  }
+]

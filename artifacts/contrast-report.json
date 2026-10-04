@@ -1,0 +1,22 @@
+[
+  {
+    "route": "/",
+    "fails": []
+  },
+  {
+    "route": "/case-studies/markettrack",
+    "fails": []
+  },
+  {
+    "route": "/case-studies/guidely",
+    "fails": []
+  },
+  {
+    "route": "/case-studies/thermal",
+    "fails": []
+  },
+  {
+    "route": "/case-studies/portfolio",
+    "fails": []
+  }
+]
