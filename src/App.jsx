@@ -16,6 +16,7 @@ import Home from './pages/Home';
 // so adding a new case study there needs no route/component changes here.
 const GuidelyCaseStudy = lazy(() => import('./pages/GuidelyCaseStudy'));
 const ThermalCaseStudy = lazy(() => import('./pages/ThermalCaseStudy'));
+const MarketTrackCaseStudy = lazy(() => import('./pages/MarketTrackCaseStudy'));
 const CaseStudyTemplate = lazy(() => import('./pages/CaseStudyTemplate'));
 
 function App() {
@@ -30,6 +31,7 @@ function App() {
       <main id="main-content" tabIndex="-1"><Suspense fallback={<div className="route-fallback" />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/case-studies/markettrack" element={<MarketTrackCaseStudy />} />
           <Route path="/case-studies/guidely" element={<GuidelyCaseStudy />} />
           <Route path="/case-studies/thermal" element={<ThermalCaseStudy />} />
           <Route path="/case-studies/:slug" element={<CaseStudyTemplate />} />
@@ -40,3 +42,4 @@ function App() {
 }
 
 export default App;
+

@@ -572,3 +572,4 @@
 }
 :root { --tools-loop-duration: 36s; --tools-badge-width: 152px; }
 
+:root { --mt-title: clamp(2.25rem, 4vw, 3.5rem); --mt-anchor-offset: 112px; }

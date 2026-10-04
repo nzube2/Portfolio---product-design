@@ -7,7 +7,15 @@
     "overflow": false,
     "missingDimensions": [],
     "brokenImages": [],
-    "outside": [],
+    "outside": [
+      "tools-row",
+      "tool-badge",
+      "tool-icon tool-icon-adobe",
+      "tool-label",
+      "tool-badge",
+      "tool-icon tool-icon-framer",
+      "tool-label"
+    ],
     "errors": []
   },
   {

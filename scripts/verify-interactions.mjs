@@ -9,10 +9,11 @@ try {
  await page.click('.menu-toggle');await page.click('#mobile-navigation a[href="/#about"]');assert('Selecting an anchor closes mobile menu',await page.$eval('.menu-toggle',e=>e.getAttribute('aria-expanded')==='false'));
  assert('Reduced motion disables hero entrance',await page.$eval('.display-text',e=>getComputedStyle(e).animationName==='none'));
  await page.goto('http://127.0.0.1:4173/case-studies/thermal',{waitUntil:'networkidle2'});assert('Reduced motion prevents decorative video playback',await page.$$eval('video',videos=>videos.every(v=>v.paused)));
- await page.goto('http://127.0.0.1:4173',{waitUntil:'networkidle2'});await page.click('.project-link');await page.waitForSelector('.portfolio-hero-heading');assert('Project link reaches preserved route',page.url().includes('/case-studies/markettrack'));
+ await page.goto('http://127.0.0.1:4173',{waitUntil:'networkidle2'});await page.click('.project-link');await page.waitForSelector('.mt-intro h1');assert('Project link reaches preserved route',page.url().includes('/case-studies/markettrack'));
  await page.click('.portfolio-next');await page.waitForSelector('.guidely-hero-heading');assert('Next-project navigation works',page.url().includes('/case-studies/guidely'));
  await page.goto('http://127.0.0.1:4173',{waitUntil:'networkidle2'});await page.emulateMediaFeatures([{name:'prefers-reduced-motion',value:'no-preference'}]);await page.reload({waitUntil:'networkidle2'});
  await page.$eval('.project-card:nth-child(2)',e=>e.scrollIntoView());await new Promise(r=>setTimeout(r,800));assert('Project reveal becomes visible',await page.$eval('.project-card:nth-child(2)',e=>!e.classList.contains('reveal-pending')));
  await page.evaluate(()=>scrollTo(0,0));await new Promise(r=>setTimeout(r,200));assert('Reveals remain visible after leaving viewport',await page.$eval('.project-card:nth-child(2)',e=>!e.classList.contains('reveal-pending')));
  console.log(JSON.stringify(checks,null,2));fs.writeFileSync('artifacts/interaction-report.json',JSON.stringify(checks,null,2));
 }finally{await browser.close();}
+
