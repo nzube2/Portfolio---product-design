@@ -132,7 +132,7 @@ const caseStudyContent = {
             'Testing exposed that product-name-only search was too limited, so I added SKU search alongside it. The decision was to support another way to locate a product without forcing the user to know its exact name.',
             'I kept stock, order history, and supplier information together to support inventory decisions. When testing exposed details missing from the main table, I added a “more info” action rather than expanding every row and making the list harder to scan.',
           ],
-          evidence: 'After adding SKU search, I searched using a product’s SKU and confirmed that the matching product appeared. The product screen below shows the inventory context for this change.',
+          evidence: 'I searched by SKU and confirmed that the matching product appeared.',
           image: {
             src: '/images/markettrack-product-page.webp',
             alt: 'MarketTrack product page — stock list with buy/sell price, margin, and status',
@@ -147,7 +147,7 @@ const caseStudyContent = {
           'The initial sales flow assumed every item already existed in inventory. Testing showed that new items could arrive before they had been entered, so I added a manual-sale-entry option at the top of the product dropdown, before the existing products. This made the alternative available at the point where the user would otherwise need to select an inventory item.',
           'A recorded sale also needed to accommodate a customer changing their selection. I added editing to the recorded sale rather than treating the first entry as permanent. Receipts and reports remain part of the same sales workflow.',
         ],
-        evidence: 'I checked that the manual-sale-entry option was included at the top of the dropdown, before the product list. This confirms that the alternative entry path was available; a completed manual-sale transaction and a sales-editing retest are not documented here. The screen below shows the recorded-sales overview.',
+        evidence: 'I confirmed that the manual-sale-entry option appeared at the top of the product dropdown.',
         image: {
           src: '/images/markettrack-sales-page.webp',
           alt: 'MarketTrack sales page — revenue summary cards and a table of recorded sales with gross profit',
@@ -158,7 +158,7 @@ const caseStudyContent = {
         title: '03 — Make spending visible alongside profit',
         subheading: true,
         body: 'Expenses had been tracked from memory, which made actual profit hard to understand. I gave spending its own page with time-based totals, a category breakdown, and a profit summary, so the business could review recorded costs rather than rely on recollection.',
-        evidence: 'The screen shows totals for different periods, spending categories, and a profit summary. The documented outcome is adoption of digital expense records; no measured improvement in reporting speed is recorded.',
+        evidence: 'The screen brings period totals, spending categories, and a profit summary together.',
         image: {
           src: '/images/markettrack-expense-page.webp',
           alt: 'MarketTrack expense page — today/week/month/year totals, category breakdown, and profit summary',
@@ -169,7 +169,7 @@ const caseStudyContent = {
         title: '04 — Bring the business picture into one view',
         subheading: true,
         body: 'The store could not easily answer what was selling, what it was spending, or what stock was running low. I made the dashboard the entry point, bringing revenue, cost of goods, expenses, net profit, top-selling products, and low-stock alerts into one view. The aim was to make the next operational question easier to identify before opening a detailed page.',
-        evidence: 'The dashboard screen shows these summaries together. MarketTrack is documented as actively used by the business; the case study does not claim a quantified gain in decision speed or profit.',
+        evidence: 'The dashboard is part of the system now used in the store’s daily operations.',
         image: {
           src: '/images/markettrack-dashboard.webp',
           alt: 'MarketTrack dashboard — revenue, cost of goods, expenses, net profit, top selling products, and low stock alerts',
