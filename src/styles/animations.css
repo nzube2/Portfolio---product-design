@@ -51,3 +51,37 @@
     transform: none !important;
   }
 }
+
+@keyframes stamp-land {
+  0% {
+    opacity: 0;
+    transform: translateY(var(--hero-stamp-start-y)) rotate(-24deg) scale(1.6);
+  }
+  60% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--hero-stamp-rotation)) scale(0.94);
+  }
+  78% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--hero-stamp-rotation)) scale(1.04);
+  }
+  100% {
+    opacity: 1;
+    transform: translateY(0) rotate(var(--hero-stamp-rotation)) scale(1);
+  }
+}
+.hero-portrait img {
+  animation: enter var(--motion-enter) var(--ease-out)
+    var(--hero-portrait-delay) both;
+}
+.hero-stamp {
+  animation: stamp-land var(--hero-stamp-duration) var(--ease-out)
+    var(--hero-stamp-delay) both;
+}
+@media (prefers-reduced-motion: reduce) {
+  .hero-portrait img,
+  .hero-stamp {
+    animation: none;
+    opacity: 1;
+  }
+}

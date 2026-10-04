@@ -549,3 +549,20 @@
   --project-guidely-green: #75b946;
   --mask-white: #fff;
 }
+
+/* Hero portrait and a one-time rubber-stamp entrance. */
+:root {
+  --hero-portrait-width: clamp(240px, 25vw, 320px);
+  --hero-portrait-mobile: 112px;
+  --hero-heading-mobile-with-photo: 2rem;
+  --hero-stamp-size: 144px;
+  --hero-stamp-mobile: 96px;
+  --hero-stamp-border: 3px;
+  --hero-stamp-inset: 5px;
+  --hero-stamp-rotation: -12deg;
+  --hero-stamp-shadow: 0 8px 24px #00000026;
+  --hero-stamp-duration: 650ms;
+  --hero-stamp-delay: 900ms;
+  --hero-stamp-start-y: -48px;
+  --hero-portrait-delay: 160ms;
+}

@@ -58,3 +58,9 @@ The chosen accent is warm coral and the font is Manrope. One alternative is a co
 8. **Resume:** consider hosting the PDF directly under a stable portfolio URL so availability does not depend on Drive sharing settings.
 9. **Project claims:** keep shipped-product evidence separate from design outcomes; avoid numerical metrics without a recorded baseline.
 
+
+## Hero portrait follow-up
+
+Added the owner's supplied portrait as a 59.5KB WebP asset imported through Vite. `Hero.jsx` now pairs the photo with the existing introduction and CTAs. A coral “Tested & trusted” badge lands once with a short scale/rotation press animation; reduced-motion users see its settled state immediately. The portrait stays beside the headline on mobile with a smaller badge, without covering the face.
+
+Files: `src/assets/valentina-portrait.webp`, `src/components/Hero.jsx`, and the existing tokens/layout/components/animations CSS files. Verification: full production build and all prerendered routes passed; homepage preview checked at 360, 768, 1024, and 1440px with no horizontal overflow or page errors; reduced-motion animation disabled and CSS token compliance passed. Recheck Lighthouse on deployment after media changes; the earlier scores above describe the pre-portrait audit.

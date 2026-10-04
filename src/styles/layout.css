@@ -361,3 +361,56 @@ main,
   width: calc(100% - var(--gutter) * 2);
   padding-inline: 0;
 }
+
+.hero-body {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--hero-portrait-width);
+  align-items: center;
+  gap: var(--space-6);
+}
+.hero-copy {
+  min-width: 0;
+}
+.hero-portrait {
+  position: relative;
+  margin: 0;
+}
+.hero-portrait img {
+  width: 100%;
+  height: auto;
+  border-radius: var(--radius-large);
+  border: var(--border-width) solid var(--color-border-alpha);
+}
+@media (max-width: 768px) {
+  .hero-body {
+    grid-template-columns: minmax(0, 1fr) var(--hero-portrait-mobile);
+    column-gap: var(--space-2);
+    row-gap: var(--space-3);
+    align-items: start;
+  }
+  .hero-copy {
+    display: contents;
+  }
+  .hero-eyebrow {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .hero .display-text {
+    grid-column: 1;
+    grid-row: 2;
+    font-size: var(--hero-heading-mobile-with-photo);
+    margin: 0;
+  }
+  .hero-portrait {
+    grid-column: 2;
+    grid-row: 2;
+    margin-top: var(--space-1);
+  }
+  .hero-subhead {
+    grid-column: 1 / -1;
+    margin: 0;
+  }
+  .hero .cta-buttons {
+    grid-column: 1 / -1;
+  }
+}
