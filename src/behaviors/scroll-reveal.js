@@ -1,5 +1,6 @@
 export function observeReveals(root) {
-  const nodes = root.querySelectorAll("[data-reveal]");
+  const nodes = root.querySelectorAll("[data-reveal], .about-top-row, .skills-heading-pill, .skills-row-1, .skills-row-2, .tools-section, .process-panel, .exp-heading-pill, .exp-card, .more-works-pill, .more-works-media, .contact-content, .contact-footer-bar");
+  nodes.forEach((node) => node.setAttribute('data-reveal', ''));
   if (
     window.matchMedia("(prefers-reduced-motion: reduce)").matches ||
     !("IntersectionObserver" in window)
@@ -24,3 +25,4 @@ export function observeReveals(root) {
     nodes.forEach((node) => node.classList.remove("reveal-pending"));
   };
 }
+
