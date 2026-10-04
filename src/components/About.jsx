@@ -1,7 +1,7 @@
 import Image from './Image.jsx';
 import React, { useEffect, useRef, useState } from 'react';
 
-import aboutIllustration from '../assets/about-illustration.svg';
+import aboutPortrait from '../assets/valentina-about.webp';
 
 const HeadingBorder = ({ className }) => (
   <svg
@@ -52,20 +52,20 @@ const About = () => {
 
       <div className="about-top-row">
         <Image
-          src={aboutIllustration}
-          alt=""
-          className="about-illustration"
-          aria-hidden="true"
+          src={aboutPortrait}
+          alt="Valentina Molokwu, product designer"
+          className="about-portrait"
+          width={591}
+          height={683}
         />
 
+        <div className="about-copy">
         <h2 className="about-heading">
           Hi, I&apos;m Valentina —{' '}
           <span className="about-heading-accent">
             A Product Designer With A Software Engineering Background.
           </span>
         </h2>
-      </div>
-
       <div className="about-text">
         <p>
           My foundation taught me to think in systems before I think in
@@ -82,6 +82,8 @@ const About = () => {
           the journey of product thinking as much as the design itself and
           this is widely represented throughout my works.
         </p>
+      </div>
+        </div>
       </div>
     </section>
   );
