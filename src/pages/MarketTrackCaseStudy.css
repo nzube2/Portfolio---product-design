@@ -11,8 +11,9 @@
 .mt-hero-screen, .mt-screen { margin: 0; padding: var(--space-3); background: var(--color-surface); border: var(--border-width) solid var(--color-border-alpha); border-radius: var(--radius-medium); }
 .mt-hero-screen img, .mt-screen img { display: block; width: 100%; height: auto; border-radius: var(--radius-small); }
 .mt-hero-screen figcaption, .mt-screen figcaption { color: var(--color-text-secondary); font-size: var(--text-small); margin-top: var(--space-2); }
-.mt-meta { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); gap: var(--space-3); padding-block: var(--space-4); border-block: var(--border-width) solid var(--color-border-alpha); margin: 0; }
-.mt-meta dt { color: var(--color-text-secondary); font-size: var(--text-small); margin-bottom: var(--space-1); }
+.mt-meta { display: grid; grid-template-columns: repeat(5, minmax(0, 1fr)); column-gap: var(--space-4); row-gap: var(--space-4); align-items: start; padding-block: var(--space-4); border-block: var(--border-width) solid var(--color-border-alpha); margin: 0; }
+.mt-meta > div { display: grid; align-content: start; gap: var(--space-1); min-width: 0; }
+.mt-meta dt { color: var(--color-text-secondary); font-size: var(--text-small); margin: 0; }
 .mt-meta dd { margin: 0; font-size: var(--text-body); }
 .mt-outcome { margin-block: var(--space-8); padding: var(--space-5); background: var(--color-paper); color: var(--color-ink); border-radius: var(--radius-medium); }
 .mt-outcome .mt-label, .mt-outcome .mt-note { color: var(--color-muted-ink); }
@@ -39,3 +40,4 @@
 .mt-next:hover { transform: translateY(var(--lift)); }
 @media(max-width:1024px) { .mt-hero { grid-template-columns: 1fr; } .mt-meta { grid-template-columns: repeat(3, minmax(0, 1fr)); } .mt-section { grid-template-columns: minmax(0, 1fr) minmax(0, 2fr); gap: var(--space-4); } }
 @media(max-width:768px) { .mt-topnav { flex-wrap: wrap; gap: var(--space-1) var(--space-2); } .mt-topnav > span { order: 3; width: 100%; } .mt-hero { padding-block: var(--space-4); gap: var(--space-4); } .mt-meta { grid-template-columns: repeat(2, minmax(0, 1fr)); } .mt-section { grid-template-columns: 1fr; gap: var(--space-3); padding-block: var(--space-5); } .mt-section-heading h2 { margin-bottom: 0; } .mt-outcome { padding: var(--space-3); margin-block: var(--space-5); } .mt-screen, .mt-hero-screen { padding: var(--space-1); } .mt-screen figcaption, .mt-hero-screen figcaption { padding-inline: var(--space-1); } .mt-next { padding: var(--space-3); } }
+
