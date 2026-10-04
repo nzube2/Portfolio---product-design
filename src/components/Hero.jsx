@@ -13,7 +13,7 @@ const Hero = () => (
         </h1>
         <p className="hero-subhead">
           Product designer with an engineering foundation, creating scalable
-          digital experiences from Port Harcourt, Nigeria—open to remote.
+          digital experiences. Open to remote opportunities.
         </p>
         <div className="cta-buttons">
           <a href="#case-studies" className="btn-primary">
@@ -53,3 +53,4 @@ const Hero = () => (
   </section>
 );
 export default Hero;
+
