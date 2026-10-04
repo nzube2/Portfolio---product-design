@@ -6,8 +6,8 @@
 .thermal-page {
   width: 100%;
   min-height: 100vh;
-  background-color: #1b1512;
-  padding-top: 70px;
+  background-color: var(--color-bg);
+  padding-top: var(--space-8);
 }
 
 
@@ -15,22 +15,22 @@
    white body card */
 .thermal-body {
   position: relative;
-  width: 1158px;
+  width: var(--layout-detail-38);
   max-width: 100%;
-  min-height: 3727.44px;
+  min-height: var(--layout-detail-249);
   margin: 0 auto;
-  background: #191818;
-  border-radius: 10px 10px 0 0;
+  background: var(--brand-color-29);
+  border-radius: var(--radius-small) var(--radius-small) 0 0;
   box-sizing: border-box;
   /* contains the blurred glow so it can't bleed onto the page background */
   overflow: hidden;
 }
 
 .thermal-topbar {
-  width: 1158px;
+  width: var(--layout-detail-38);
   max-width: 100%;
   margin: 0 auto;
-  padding: 40px 0 0;
+  padding: var(--space-5) 0 0;
   display: flex;
   flex-direction: column;
   box-sizing: border-box;
@@ -40,35 +40,35 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  margin-bottom: 24px;
+  margin-bottom: var(--space-3);
 }
 
 .thermal-back,
 .thermal-next {
   display: inline-flex;
   align-items: center;
-  gap: 8px;
+  gap: var(--space-1);
   width: fit-content;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  color: #c2beba;
-  transition: color 0.3s ease;
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
+  transition: none;
 }
 
 .thermal-back:hover,
 .thermal-next:hover {
-  color: #f3eee8;
+  color: var(--color-text-primary);
 }
 
 .thermal-id {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 14px;
-  letter-spacing: 0.05em;
+  font-size: var(--text-small);
+  letter-spacing: var(--layout-detail-39);
   text-transform: uppercase;
-  color: #928f8b;
-  margin-bottom: 24px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-3);
 }
 
 /* ============================================================================
@@ -77,10 +77,10 @@
 
 .thermal-gradient {
   position: absolute;
-  left: calc(50% - 579.5px + 0.5px);
-  top: 940px;
-  width: 1159px;
-  height: 673px;
+  left: calc(50% - var(--layout-detail-250) + var(--layout-detail-251));
+  top: var(--layout-detail-252);
+  width: var(--layout-detail-253);
+  height: var(--layout-detail-254);
   z-index: 0;
   opacity: 0.32;
   transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -91,29 +91,29 @@
 }
 
 .thermal-gradient-2 {
-  left: calc(50% - 579.5px - 0.5px);
-  top: 2057px;
+  left: calc(50% - var(--layout-detail-250) - var(--layout-detail-251));
+  top: var(--layout-detail-255);
 }
 
 .thermal-gradient-3 {
-  left: calc(50% - 579.5px + 0.5px);
+  left: calc(50% - var(--layout-detail-250) + var(--layout-detail-251));
   /* starts at "./Who Thermal is for" */
-  top: 2632.44px;
+  top: var(--layout-detail-256);
 }
 
 .thermal-gradient-4 {
-  left: calc(50% - 579.5px + 0.5px);
+  left: calc(50% - var(--layout-detail-250) + var(--layout-detail-251));
   /* starts at "./Design Decisions" */
-  top: 3047.44px;
+  top: var(--layout-detail-257);
   /* flipped relative to the other three — undoes the base horizontal
      flip, so warm/cool swap sides compared to gradients 1-3 */
   transform: none;
 }
 
 .thermal-gradient-5 {
-  left: calc(50% - 579.5px + 0.5px);
+  left: calc(50% - var(--layout-detail-250) + var(--layout-detail-251));
   /* starts at "./Reflection" */
-  top: 7453.22px;
+  top: var(--layout-detail-258);
   /* toggles back to the base flip, undoing gradient-4's flip — keeps the
      warm/cool sides alternating section to section */
   transform: matrix(-1, 0, 0, 1, 0, 0);
@@ -122,32 +122,32 @@
 .thermal-gradient span {
   position: absolute;
   display: block;
-  width: 643px;
-  height: 165px;
+  width: var(--layout-detail-259);
+  height: var(--layout-detail-260);
   border-radius: 50%;
-  filter: blur(200px);
+  filter: blur(var(--layout-detail-261));
 }
 
 .thermal-gradient-warm {
-  left: 619.44px;
-  top: 135px;
+  left: var(--layout-detail-262);
+  top: var(--layout-detail-263);
   background: conic-gradient(
     from 90deg at 50% 50%,
-    #ff2d00 0deg,
-    #ffd84d 180deg,
-    #ff7a00 360deg
+    var(--brand-color-30) 0deg,
+    var(--brand-color-31) 180deg,
+    var(--brand-color-32) 360deg
   );
   transform: matrix(-0.77, 0.64, 0.64, 0.77, 0, 0);
 }
 
 .thermal-gradient-cool {
-  left: 197.95px;
+  left: var(--layout-detail-264);
   top: 0;
   background: conic-gradient(
     from 90deg at 50% 50%,
-    #00cfff 0deg,
-    #aeebff 180deg,
-    #3aa6ff 360deg
+    var(--brand-color-33) 0deg,
+    var(--brand-color-34) 180deg,
+    var(--brand-color-35) 360deg
   );
   transform: matrix(-0.67, 0.74, 0.74, 0.67, 0, 0);
 }
@@ -159,7 +159,7 @@
 .thermal-hero {
   position: relative;
   width: 100%;
-  height: 635px;
+  height: var(--layout-detail-77);
   overflow: hidden;
 }
 
@@ -167,9 +167,9 @@
 
 .thermal-hero-card {
   position: absolute;
-  left: calc(50% - 116.55px - 0.45px);
-  top: 130.75px;
-  width: 233.1px;
+  left: calc(50% - var(--layout-detail-265) - var(--layout-detail-266));
+  top: var(--layout-detail-267);
+  width: var(--layout-detail-268);
   height: auto;
   display: flex;
   flex-direction: column;
@@ -182,7 +182,7 @@
   width: 100%;
   height: auto;
   aspect-ratio: 366 / 220;
-  border-radius: 6.75px;
+  border-radius: var(--radius-small);
   object-fit: contain;
   max-width: none;
   /* same situation as .thermal-wheel-group: MP4 has no alpha, and this
@@ -197,38 +197,38 @@
 
 .thermal-hero-title {
   position: absolute;
-  left: 39px;
-  top: 390.5px;
-  width: 687px;
-  height: 198px;
+  left: var(--layout-detail-228);
+  top: var(--layout-detail-270);
+  width: var(--layout-detail-271);
+  height: var(--layout-detail-272);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--space-1);
 }
 
 .thermal-hero-eyebrow {
-  width: 201px;
-  height: 29px;
-  font-family: 'Be Vietnam', sans-serif;
+  width: var(--layout-detail-72);
+  height: var(--layout-detail-73);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 20px;
-  line-height: 29px;
-  color: #ffffff;
+  font-size: var(--text-h4);
+  line-height: var(--layout-detail-73);
+  color: var(--color-paper);
   opacity: 0.71;
 }
 
 .thermal-hero-heading {
-  width: 794px;
-  height: 96px;
+  width: var(--layout-detail-74);
+  height: var(--space-12);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 32px;
-  line-height: 48px;
+  font-size: var(--text-section);
+  line-height: var(--space-6);
   text-transform: capitalize;
-  color: #dadada;
+  color: var(--brand-color-22);
 }
 
 .thermal-hero-btn {
@@ -237,23 +237,23 @@
   flex-direction: column;
   align-items: flex-start;
   justify-content: center;
-  padding: 15px 20px;
-  width: 169px;
-  height: 53px;
-  background: #5d0606;
+  padding: var(--space-2) var(--space-2);
+  width: var(--layout-detail-75);
+  height: var(--layout-detail-76);
+  background: var(--color-accent);
   border: none;
-  border-radius: 10px;
-  font-family: 'Be Vietnam', sans-serif;
+  border-radius: var(--radius-small);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 23px;
-  color: #f3eee8;
+  font-size: var(--text-body);
+  line-height: var(--layout-detail-40);
+  color: var(--color-text-primary);
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  transition: none;
 }
 
 .thermal-hero-btn:hover {
-  background: #7a0707;
+  background: var(--color-accent);
 }
 
 /* ============================================================================
@@ -264,18 +264,18 @@
 .thermal-meta-card {
   box-sizing: border-box;
   position: absolute;
-  left: 40px;
-  top: 635px;
-  width: calc(100% - 80px);
-  height: 116px;
+  left: var(--space-5);
+  top: var(--layout-detail-77);
+  width: calc(100% - var(--header-height));
+  height: var(--layout-detail-273);
   display: flex;
   flex-direction: row;
   align-items: flex-start;
   justify-content: center;
-  padding: 0 43px;
-  gap: 57px;
-  background: #ffffff;
-  border-radius: 10px;
+  padding: 0 var(--space-5);
+  gap: var(--space-8);
+  background: var(--color-paper);
+  border-radius: var(--radius-small);
 }
 
 .thermal-meta-item {
@@ -284,27 +284,27 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  padding: 10px;
-  gap: 15px;
-  height: 110.5px;
+  padding: var(--space-1);
+  gap: var(--space-2);
+  height: var(--layout-detail-44);
 }
 
-.thermal-meta-item-1 { width: 161.5px; }
-.thermal-meta-item-2 { width: 180px; height: 110px; }
-.thermal-meta-item-3 { width: 161.5px; }
-.thermal-meta-item-4 { width: 161.5px; }
-.thermal-meta-item-5 { width: 203px; }
+.thermal-meta-item-1 { width: var(--layout-detail-45); }
+.thermal-meta-item-2 { width: var(--layout-detail-46); height: var(--layout-detail-47); }
+.thermal-meta-item-3 { width: var(--layout-detail-45); }
+.thermal-meta-item-4 { width: var(--layout-detail-45); }
+.thermal-meta-item-5 { width: var(--layout-detail-48); }
 
 .thermal-meta-icon {
   flex: none;
-  width: 25px;
-  height: 25px;
-  color: #000000;
+  width: var(--layout-detail-49);
+  height: var(--layout-detail-49);
+  color: var(--color-ink);
 }
 
 .thermal-meta-icon-team {
-  width: 28px;
-  height: 28px;
+  width: var(--layout-detail-50);
+  height: var(--layout-detail-50);
 }
 
 .thermal-meta-text {
@@ -312,43 +312,43 @@
   flex-direction: column;
   justify-content: center;
   align-items: flex-start;
-  gap: 5px;
+  gap: var(--space-1);
 }
 
-.thermal-meta-item-1 .thermal-meta-text { width: 95px; height: 51px; }
-.thermal-meta-item-2 .thermal-meta-text { width: 102px; height: 74px; }
-.thermal-meta-item-3 .thermal-meta-text { width: 43px; height: 51px; }
-.thermal-meta-item-4 .thermal-meta-text { width: 67px; height: 51px; }
-.thermal-meta-item-5 .thermal-meta-text { width: 105px; height: 51px; }
+.thermal-meta-item-1 .thermal-meta-text { width: var(--layout-detail-78); height: var(--space-detail-17); }
+.thermal-meta-item-2 .thermal-meta-text { width: var(--layout-detail-274); height: var(--layout-detail-80); }
+.thermal-meta-item-3 .thermal-meta-text { width: var(--space-detail-13); height: var(--space-detail-17); }
+.thermal-meta-item-4 .thermal-meta-text { width: var(--layout-detail-85); height: var(--space-detail-17); }
+.thermal-meta-item-5 .thermal-meta-text { width: var(--layout-detail-30); height: var(--space-detail-17); }
 
 .thermal-meta-label {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 16px;
-  line-height: 23px;
+  font-size: var(--text-body);
+  line-height: var(--layout-detail-40);
   text-align: center;
-  color: rgba(0, 0, 0, 0.5);
+  color: var(--brand-color-9);
 }
 
 .thermal-meta-value {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
-  line-height: 23px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: var(--text-body);
+  line-height: var(--layout-detail-40);
+  color: var(--brand-color-10);
 }
 
 /* per-node widths from the spec — several differ from their column width */
-.thermal-meta-item-1 .thermal-meta-label { width: 95px; }
-.thermal-meta-item-1 .thermal-meta-value { width: 67px; text-align: center; }
-.thermal-meta-item-2 .thermal-meta-label { width: 59px; }
-.thermal-meta-item-2 .thermal-meta-value { width: 102px; text-align: center; }
-.thermal-meta-item-3 .thermal-meta-label { width: 43px; }
-.thermal-meta-item-3 .thermal-meta-value { width: 34px; text-align: center; }
-.thermal-meta-item-4 .thermal-meta-label { width: 67px; }
-.thermal-meta-item-4 .thermal-meta-value { width: 66px; }
-.thermal-meta-item-5 .thermal-meta-label { width: 41px; }
-.thermal-meta-item-5 .thermal-meta-value { width: 105px; }
+.thermal-meta-item-1 .thermal-meta-label { width: var(--layout-detail-78); }
+.thermal-meta-item-1 .thermal-meta-value { width: var(--layout-detail-85); text-align: center; }
+.thermal-meta-item-2 .thermal-meta-label { width: var(--layout-detail-15); }
+.thermal-meta-item-2 .thermal-meta-value { width: var(--layout-detail-274); text-align: center; }
+.thermal-meta-item-3 .thermal-meta-label { width: var(--space-detail-13); }
+.thermal-meta-item-3 .thermal-meta-value { width: var(--layout-detail-35); text-align: center; }
+.thermal-meta-item-4 .thermal-meta-label { width: var(--layout-detail-85); }
+.thermal-meta-item-4 .thermal-meta-value { width: var(--space-detail-23); }
+.thermal-meta-item-5 .thermal-meta-label { width: var(--layout-detail-84); }
+.thermal-meta-item-5 .thermal-meta-value { width: var(--layout-detail-30); }
 
 /* ============================================================================
    SECTION — "What if you could find music..."
@@ -356,17 +356,17 @@
 
 .thermal-question {
   position: absolute;
-  left: calc(50% - 321.5px + 0.5px);
-  top: 876px;
-  width: 643px;
-  height: 72px;
+  left: calc(50% - var(--layout-detail-275) + var(--layout-detail-251));
+  top: var(--layout-detail-276);
+  width: var(--layout-detail-259);
+  height: var(--layout-detail-277);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
   text-align: center;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 /* ============================================================================
@@ -376,9 +376,9 @@
 .thermal-problem {
   box-sizing: border-box;
   position: absolute;
-  left: calc(50% - 495.5px + 0.5px);
-  top: 1024px;
-  width: 991px;
+  left: calc(50% - var(--layout-detail-278) + var(--layout-detail-251));
+  top: var(--layout-detail-279);
+  width: var(--layout-detail-52);
   /* spec's 367px assumes the last paragraph wraps to two lines; sizing to
      content keeps the 40px padding honest top and bottom */
   height: auto;
@@ -386,27 +386,27 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 30px;
-  background: #ffffff;
-  border-radius: 10px;
+  padding: var(--space-5);
+  gap: var(--space-4);
+  background: var(--color-paper);
+  border-radius: var(--radius-small);
 }
 
 .thermal-problem-title {
   /* 17px is Figma's cap-height for this node; the spec's own box maths
      (40 + 17 + 30 + 240 + 40) only adds up to 367 with this value */
-  width: 171px;
-  height: 17px;
+  width: var(--layout-detail-92);
+  height: var(--layout-detail-37);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
+  color: var(--brand-color-10);
 }
 
 .thermal-problem-body {
-  width: 911px;
+  width: var(--layout-detail-280);
   /* spec says 240px, but that assumes the last paragraph wraps to two
      lines; let it size naturally so the card centres the content instead
      of pooling the difference at the bottom */
@@ -416,12 +416,12 @@
   flex-direction: column;
   /* one blank line between paragraphs, matching the 24px line-height —
      2 + 4 + 2 lines plus two gaps is exactly the spec's 240px */
-  gap: 24px;
-  font-family: 'Be Vietnam', sans-serif;
+  gap: var(--space-3);
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--brand-color-10);
 }
 
 .thermal-problem-body p {
@@ -435,66 +435,66 @@
 .thermal-concept {
   box-sizing: border-box;
   position: absolute;
-  left: calc(50% - 327.5px - 252.5px + 60px);
+  left: calc(50% - var(--layout-detail-281) - var(--layout-detail-282) + var(--space-detail-6));
   /* 120px below "./The Problem"; standing rule: 120px between ./-prefixed
      sections, 40px between subsections within one (see below) */
-  top: 1487px;
-  width: 655px;
+  top: var(--layout-detail-283);
+  width: var(--layout-detail-53);
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   /* explicit stacking above the gradient glow, plus a frosted-glass
      treatment so the translucent fill separates from whatever's behind it
      instead of reading as flat dark-on-dark */
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 .thermal-concept-title {
-  width: 173px;
-  height: 17px;
+  width: var(--layout-detail-284);
+  height: var(--layout-detail-37);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: #f5f5f5;
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
+  color: var(--brand-color-25);
 }
 
 .thermal-concept-body {
-  width: 575px;
+  width: var(--layout-detail-285);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: #f5f5f5;
+  color: var(--brand-color-25);
 }
 
 .thermal-link {
-  color: #6ec6ff;
+  color: var(--brand-color-37);
   text-decoration: underline;
 }
 
 .thermal-link:hover {
-  color: #ff7a00;
+  color: var(--brand-color-32);
 }
 
 .thermal-concept-wordmark {
   position: absolute;
-  left: 789px;
-  top: 1568px;
-  width: 235.5px;
-  height: 90px;
+  left: var(--layout-detail-286);
+  top: var(--layout-detail-287);
+  width: var(--layout-detail-288);
+  height: var(--layout-detail-60);
   max-width: none;
   object-fit: contain;
   z-index: 2;
@@ -513,32 +513,32 @@
 
 .thermal-mockup-1 {
   position: absolute;
-  left: 22.4px;
-  top: 1818.58px;
-  width: 419.4px;
-  height: 230.4px;
+  left: var(--layout-detail-289);
+  top: var(--layout-detail-290);
+  width: var(--layout-detail-291);
+  height: var(--layout-detail-292);
   object-fit: cover;
   transform: rotate(-4.22deg);
 }
 
 .thermal-mockup-2 {
   position: absolute;
-  left: 358.91px;
-  top: 1859.54px;
-  width: 90.06px;
-  height: 186.18px;
+  left: var(--layout-detail-293);
+  top: var(--layout-detail-294);
+  width: var(--layout-detail-295);
+  height: var(--layout-detail-296);
   object-fit: cover;
 }
 
 .thermal-mockup-3 {
   box-sizing: border-box;
   position: absolute;
-  left: calc(50% - 614.4px / 2 + 239.2px);
-  top: 1752px;
-  width: 614.4px;
-  height: 337.44px;
-  background: #191818;
-  border: 1px solid rgba(245, 245, 245, 0.2);
+  left: calc(50% - var(--layout-detail-297) / 2 + var(--layout-detail-298));
+  top: var(--layout-detail-299);
+  width: var(--layout-detail-297);
+  height: var(--layout-detail-300);
+  background: var(--brand-color-29);
+  border: var(--border-width) solid var(--brand-color-38);
   object-fit: cover;
 }
 
@@ -555,84 +555,84 @@
 .thermal-concept-2-card {
   box-sizing: border-box;
   position: absolute;
-  left: calc(50% - 655px / 2 - 222.5px);
+  left: calc(50% - var(--layout-detail-53) / 2 - var(--layout-detail-301));
   /* 40px below the img-row subsection — standing rule: 40px between
      subsections within a ./-prefixed section. thermal-wheel-group shifts
      by the same amount to keep the two aligned as a row. */
-  top: 2129.44px;
-  width: 655px;
-  height: 383px;
+  top: var(--layout-detail-302);
+  width: var(--layout-detail-53);
+  height: var(--layout-detail-303);
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   /* same frosted-glass treatment as the concept card above, so this
      translucent panel separates from the page instead of blending flat */
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 .thermal-concept-2-body {
-  width: 575px;
+  width: var(--layout-detail-285);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: #f5f5f5;
+  color: var(--brand-color-25);
 }
 
 .thermal-quote {
   box-sizing: border-box;
   position: relative;
-  width: 487px;
-  height: 129px;
-  border: 1px solid #f5f5f5;
-  border-radius: 10px;
+  width: var(--layout-detail-106);
+  height: var(--layout-detail-107);
+  border: var(--border-width) solid var(--brand-color-25);
+  border-radius: var(--radius-small);
 }
 
 .thermal-quote-text {
   box-sizing: border-box;
   position: absolute;
-  left: 61px;
-  top: 32px;
-  width: 418px;
-  height: 75px;
+  left: var(--layout-detail-108);
+  top: var(--space-4);
+  width: var(--layout-detail-304);
+  height: var(--layout-detail-305);
   margin: 0;
-  padding: 20px 10px;
+  padding: var(--space-2) var(--space-1);
   display: flex;
   align-items: center;
   justify-content: center;
   text-align: center;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 .thermal-quote-mark {
   position: absolute;
-  width: 46.25px;
-  height: 39px;
+  width: var(--layout-detail-227);
+  height: var(--layout-detail-228);
   max-width: none;
 }
 
 .thermal-quote-mark-open {
-  left: 10px;
-  top: 24px;
+  left: var(--layout-detail-9);
+  top: var(--radius-large);
 }
 
 .thermal-quote-mark-close {
-  left: 438.75px;
-  top: 94px;
+  left: var(--layout-detail-230);
+  top: var(--layout-detail-306);
   transform: rotate(180deg);
 }
 
@@ -642,11 +642,11 @@
 
 .thermal-wheel-group {
   position: absolute;
-  left: 845px;
+  left: var(--layout-detail-307);
   /* shifts with .thermal-concept-2-card, see its comment */
-  top: 2166.72px;
-  width: 256px;
-  height: 242.76px;
+  top: var(--layout-detail-308);
+  width: var(--layout-detail-309);
+  height: var(--layout-detail-310);
   object-fit: contain;
   max-width: none;
   /* MP4 has no alpha channel, so true transparency isn't possible. The
@@ -665,10 +665,10 @@
 .thermal-who-for {
   box-sizing: border-box;
   position: absolute;
-  left: calc(50% - 991px / 2 + 0.5px);
+  left: calc(50% - var(--layout-detail-52) / 2 + var(--layout-detail-251));
   /* 120px below "./The Concept" section (last subsection: the quote card) */
-  top: 2632.44px;
-  width: 991px;
+  top: var(--layout-detail-256);
+  width: var(--layout-detail-52);
   /* spec's 343px assumes different line-wrapping than this renderer
      produces — sized to content so the 40px padding stays honest, same
      fix as "./The Problem" above */
@@ -677,31 +677,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 30px;
-  background: #ffffff;
-  border-radius: 10px;
+  padding: var(--space-5);
+  gap: var(--space-4);
+  background: var(--color-paper);
+  border-radius: var(--radius-small);
 }
 
 .thermal-who-for-title {
-  width: 247px;
-  height: 17px;
+  width: var(--layout-detail-311);
+  height: var(--layout-detail-37);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
+  color: var(--brand-color-10);
 }
 
 .thermal-who-for-body {
-  width: 911px;
+  width: var(--layout-detail-280);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--brand-color-10);
 }
 
 /* ============================================================================
@@ -714,66 +714,66 @@
 .thermal-design-decisions {
   box-sizing: border-box;
   position: absolute;
-  left: calc(50% - 655px / 2 + 219.5px);
+  left: calc(50% - var(--layout-detail-53) / 2 + var(--layout-detail-312));
   /* 120px below "./Who Thermal is for" — standing rule */
-  top: 3047.44px;
-  width: 655px;
+  top: var(--layout-detail-257);
+  width: var(--layout-detail-53);
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 42px 40px 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   /* same frosted-glass treatment as the other translucent cards, so it
      separates from the page instead of blending flat */
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 .thermal-design-decisions-title {
-  width: 225px;
-  height: 17px;
+  width: var(--layout-detail-120);
+  height: var(--layout-detail-37);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: #f5f5f5;
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
+  color: var(--brand-color-25);
 }
 
 .thermal-decision-item {
-  width: 575px;
+  width: var(--layout-detail-285);
   display: flex;
   flex-direction: column;
   align-items: flex-start;
-  gap: 10px;
+  gap: var(--space-1);
 }
 
 .thermal-decision-title {
-  width: 575px;
+  width: var(--layout-detail-285);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 20px;
+  font-size: var(--text-h4);
   line-height: 150%;
   text-transform: capitalize;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 .thermal-decision-body {
-  width: 575px;
+  width: var(--layout-detail-285);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: #f5f5f5;
+  color: var(--brand-color-25);
 }
 
 /* ============================================================================
@@ -789,14 +789,14 @@
 .thermal-mood-screen {
   box-sizing: border-box;
   position: absolute;
-  left: 60px;
+  left: var(--space-detail-6);
   /* 40px below ./Design Decisions — standing subsection rule */
-  top: 3330.44px;
-  width: 639px;
-  height: 366.5px;
-  background: #191818;
-  border: 1px solid rgba(245, 245, 245, 0.2);
-  border-radius: 10px;
+  top: var(--layout-detail-313);
+  width: var(--layout-detail-314);
+  height: var(--layout-detail-315);
+  background: var(--brand-color-29);
+  border: var(--border-width) solid var(--brand-color-38);
+  border-radius: var(--radius-small);
   overflow: hidden;
 }
 
@@ -808,48 +808,48 @@
 
 .thermal-mood-vector {
   position: absolute;
-  left: 440px;
-  top: 3460.94px;
-  width: 400.5px;
-  height: 206px;
+  left: var(--layout-detail-316);
+  top: var(--layout-detail-317);
+  width: var(--layout-detail-318);
+  height: var(--layout-detail-319);
   max-width: none;
 }
 
 .thermal-mood-label {
   position: absolute;
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
-  color: rgba(255, 255, 255, 0.7);
+  color: var(--brand-color-39);
 }
 
 .thermal-mood-label-1 {
-  left: 861px;
-  top: 3464.44px;
-  width: 143px;
+  left: var(--layout-detail-320);
+  top: var(--layout-detail-321);
+  width: var(--layout-detail-322);
 }
 
 .thermal-mood-label-2 {
-  left: 843px;
-  top: 3638.44px;
-  width: 187px;
+  left: var(--layout-detail-323);
+  top: var(--layout-detail-324);
+  width: var(--layout-detail-325);
 }
 
 .thermal-mood-caption {
   position: absolute;
-  left: 122px;
-  top: 3706.44px;
-  width: 539px;
+  left: var(--layout-detail-326);
+  top: var(--layout-detail-327);
+  width: var(--layout-detail-328);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 /* ============================================================================
@@ -859,53 +859,53 @@
 @media (min-width: 769px) {
   .thermal-body {
     /* 40px trailing space below "./Reflection" — the panel's last section */
-    min-height: 7908.22px;
+    min-height: var(--layout-detail-329);
   }
 }
 
 .thermal-decision-detail {
   position: absolute;
-  left: calc(50% - 655px / 2 - 222.5px);
-  top: 3767.44px;
-  width: 655px;
-  height: 202px;
+  left: calc(50% - var(--layout-detail-53) / 2 - var(--layout-detail-301));
+  top: var(--layout-detail-330);
+  width: var(--layout-detail-53);
+  height: var(--layout-detail-331);
   box-sizing: border-box;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 42px 40px 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 .thermal-decision-detail-content {
-  width: 575px;
-  height: 120px;
+  width: var(--layout-detail-285);
+  height: var(--space-detail-1);
   display: flex;
   flex: none;
   flex-direction: column;
   align-items: flex-start;
   order: 0;
-  gap: 10px;
+  gap: var(--space-1);
 }
 
 .thermal-decision-detail-content p {
-  width: 575px;
-  height: 120px;
+  width: var(--layout-detail-285);
+  height: var(--space-detail-1);
   margin: 0;
   flex: none;
   order: 0;
   flex-grow: 0;
-  color: #f5f5f5;
-  font-family: 'Be Vietnam', sans-serif;
-  font-size: 16px;
+  color: var(--brand-color-25);
+  font-family: var(--font-body);
+  font-size: var(--text-body);
   font-style: normal;
   font-weight: 400;
   line-height: 150%;
@@ -929,51 +929,51 @@
 
 .thermal-discovery-screen {
   position: absolute;
-  width: 532.19px;
-  height: 305.24px;
+  width: var(--layout-detail-332);
+  height: var(--layout-detail-333);
   box-sizing: border-box;
-  border: 1px solid rgba(245, 245, 245, 0.2);
-  border-radius: 10px;
-  background: #191818;
+  border: var(--border-width) solid var(--brand-color-38);
+  border-radius: var(--radius-small);
+  background: var(--brand-color-29);
   object-fit: cover;
 }
 
-.thermal-discovery-music { left: 30px; top: 4009.49px; }
-.thermal-discovery-artiste { left: 595.81px; top: 4012.57px; }
+.thermal-discovery-music { left: var(--layout-detail-19); top: var(--layout-detail-334); }
+.thermal-discovery-artiste { left: var(--layout-detail-335); top: var(--layout-detail-336); }
 
 .thermal-discovery-connector {
   position: absolute;
-  left: calc(50% - 651px / 2 + 0.5px);
-  top: 4329.22px;
-  width: 651px;
-  height: 53.5px;
+  left: calc(50% - var(--layout-detail-337) / 2 + var(--layout-detail-251));
+  top: var(--layout-detail-338);
+  width: var(--layout-detail-337);
+  height: var(--layout-detail-339);
 }
 
 .thermal-discovery-label,
 .thermal-discovery-caption {
   position: absolute;
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
 }
 
 .thermal-discovery-label {
-  left: calc(50% - 275px / 2 + 0.5px);
-  top: 4397.22px;
-  width: 275px;
-  height: 21px;
-  color: rgba(255, 255, 255, 0.7);
+  left: calc(50% - var(--layout-detail-340) / 2 + var(--layout-detail-251));
+  top: var(--layout-detail-341);
+  width: var(--layout-detail-340);
+  height: var(--layout-detail-11);
+  color: var(--brand-color-39);
 }
 
 .thermal-discovery-caption {
-  left: calc(50% - 636px / 2);
-  top: 4446.22px;
-  width: 636px;
-  height: 21px;
-  color: #ffffff;
+  left: calc(50% - var(--layout-detail-195) / 2);
+  top: var(--layout-detail-342);
+  width: var(--layout-detail-195);
+  height: var(--layout-detail-11);
+  color: var(--color-paper);
   text-align: center;
 }
 
@@ -986,24 +986,24 @@
   position: absolute;
   /* spec's literal +249.5px offset pushed this 3px past the panel's right
      edge; repositioned for an exact 30px right margin */
-  left: calc(50% - 655px / 2 + 221.5px);
+  left: calc(50% - var(--layout-detail-53) / 2 + var(--layout-detail-343));
   /* 40px below the discovery-subsection — standing subsection rule */
-  top: 4507.2px;
-  width: 655px;
+  top: var(--layout-detail-344);
+  width: var(--layout-detail-53);
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 42px 40px 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 /* ============================================================================
@@ -1018,33 +1018,33 @@
 .thermal-webapp-1 {
   box-sizing: border-box;
   position: absolute;
-  left: 166px;
+  left: var(--layout-detail-5);
   /* sits beside the "02" card, not below it — reference screenshot shows
      them at roughly the same vertical level (51.21px spec offset
      preserved from decision-2's corrected top) */
-  top: 4558.41px;
-  width: 235px;
-  height: 416.07px;
+  top: var(--layout-detail-345);
+  width: var(--layout-detail-346);
+  height: var(--layout-detail-347);
   object-fit: cover;
-  border-width: 1px 0 1px 1px;
+  border-width: var(--border-width) 0 var(--border-width) var(--border-width);
   border-style: solid;
-  border-color: rgba(245, 245, 245, 0.2);
-  border-radius: 10px 0 0 10px;
+  border-color: var(--brand-color-38);
+  border-radius: var(--radius-small) 0 0 var(--radius-small);
 }
 
 .thermal-webapp-caption {
   position: absolute;
-  left: 427px;
-  top: 4940.2px;
-  width: 549px;
-  height: 21px;
+  left: var(--layout-detail-348);
+  top: var(--layout-detail-349);
+  width: var(--layout-detail-350);
+  height: var(--layout-detail-11);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 /* ============================================================================
@@ -1059,24 +1059,24 @@
   position: absolute;
   /* spec's literal -252.5px offset left it flush against the panel's
      left edge (0px margin) — repositioned for an exact 30px left margin */
-  left: calc(50% - 655px / 2 - 221.5px);
+  left: calc(50% - var(--layout-detail-53) / 2 - var(--layout-detail-343));
   /* 40px below .thermal-webapp-group — standing subsection rule */
-  top: 5014.47px;
-  width: 655px;
+  top: var(--layout-detail-351);
+  width: var(--layout-detail-53);
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 42px 40px 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 .thermal-artiste-group {
@@ -1095,31 +1095,31 @@
   /* card(655) + image(444.4) leaves only 1098px between two 30px margins
      — 1.4px short, causing a hairline overlap. Nudged right for a clean
      20px gap after the card instead. */
-  left: 705px;
-  top: 5140.01px;
-  width: 444.4px;
-  height: 185.9px;
+  left: var(--layout-detail-352);
+  top: var(--layout-detail-353);
+  width: var(--layout-detail-354);
+  height: var(--layout-detail-355);
   object-fit: cover;
-  border-width: 1.1px 0 1.1px 1.1px;
+  border-width: var(--layout-detail-356) 0 var(--layout-detail-356) var(--layout-detail-356);
   border-style: solid;
-  border-color: rgba(245, 245, 245, 0.2);
-  border-radius: 11px 0 0 11px;
+  border-color: var(--brand-color-38);
+  border-radius: var(--radius-medium) 0 0 var(--radius-medium);
 }
 
 .thermal-artiste-caption {
   position: absolute;
-  left: 729.21px;
-  top: 5338.47px;
-  width: 400px;
-  height: 42px;
+  left: var(--layout-detail-358);
+  top: var(--layout-detail-359);
+  width: var(--layout-detail-360);
+  height: var(--space-detail-29);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
   text-align: center;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 /* ============================================================================
@@ -1132,24 +1132,24 @@
   position: absolute;
   /* spec's literal +254.5px offset pushed this 3px past the panel's right
      edge; repositioned for an exact 30px right margin, same fix as "02" */
-  left: calc(50% - 655px / 2 + 221.5px);
+  left: calc(50% - var(--layout-detail-53) / 2 + var(--layout-detail-343));
   /* 40px below .thermal-artiste-group — standing subsection rule */
-  top: 5420.47px;
-  width: 655px;
+  top: var(--layout-detail-361);
+  width: var(--layout-detail-53);
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 42px 40px 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 .thermal-waveform-group {
@@ -1161,27 +1161,27 @@
   position: absolute;
   /* shifted -55px along with the caption, so the group's left edge sits
      exactly 30px from the panel margin (was 85px) */
-  left: 118.13px;
+  left: var(--layout-detail-362);
   /* sits beside the "04" card — spec's relative offset preserved */
-  top: 5552.38px;
-  width: 262.24px;
-  height: 136.69px;
+  top: var(--layout-detail-363);
+  width: var(--layout-detail-364);
+  height: var(--layout-detail-365);
   object-fit: contain;
 }
 
 .thermal-waveform-caption {
   position: absolute;
-  left: 30px;
-  top: 5721.47px;
-  width: 435px;
-  height: 21px;
+  left: var(--layout-detail-19);
+  top: var(--layout-detail-366);
+  width: var(--layout-detail-367);
+  height: var(--layout-detail-11);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 /* ============================================================================
@@ -1194,24 +1194,24 @@
   /* spec's literal -252.5px offset left it flush against the panel's
      left edge — repositioned for an exact 30px left margin, same fix as
      "03" */
-  left: calc(50% - 655px / 2 - 221.5px);
+  left: calc(50% - var(--layout-detail-53) / 2 - var(--layout-detail-343));
   /* 40px below .thermal-waveform-group — standing subsection rule */
-  top: 5782.47px;
-  width: 655px;
+  top: var(--layout-detail-368);
+  width: var(--layout-detail-53);
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 42px 40px 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 /* ============================================================================
@@ -1228,14 +1228,14 @@
   position: absolute;
   /* spec's literal +239.06px offset left only 0.9px right margin —
      repositioned for an exact 30px right margin */
-  left: calc(50% - 678.12px / 2 + 209.94px);
+  left: calc(50% - var(--layout-detail-369) / 2 + var(--layout-detail-370));
   /* 40px below "05" — standing subsection rule */
-  top: 6114.47px;
-  width: 678.12px;
-  height: 388.94px;
+  top: var(--layout-detail-371);
+  width: var(--layout-detail-369);
+  height: var(--layout-detail-372);
   object-fit: cover;
-  border: 1.06px solid rgba(245, 245, 245, 0.2);
-  border-radius: 10.61px;
+  border: var(--layout-detail-373) solid var(--brand-color-38);
+  border-radius: var(--radius-medium);
 }
 
 .thermal-results-2 {
@@ -1243,28 +1243,28 @@
   position: absolute;
   /* spec's literal -357px offset gave 49px left margin — repositioned
      for an exact 30px left margin, matching .thermal-results-1's fix */
-  left: calc(50% - 346px / 2 - 376px);
-  top: 6297.14px;
-  width: 346px;
-  height: 52px;
+  left: calc(50% - var(--layout-detail-194) / 2 - var(--layout-detail-375));
+  top: var(--layout-detail-376);
+  width: var(--layout-detail-194);
+  height: var(--layout-detail-22);
   object-fit: cover;
-  border: 1px solid rgba(245, 245, 245, 0.2);
-  border-radius: 10px;
+  border: var(--border-width) solid var(--brand-color-38);
+  border-radius: var(--radius-small);
 }
 
 .thermal-results-caption {
   position: absolute;
-  left: calc(50% - 674px / 2 - 202px);
-  top: 6524.14px;
-  width: 674px;
-  height: 21px;
+  left: calc(50% - var(--layout-detail-377) / 2 - var(--layout-detail-331));
+  top: var(--layout-detail-378);
+  width: var(--layout-detail-377);
+  height: var(--layout-detail-11);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-style: italic;
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 /* ============================================================================
@@ -1277,24 +1277,24 @@
   /* spec's literal +254.5px offset overflows the panel's right edge by
      3px, same recurring issue as "02"/"04" — repositioned for an exact
      30px right margin */
-  left: calc(50% - 655px / 2 + 221.5px);
+  left: calc(50% - var(--layout-detail-53) / 2 + var(--layout-detail-343));
   /* 40px below .thermal-results-group — standing subsection rule */
-  top: 6585.14px;
-  width: 655px;
+  top: var(--layout-detail-379);
+  width: var(--layout-detail-53);
   height: auto;
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 42px 40px 40px;
-  gap: 30px;
-  background: rgba(25, 24, 24, 0.4);
-  border-radius: 10px;
+  padding: var(--space-5) var(--space-5) var(--space-5);
+  gap: var(--space-4);
+  background: var(--brand-color-36);
+  border-radius: var(--radius-small);
   z-index: 2;
-  border: 1px solid rgba(255, 255, 255, 0.08);
-  box-shadow: 0 8px 32px rgba(0, 0, 0, 0.35);
-  backdrop-filter: blur(24px);
-  -webkit-backdrop-filter: blur(24px);
+  border: var(--border-width) solid var(--brand-color-12);
+  box-shadow: 0 var(--radius-small) var(--space-4) var(--brand-color-13);
+  backdrop-filter: blur(var(--radius-large));
+  -webkit-backdrop-filter: blur(var(--radius-large));
 }
 
 /* ============================================================================
@@ -1312,41 +1312,41 @@
   box-sizing: border-box;
   position: absolute;
   object-fit: cover;
-  border: 1px solid rgba(245, 245, 245, 0.2);
-  border-radius: 10px;
+  border: var(--border-width) solid var(--brand-color-38);
+  border-radius: var(--radius-small);
   /* spec's literal 63px left margin nudged to an exact 30px, matching
      the page's standing margin convention */
-  left: 30px;
-  top: 7164.5px;
-  width: 307.2px;
-  height: 168.72px;
+  left: var(--layout-detail-19);
+  top: var(--layout-detail-380);
+  width: var(--layout-detail-381);
+  height: var(--layout-detail-382);
 }
 
 .thermal-closing-mood {
   box-sizing: border-box;
   position: absolute;
   object-fit: cover;
-  border: 1px solid rgba(245, 245, 245, 0.2);
-  border-radius: 10px;
-  left: 296px;
-  top: 7011.5px;
-  width: 511.2px;
-  height: 293.2px;
+  border: var(--border-width) solid var(--brand-color-38);
+  border-radius: var(--radius-small);
+  left: var(--layout-detail-383);
+  top: var(--layout-detail-384);
+  width: var(--layout-detail-385);
+  height: var(--layout-detail-386);
 }
 
 .thermal-closing-results {
   box-sizing: border-box;
   position: absolute;
   object-fit: cover;
-  border: 1px solid rgba(245, 245, 245, 0.2);
-  border-radius: 10px;
+  border: var(--border-width) solid var(--brand-color-38);
+  border-radius: var(--radius-small);
   /* spec's literal 583px left overflowed the panel's right edge by 64px
      — repositioned for an exact 30px right margin. Top: 40px below
      .thermal-decision-6 (this is the topmost of the three) */
-  left: 489px;
-  top: 6844.5px;
-  width: 639px;
-  height: 366.5px;
+  left: var(--layout-detail-387);
+  top: var(--layout-detail-388);
+  width: var(--layout-detail-314);
+  height: var(--layout-detail-315);
 }
 
 /* ============================================================================
@@ -1356,10 +1356,10 @@
 .thermal-reflection {
   box-sizing: border-box;
   position: absolute;
-  left: calc(50% - 991px / 2 + 11.5px);
+  left: calc(50% - var(--layout-detail-52) / 2 + var(--layout-detail-389));
   /* 120px below the closing image cascade — standing ./-section rule */
-  top: 7453.22px;
-  width: 991px;
+  top: var(--layout-detail-258);
+  width: var(--layout-detail-52);
   /* spec's 487px assumes different line-wrapping than this renderer
      produces — sized to content, same fix as "./The Problem" */
   height: auto;
@@ -1367,31 +1367,31 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  padding: 40px;
-  gap: 30px;
-  background: #ffffff;
-  border-radius: 10px;
+  padding: var(--space-5);
+  gap: var(--space-4);
+  background: var(--color-paper);
+  border-radius: var(--radius-small);
 }
 
 .thermal-reflection-title {
-  width: 140px;
-  height: 17px;
+  width: var(--space-detail-15);
+  height: var(--layout-detail-37);
   margin: 0;
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
-  color: rgba(0, 0, 0, 0.7);
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
+  color: var(--brand-color-10);
 }
 
 .thermal-reflection-body {
-  width: 911px;
+  width: var(--layout-detail-280);
   margin: 0;
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: rgba(0, 0, 0, 0.7);
+  color: var(--brand-color-10);
 }
 
 /* ============================================================================
@@ -1403,59 +1403,59 @@
   flex-direction: column;
   align-items: center;
   width: 100%;
-  padding: 60px 40px;
+  padding: var(--space-8) var(--space-5);
   box-sizing: border-box;
 }
 
 .thermal-next-label {
-  font-family: 'Be Vietnam', sans-serif;
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 14px;
+  font-size: var(--text-small);
   line-height: 150%;
-  color: #c2beba;
-  margin-bottom: 20px;
+  color: var(--color-text-secondary);
+  margin-bottom: var(--space-2);
 }
 
 .thermal-next-card {
   display: flex;
   align-items: center;
-  gap: 20px;
-  max-width: 500px;
-  padding: 12px;
-  border-radius: 10px;
-  transition: background-color 0.3s ease;
+  gap: var(--space-2);
+  max-width: var(--layout-detail-59);
+  padding: var(--space-1);
+  border-radius: var(--radius-small);
+  transition: none;
 }
 
 .thermal-next-case:hover .thermal-next-card {
-  background-color: rgba(243, 238, 232, 0.06);
+  background-color: var(--brand-color-20);
 }
 
 .thermal-next-image {
-  width: 90px;
-  height: 70px;
+  width: var(--layout-detail-60);
+  height: var(--space-detail-2);
   object-fit: cover;
-  border-radius: 8px;
+  border-radius: var(--radius-small);
   flex: none;
 }
 
 .thermal-next-title {
-  font-family: 'Poppins', sans-serif;
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 1.4;
   text-transform: capitalize;
-  color: #f3eee8;
+  color: var(--color-text-primary);
 }
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .thermal-decision-detail {
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
   }
 
   .thermal-decision-detail-content,
@@ -1473,8 +1473,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    padding: 0 30px 60px;
+    gap: var(--space-3);
+    padding: 0 var(--space-4) var(--space-8);
     box-sizing: border-box;
   }
 
@@ -1489,12 +1489,12 @@
 
   .thermal-discovery-screen {
     width: 100%;
-    max-width: 562.32px;
+    max-width: var(--layout-detail-390);
     height: auto;
     aspect-ratio: 562.32 / 322.52;
   }
 
-  .thermal-discovery-connector { width: min(100%, 651px); height: auto; }
+  .thermal-discovery-connector { width: min(100%, var(--layout-detail-337)); height: auto; }
   .thermal-discovery-label,
   .thermal-discovery-caption { width: 100%; height: auto; text-align: center; }
 }
@@ -1507,36 +1507,36 @@
   align-items: center;
   justify-content: center;
   text-align: center;
-  padding: 8px;
+  padding: var(--space-1);
   background: linear-gradient(
     135deg,
-    rgba(255, 122, 0, 0.15),
-    rgba(110, 198, 255, 0.15)
+    var(--brand-color-40),
+    var(--brand-color-41)
   );
-  border: 1px dashed rgba(255, 122, 0, 0.5);
-  font-family: 'Be Vietnam', sans-serif;
-  font-size: 11px;
-  color: #928f8b;
+  border: var(--border-width) dashed var(--brand-color-42);
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  color: var(--color-text-secondary);
 }
 
 /* ============================================================================
    RESPONSIVE - MOBILE
    ============================================================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .thermal-page {
-    padding-top: 60px;
+    padding-top: var(--space-8);
   }
 
   .thermal-topbar {
-    padding: 24px 10px 0;
+    padding: var(--space-3) var(--space-1) 0;
   }
 
   /* matches Guidely's panel width convention (10px inset from the
      viewport) — individual sections below keep their own 30px insets
      from the panel edge independently of this */
   .thermal-body {
-    width: calc(100% - 20px);
+    width: calc(100% - var(--space-detail-3));
     min-height: 0;
     margin: 0 auto;
   }
@@ -1550,8 +1550,8 @@
     display: grid;
     grid-template-columns: 1fr 1fr;
     align-items: center;
-    padding: 20px;
-    gap: 20px;
+    padding: var(--space-2);
+    gap: var(--space-2);
   }
 
   .thermal-meta-item,
@@ -1611,7 +1611,7 @@
 
   .thermal-hero {
     height: auto;
-    padding: 30px 30px 60px;
+    padding: var(--space-4) var(--space-4) var(--space-8);
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
@@ -1622,10 +1622,10 @@
     position: relative;
     left: auto;
     top: auto;
-    width: 233.1px;
+    width: var(--layout-detail-268);
     max-width: 100%;
     height: auto;
-    margin-bottom: 40px;
+    margin-bottom: var(--space-5);
   }
 
   .thermal-hero-card-img {
@@ -1650,30 +1650,30 @@
     top: auto;
     width: 100%;
     height: auto;
-    padding: 0 30px;
-    margin: 60px 0;
+    padding: 0 var(--space-4);
+    margin: var(--space-8) 0;
     box-sizing: border-box;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .thermal-problem {
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--space-2);
   }
 
   .thermal-problem-title {
     width: 100%;
     height: auto;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .thermal-problem-body {
@@ -1685,19 +1685,19 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 40px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-5);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--space-2);
   }
 
   .thermal-concept-title {
     width: 100%;
     height: auto;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .thermal-concept-body {
@@ -1709,17 +1709,17 @@
     left: auto;
     top: auto;
     display: block;
-    width: 180px;
+    width: var(--layout-detail-46);
     height: auto;
-    margin: 0 auto 60px;
+    margin: 0 auto var(--space-8);
   }
 
   .thermal-img-row {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 24px;
-    padding: 0 30px 60px;
+    gap: var(--space-3);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-mockup-1,
@@ -1733,20 +1733,20 @@
 
   .thermal-mockup-3 {
     width: 100%;
-    max-width: 420px;
+    max-width: var(--layout-detail-391);
     height: auto;
     aspect-ratio: 614.4 / 337.44;
   }
 
   .thermal-mockup-1 {
     width: 100%;
-    max-width: 320px;
+    max-width: var(--layout-detail-247);
     height: auto;
     aspect-ratio: 419.4 / 230.4;
   }
 
   .thermal-mockup-2 {
-    width: 140px;
+    width: var(--space-detail-15);
     height: auto;
     aspect-ratio: 90.06 / 186.18;
   }
@@ -1760,8 +1760,8 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 40px;
-    padding: 0 30px 60px;
+    gap: var(--space-5);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-concept-2-card {
@@ -1770,8 +1770,8 @@
     top: auto;
     width: 100%;
     height: auto;
-    padding: 24px 20px;
-    gap: 16px;
+    padding: var(--space-3) var(--space-2);
+    gap: var(--space-2);
   }
 
   .thermal-concept-2-body {
@@ -1781,36 +1781,36 @@
   .thermal-quote {
     width: 100%;
     height: auto;
-    min-height: 129px;
+    min-height: var(--layout-detail-107);
   }
 
   .thermal-quote-text {
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 24px auto;
-    font-size: 14px;
+    margin: var(--space-3) auto;
+    font-size: var(--text-small);
   }
 
   .thermal-quote-mark-open {
-    left: 10px;
-    top: 12px;
+    left: var(--layout-detail-9);
+    top: var(--space-detail-8);
   }
 
   .thermal-quote-mark-close {
     left: auto;
-    right: 10px;
+    right: var(--layout-detail-9);
     top: auto;
-    bottom: 12px;
+    bottom: var(--space-detail-8);
   }
 
   .thermal-wheel-group {
     position: relative;
     left: auto;
     top: auto;
-    width: 220px;
+    width: var(--layout-detail-164);
     height: auto;
     aspect-ratio: 256 / 242.76;
     margin: 0 auto;
@@ -1820,19 +1820,19 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 60px auto;
-    padding: 24px 20px;
+    margin: var(--space-8) auto;
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--space-2);
   }
 
   .thermal-who-for-title {
     width: 100%;
     height: auto;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .thermal-who-for-body {
@@ -1843,19 +1843,19 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 24px;
+    gap: var(--space-3);
   }
 
   .thermal-design-decisions-title {
     width: 100%;
     height: auto;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .thermal-decision-item {
@@ -1864,7 +1864,7 @@
 
   .thermal-decision-title {
     width: 100%;
-    font-size: 18px;
+    font-size: var(--text-lead);
   }
 
   .thermal-decision-body {
@@ -1875,20 +1875,20 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 24px;
+    gap: var(--space-3);
   }
 
   .thermal-webapp-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 0 30px 60px;
+    gap: var(--space-2);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-webapp-1 {
@@ -1896,10 +1896,10 @@
     left: auto;
     top: auto;
     width: 100%;
-    max-width: 235px;
+    max-width: var(--layout-detail-346);
     height: auto;
     aspect-ratio: 235 / 416.07;
-    border-radius: 10px;
+    border-radius: var(--radius-small);
   }
 
   .thermal-webapp-caption {
@@ -1915,20 +1915,20 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 24px;
+    gap: var(--space-3);
   }
 
   .thermal-artiste-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 0 30px 60px;
+    gap: var(--space-2);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-artiste-popular {
@@ -1936,10 +1936,10 @@
     left: auto;
     top: auto;
     width: 100%;
-    max-width: 444.4px;
+    max-width: var(--layout-detail-354);
     height: auto;
     aspect-ratio: 444.4 / 185.9;
-    border-radius: 10px;
+    border-radius: var(--radius-small);
   }
 
   .thermal-artiste-caption {
@@ -1955,27 +1955,27 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 24px;
+    gap: var(--space-3);
   }
 
   .thermal-waveform-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 0 30px 60px;
+    gap: var(--space-2);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-waveform-img {
     position: relative;
     left: auto;
     top: auto;
-    width: 262.24px;
+    width: var(--layout-detail-364);
     max-width: 100%;
     height: auto;
     aspect-ratio: 262.24 / 136.69;
@@ -1994,20 +1994,20 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 24px;
+    gap: var(--space-3);
   }
 
   .thermal-results-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 0 30px 60px;
+    gap: var(--space-2);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-results-1 {
@@ -2015,7 +2015,7 @@
     left: auto;
     top: auto;
     width: 100%;
-    max-width: 678.12px;
+    max-width: var(--layout-detail-369);
     height: auto;
     aspect-ratio: 678.12 / 388.94;
   }
@@ -2025,7 +2025,7 @@
     left: auto;
     top: auto;
     width: 100%;
-    max-width: 346px;
+    max-width: var(--layout-detail-194);
     height: auto;
     aspect-ratio: 346 / 52;
   }
@@ -2043,20 +2043,20 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 0 auto 60px;
-    padding: 24px 20px;
+    margin: 0 auto var(--space-8);
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 24px;
+    gap: var(--space-3);
   }
 
   .thermal-closing-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 0 30px 60px;
+    gap: var(--space-2);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-closing-hero,
@@ -2070,17 +2070,17 @@
   }
 
   .thermal-closing-hero {
-    max-width: 307.2px;
+    max-width: var(--layout-detail-381);
     aspect-ratio: 307.2 / 168.72;
   }
 
   .thermal-closing-mood {
-    max-width: 511.2px;
+    max-width: var(--layout-detail-385);
     aspect-ratio: 511.2 / 293.2;
   }
 
   .thermal-closing-results {
-    max-width: 639px;
+    max-width: var(--layout-detail-314);
     aspect-ratio: 639 / 366.5;
   }
 
@@ -2088,19 +2088,19 @@
     position: relative;
     left: auto;
     top: auto;
-    width: calc(100% - 60px);
+    width: calc(100% - var(--space-detail-6));
     height: auto;
-    margin: 60px auto;
-    padding: 24px 20px;
+    margin: var(--space-8) auto;
+    padding: var(--space-3) var(--space-2);
     align-items: flex-start;
-    gap: 16px;
+    gap: var(--space-2);
   }
 
   .thermal-reflection-title {
     width: 100%;
     height: auto;
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .thermal-reflection-body {
@@ -2108,28 +2108,28 @@
   }
 
   .thermal-next-case {
-    padding: 40px 20px;
+    padding: var(--space-5) var(--space-2);
   }
 
   .thermal-next-card {
-    gap: 14px;
+    gap: var(--space-2);
   }
 
   .thermal-next-image {
-    width: 64px;
-    height: 50px;
+    width: var(--space-8);
+    height: var(--space-detail-9);
   }
 
   .thermal-next-title {
-    font-size: 14px;
+    font-size: var(--text-small);
   }
 
   .thermal-mood-group {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 16px;
-    padding: 0 30px 60px;
+    gap: var(--space-2);
+    padding: 0 var(--space-4) var(--space-8);
   }
 
   .thermal-mood-screen {
@@ -2160,18 +2160,22 @@
   .thermal-hero-eyebrow {
     width: 100%;
     height: auto;
-    font-size: 16px;
-    line-height: 24px;
+    font-size: var(--text-body);
+    line-height: var(--radius-large);
   }
 
   .thermal-hero-heading {
     width: 100%;
     height: auto;
-    font-size: 24px;
-    line-height: 36px;
+    font-size: var(--text-title);
+    line-height: var(--layout-detail-4);
   }
 
   .thermal-hero-btn {
     align-items: center;
   }
 }
+
+.thermal-page {padding-top: var(--header-height);}
+.thermal-hero-btn {color: var(--color-ink); min-height: var(--space-6);}
+#thermal-problem {scroll-margin-top: var(--space-3);}

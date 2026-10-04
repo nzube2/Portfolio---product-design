@@ -5,15 +5,15 @@
 .experience-section {
   position: relative;
   z-index: 3;
-  width: 1200px;
+  width: var(--container);
   max-width: 100%;
-  min-height: 594px;
+  min-height: var(--layout-detail-1);
   box-sizing: border-box;
-  background-color: #1B1512;
-  border-radius: 15px;
-  padding: 40px;
-  margin: 120px auto 0;
-  scroll-margin-top: 70px;
+  background-color: var(--color-bg);
+  border-radius: var(--radius-medium);
+  padding: var(--space-5);
+  margin: var(--space-16) auto 0;
+  scroll-margin-top: var(--space-detail-2);
   opacity: 0;
   transition: opacity 0.6s ease-out;
 }
@@ -36,14 +36,14 @@
 .exp-heading-pill {
   position: absolute;
   left: 50%;
-  top: 40px;
+  top: var(--space-5);
   transform: translateX(-50%);
   width: fit-content;
-  height: 63px;
+  height: var(--layout-detail-3);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  padding: 0 20px;
+  padding: 0 var(--space-2);
 }
 
 .exp-heading-pill-border {
@@ -57,12 +57,12 @@
 .exp-heading-pill span {
   position: relative;
   z-index: 1;
-  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
   text-transform: capitalize;
-  color: #f3eee8;
+  color: var(--color-text-primary);
 }
 
 /* ============================================================================
@@ -71,46 +71,46 @@
 
 .exp-card {
   position: absolute;
-  left: 166px;
-  top: 163px;
-  width: 868px;
-  height: 391px;
+  left: var(--layout-detail-5);
+  top: var(--layout-detail-6);
+  width: var(--layout-detail-7);
+  height: var(--layout-detail-8);
   box-sizing: border-box;
-  background-color: #16110E;
-  border-left: 1px solid #f3eee8;
-  border-radius: 10px;
+  background-color: var(--color-bg);
+  border-left: var(--border-width) solid var(--color-text-primary);
+  border-radius: var(--radius-small);
 }
 
 .exp-github-link {
   position: absolute;
-  left: 40px;
-  top: 40px;
-  width: 65px;
-  height: 21px;
-  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
-  color: #C2BEBA;
-  transition: color 0.3s ease;
+  left: var(--space-5);
+  top: var(--space-5);
+  width: var(--layout-detail-10);
+  height: var(--layout-detail-11);
+  font-family: var(--font-body);
+  color: var(--color-text-secondary);
+  transition: none;
 }
 
 .exp-github-link:hover {
-  color: #f3eee8;
+  color: var(--color-text-primary);
 }
 
 .exp-github-icon {
   position: absolute;
   left: 0;
-  top: 5px;
-  width: 16px;
-  height: 16px;
+  top: var(--layout-detail-12);
+  width: var(--reveal-distance);
+  height: var(--reveal-distance);
 }
 
 .exp-github-link span {
   position: absolute;
-  left: 21px;
+  left: var(--layout-detail-11);
   top: 0;
-  width: 44px;
-  height: 21px;
-  font-size: 14px;
+  width: var(--layout-detail-13);
+  height: var(--layout-detail-11);
+  font-size: var(--text-small);
   line-height: 150%;
   text-decoration-line: underline;
 }
@@ -118,179 +118,179 @@
 .exp-prototype-link {
   position: absolute;
   /* sits beside the github link: its left (40) + width (65) + 20px gap */
-  left: 125px;
-  top: 40px;
-  width: 80px;
-  height: 21px;
-  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
-  color: #c2beba;
-  transition: color 0.3s ease;
+  left: var(--layout-detail-14);
+  top: var(--space-5);
+  width: var(--header-height);
+  height: var(--layout-detail-11);
+  font-family: var(--font-body);
+  color: var(--color-text-secondary);
+  transition: none;
 }
 
 .exp-prototype-link:hover {
-  color: #f3eee8;
+  color: var(--color-text-primary);
 }
 
 .exp-prototype-icon {
   position: absolute;
   left: 0;
-  top: 5px;
-  width: 16px;
-  height: 16px;
+  top: var(--layout-detail-12);
+  width: var(--reveal-distance);
+  height: var(--reveal-distance);
 }
 
 .exp-prototype-link span {
   position: absolute;
-  left: 21px;
+  left: var(--layout-detail-11);
   top: 0;
-  width: 59px;
-  height: 21px;
-  font-size: 14px;
+  width: var(--layout-detail-15);
+  height: var(--layout-detail-11);
+  font-size: var(--text-small);
   line-height: 150%;
   text-decoration-line: underline;
 }
 
 .exp-title {
   position: absolute;
-  left: 40px;
-  top: 71px;
-  width: 788px;
-  height: 40px;
+  left: var(--space-5);
+  top: var(--layout-detail-16);
+  width: var(--layout-detail-17);
+  height: var(--space-5);
   margin: 0;
-  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 20px;
-  line-height: 40px;
+  font-size: var(--text-h4);
+  line-height: var(--space-5);
   text-transform: capitalize;
-  color: #ffffff;
+  color: var(--color-paper);
 }
 
 .exp-dates {
   position: absolute;
-  left: 40px;
-  top: 112px;
-  width: 788px;
-  height: 30px;
+  left: var(--space-5);
+  top: var(--layout-detail-18);
+  width: var(--layout-detail-17);
+  height: var(--layout-detail-19);
   margin: 0;
-  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  line-height: 40px;
+  font-size: var(--text-small);
+  line-height: var(--space-5);
   text-transform: capitalize;
-  color: #C2BEBA;
+  color: var(--color-text-secondary);
 }
 
 .exp-details {
   position: absolute;
-  top: 161px;
-  width: 152px;
-  height: 52px;
+  top: var(--layout-detail-20);
+  width: var(--layout-detail-21);
+  height: var(--layout-detail-22);
 }
 
 .exp-details-1 {
-  left: 40px;
+  left: var(--space-5);
 }
 
 .exp-details-3 {
-  left: 215px;
+  left: var(--layout-detail-23);
 }
 
 .exp-meta-icon {
   position: absolute;
   left: 0;
-  top: 14px;
-  width: 20px;
-  height: 20px;
-  color: #f3eee8;
+  top: var(--type-1);
+  width: var(--space-detail-3);
+  height: var(--space-detail-3);
+  color: var(--color-text-primary);
 }
 
 .exp-meta-text {
   position: absolute;
-  left: 40.25px;
-  top: 0.75px;
+  left: var(--layout-detail-24);
+  top: var(--layout-detail-25);
   display: flex;
   flex-direction: column;
 }
 
 .exp-details-1 .exp-meta-text {
-  width: 103px;
-  height: 40px;
+  width: var(--layout-detail-26);
+  height: var(--space-5);
 }
 
 .exp-details-3 .exp-meta-text {
-  width: 58px;
-  height: 40px;
+  width: var(--layout-detail-27);
+  height: var(--space-5);
 }
 
 .exp-meta-label {
-  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--text-small);
+  line-height: var(--space-detail-3);
   text-align: left;
-  color: #C2BEBA;
+  color: var(--color-text-secondary);
 }
 
 .exp-meta-value {
-  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
+  font-family: var(--font-body);
   font-weight: 400;
-  font-size: 14px;
-  line-height: 20px;
+  font-size: var(--text-small);
+  line-height: var(--space-detail-3);
   text-align: left;
-  color: #f3eee8;
+  color: var(--color-text-primary);
 }
 
 .exp-what-label {
   position: absolute;
-  left: 40px;
-  top: 223px;
-  width: 70px;
-  height: 20px;
+  left: var(--space-5);
+  top: var(--layout-detail-28);
+  width: var(--space-detail-2);
+  height: var(--space-detail-3);
   white-space: nowrap;
-  font-family: var(--font-nav, 'Be Vietnam', sans-serif);
-  font-size: 14px;
-  line-height: 16px;
+  font-family: var(--font-body);
+  font-size: var(--text-small);
+  line-height: var(--reveal-distance);
   text-transform: capitalize;
-  color: #C2BEBA;
+  color: var(--color-text-secondary);
 }
 
 .exp-what-list {
   position: absolute;
-  left: 40px;
-  top: 246px;
-  width: 788px;
-  min-height: 105px;
+  left: var(--space-5);
+  top: var(--layout-detail-29);
+  width: var(--layout-detail-17);
+  min-height: var(--layout-detail-30);
   margin: 0;
   padding: 0;
   list-style: none;
 }
 
 .exp-what-list li {
-  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 16px;
+  font-size: var(--text-body);
   line-height: 150%;
-  color: #f3eee8;
-  text-indent: -1em;
-  padding-left: 1em;
+  color: var(--color-text-primary);
+  text-indent: var(--layout-detail-31);
+  padding-left: var(--space-detail-4);
 }
 
 .exp-what-list li + li {
-  margin-top: 4px;
+  margin-top: var(--space-1);
 }
 
 /* ============================================================================
    RESPONSIVE - MOBILE
    ============================================================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .experience-section {
-    width: calc(100% - 20px);
+    width: calc(100% - var(--space-detail-3));
     min-height: 0;
     height: auto;
-    padding: 30px 20px;
-    margin: 60px auto 0;
-    scroll-margin-top: 60px;
+    padding: var(--space-4) var(--space-2);
+    margin: var(--space-8) auto 0;
+    scroll-margin-top: var(--space-detail-6);
   }
 
   .exp-heading-pill {
@@ -298,12 +298,12 @@
     left: auto;
     top: auto;
     transform: none;
-    margin: 0 auto 24px;
+    margin: 0 auto var(--space-3);
   }
 
   .exp-heading-pill span {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .exp-card {
@@ -312,10 +312,10 @@
     top: auto;
     width: 100%;
     height: auto;
-    padding: 24px;
+    padding: var(--space-3);
     display: flex;
     flex-direction: column;
-    gap: 16px;
+    gap: var(--space-2);
   }
 
   .exp-github-link {
@@ -326,7 +326,7 @@
     height: auto;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--space-1);
   }
 
   .exp-github-icon {
@@ -348,7 +348,7 @@
     flex-direction: row;
     align-items: center;
     flex-wrap: wrap;
-    gap: 20px;
+    gap: var(--space-2);
   }
 
   .exp-prototype-link {
@@ -359,7 +359,7 @@
     height: auto;
     display: inline-flex;
     align-items: center;
-    gap: 6px;
+    gap: var(--space-1);
   }
 
   .exp-prototype-icon {
@@ -382,7 +382,7 @@
     top: auto;
     width: 100%;
     height: auto;
-    font-size: 18px;
+    font-size: var(--text-lead);
     line-height: 1.4;
   }
 
@@ -398,7 +398,7 @@
   .exp-details-row {
     display: flex;
     flex-wrap: wrap;
-    gap: 24px;
+    gap: var(--space-3);
   }
 
   .exp-details {
@@ -409,7 +409,7 @@
     height: auto;
     display: flex;
     align-items: flex-start;
-    gap: 8px;
+    gap: var(--space-1);
   }
 
   .exp-meta-icon {
@@ -443,6 +443,6 @@
   }
 
   .exp-what-list li {
-    font-size: 14px;
+    font-size: var(--text-small);
   }
 }

@@ -1,0 +1,53 @@
+@keyframes enter {
+  from {
+    opacity: 0;
+    transform: translateY(var(--reveal-distance));
+  }
+  to {
+    opacity: 1;
+    transform: none;
+  }
+}
+.hero-eyebrow,
+.display-text,
+.hero-subhead,
+.cta-buttons {
+  animation: enter var(--motion-enter) var(--ease-out) both;
+}
+.display-text {
+  animation-delay: 80ms;
+}
+.hero-subhead {
+  animation-delay: 160ms;
+}
+.cta-buttons {
+  animation-delay: 240ms;
+}
+[data-reveal] {
+  transition:
+    opacity var(--motion-enter) var(--ease-out),
+    transform var(--motion-enter) var(--ease-out);
+}
+.reveal-pending {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+}
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+  *,
+  *::before,
+  *::after {
+    animation: none !important;
+    transition: none !important;
+  }
+  .reveal-pending,
+  .sk-reveal,
+  .more-works-reveal,
+  .about-section,
+  .experience-section {
+    opacity: 1 !important;
+    transform: none !important;
+  }
+}

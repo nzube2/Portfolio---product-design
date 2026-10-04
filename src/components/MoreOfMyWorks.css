@@ -4,13 +4,13 @@
 
 .more-works-section {
   width: 100%;
-  background-color: #1b1512;
-  padding: 40px;
-  margin-top: 120px;
+  background-color: var(--color-bg);
+  padding: var(--space-5);
+  margin-top: var(--space-16);
   display: flex;
   flex-direction: column;
   align-items: center;
-  scroll-margin-top: 70px;
+  scroll-margin-top: var(--space-detail-2);
 }
 
 /* ============================================================================
@@ -19,7 +19,7 @@
 
 .more-works-reveal {
   opacity: 0;
-  transform: translateY(40px);
+  transform: translateY(var(--space-5));
   transition: opacity 0.6s ease-out,
     transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
   will-change: transform, opacity;
@@ -45,13 +45,13 @@
 .more-works-pill {
   position: relative;
   width: fit-content;
-  height: 63px;
+  height: var(--layout-detail-3);
   display: flex;
   align-items: center;
   justify-content: flex-start;
-  gap: 8px;
-  padding: 0 20px;
-  margin: 0 0 60px;
+  gap: var(--space-1);
+  padding: 0 var(--space-2);
+  margin: 0 0 var(--space-8);
 }
 
 .more-works-pill-border {
@@ -65,12 +65,12 @@
 .more-works-pill span {
   position: relative;
   z-index: 1;
-  font-family: var(--font-display, 'Poppins', sans-serif);
+  font-family: var(--font-body);
   font-weight: 600;
-  font-size: 24px;
-  line-height: 36px;
+  font-size: var(--text-title);
+  line-height: var(--layout-detail-4);
   text-transform: capitalize;
-  color: #f3eee8;
+  color: var(--color-text-primary);
 }
 
 .more-works-icon-link {
@@ -80,7 +80,7 @@
   align-items: center;
   justify-content: center;
   flex-shrink: 0;
-  color: #f3eee8;
+  color: var(--color-text-primary);
   transition: opacity 0.2s ease;
 }
 
@@ -89,8 +89,8 @@
 }
 
 .more-works-icon {
-  width: 20px;
-  height: 20px;
+  width: var(--space-detail-3);
+  height: var(--space-detail-3);
   color: inherit;
   flex-shrink: 0;
 }
@@ -102,8 +102,8 @@
 .more-works-media {
   position: relative;
   /* container scaled to 90% of the card-width convention (1034px * 0.9) */
-  width: 930.6px;
-  max-width: calc(100% - 64px);
+  width: var(--layout-detail-32);
+  max-width: calc(100% - var(--space-8));
   margin: 0 auto;
 }
 
@@ -113,9 +113,9 @@
   /* hugs the video's own native ratio (1400x788) instead of a fixed
      16:9-ish box, so there's no letterbox gutter around the content */
   aspect-ratio: 1400 / 788;
-  border-radius: 10px;
+  border-radius: var(--radius-small);
   overflow: hidden;
-  background-color: #1b1512;
+  background-color: var(--color-bg);
 }
 
 .more-works-video {
@@ -123,7 +123,7 @@
   height: 100%;
   object-fit: cover;
   display: block;
-  border-radius: 10px;
+  border-radius: var(--radius-small);
 }
 
 .more-works-mute-btn {
@@ -131,29 +131,29 @@
   /* beside the container, outside it, top-aligned with its top edge —
      the container stays centered on its own, unaffected by the icon */
   top: 0;
-  right: -64px;
-  width: 40px;
-  height: 40px;
+  right: var(--layout-detail-33);
+  width: var(--space-5);
+  height: var(--space-5);
   display: flex;
   align-items: center;
   justify-content: center;
-  border: 1px solid #f3eee8;
+  border: var(--border-width) solid var(--color-text-primary);
   border-radius: 50%;
-  background-color: rgba(27, 21, 18, 0.55);
-  backdrop-filter: blur(8px);
-  -webkit-backdrop-filter: blur(8px);
+  background-color: var(--brand-color-1);
+  backdrop-filter: blur(var(--radius-small));
+  -webkit-backdrop-filter: blur(var(--radius-small));
   cursor: pointer;
-  transition: background-color 0.2s ease;
+  transition: none;
 }
 
 .more-works-mute-btn:hover {
-  background-color: rgba(27, 21, 18, 0.75);
+  background-color: var(--brand-color-2);
 }
 
 .more-works-mute-icon {
-  width: 20px;
-  height: 20px;
-  color: #f3eee8;
+  width: var(--space-detail-3);
+  height: var(--space-detail-3);
+  color: var(--color-text-primary);
 }
 
 .more-works-see-more {
@@ -163,17 +163,17 @@
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  padding: 12px 24px;
-  background: #5d0606;
-  border-radius: 10px;
-  font-family: 'Be Vietnam', sans-serif;
+  padding: var(--space-1) var(--space-3);
+  background: var(--color-accent);
+  border-radius: var(--radius-small);
+  font-family: var(--font-body);
   font-weight: 500;
-  font-size: 14px;
-  color: #f3eee8;
+  font-size: var(--text-small);
+  color: var(--color-text-primary);
   white-space: nowrap;
   opacity: 0;
   pointer-events: none;
-  transition: opacity 0.25s ease, background-color 0.2s ease;
+  transition: opacity 0.25s ease;
 }
 
 .more-works-video-wrap:hover .more-works-see-more {
@@ -182,27 +182,27 @@
 }
 
 .more-works-see-more:hover {
-  background: #7a0707;
+  background: var(--color-accent);
 }
 
 /* ============================================================================
    RESPONSIVE - MOBILE
    ============================================================================ */
 
-@media (max-width: 768px) {
+@media (max-width: 1200px) {
   .more-works-section {
-    padding: 30px 20px;
-    margin-top: 60px;
-    scroll-margin-top: 60px;
+    padding: var(--space-4) var(--space-2);
+    margin-top: var(--space-8);
+    scroll-margin-top: var(--space-detail-6);
   }
 
   .more-works-pill {
-    margin-bottom: 50px;
+    margin-bottom: var(--space-6);
   }
 
   .more-works-pill span {
-    font-size: 20px;
-    line-height: 30px;
+    font-size: var(--text-h4);
+    line-height: var(--layout-detail-19);
   }
 
   .more-works-media {
@@ -219,18 +219,18 @@
        aspect-ratio hug-content sizing used on desktop, so the video
        (object-fit: cover) fills this box exactly instead. */
     aspect-ratio: auto;
-    height: 300px;
+    height: var(--layout-detail-34);
   }
 
   .more-works-mute-btn {
-    width: 34px;
-    height: 34px;
-    top: -46px;
+    width: var(--layout-detail-35);
+    height: var(--layout-detail-35);
+    top: var(--layout-detail-36);
     right: 0;
   }
 
   .more-works-mute-icon {
-    width: 17px;
-    height: 17px;
+    width: var(--layout-detail-37);
+    height: var(--layout-detail-37);
   }
 }
