@@ -574,3 +574,6 @@ main,
   .hero-copy .hero-subhead { margin-inline: auto; }
   .hero-copy .cta-buttons { justify-content: center; margin-top: 0; }
 }
+/* One shared boundary gap; avoid stacking padding from adjacent sections. */
+.hero-body { padding-bottom: var(--section-space); }
+.case-studies-section { padding-top: 0; }
