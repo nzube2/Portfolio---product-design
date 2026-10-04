@@ -21,7 +21,7 @@ export const WorkIcon = ({ className }) => (
     </g>
     <defs>
       <clipPath id="meta-work-clip">
-        <rect width="25" height="25" fill="#fff" />
+        <rect width="25" height="25" fill="var(--mask-white)" />
       </clipPath>
     </defs>
   </svg>

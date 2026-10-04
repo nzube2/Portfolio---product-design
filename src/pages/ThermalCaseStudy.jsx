@@ -1,20 +1,22 @@
+import CaseOverview from '../components/CaseOverview';
+import Image from '../components/Image.jsx';
 import React, { useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import thermalWordmark from "../assets/thermal-wordmark.png";
-import thermalMockup1 from "../assets/thermal-mockup-1.png";
-import thermalMockup2 from "../assets/thermal-mockup-2.png";
-import thermalMockup3 from "../assets/thermal-mockup-3.png";
+import thermalMockup1 from "../assets/thermal-mockup-1.webp";
+import thermalMockup2 from "../assets/thermal-mockup-2.webp";
+import thermalMockup3 from "../assets/thermal-mockup-3.webp";
 import thermalQuoteMark from "../assets/thermal-quote-mark.svg";
-import thermalMoodScreen from "../assets/thermal-mood-screen-design.png";
+import thermalMoodScreen from "../assets/thermal-mood-screen-design.webp";
 import thermalVector10 from "../assets/thermal-vector-10.svg";
-import thermalSimilarMusic from "../assets/thermal-similar-music.png";
-import thermalSimilarArtiste from "../assets/thermal-similar-artiste.png";
+import thermalSimilarMusic from "../assets/thermal-similar-music.webp";
+import thermalSimilarArtiste from "../assets/thermal-similar-artiste.webp";
 import thermalVector11 from "../assets/thermal-vector-11.svg";
-import thermalWebApp1 from "../assets/thermal-web-app-1.png";
-import thermalArtistePopularChoices from "../assets/thermal-artiste-popular-choices.png";
-import thermalWaveform from "../assets/thermal-waveform.png";
-import thermalResultScreen1 from "../assets/thermal-result-screen-1.png";
-import thermalResultScreen2 from "../assets/thermal-result-screen-2.png";
+import thermalWebApp1 from "../assets/thermal-web-app-1.webp";
+import thermalArtistePopularChoices from "../assets/thermal-artiste-popular-choices.webp";
+import thermalWaveform from "../assets/thermal-waveform.webp";
+import thermalResultScreen1 from "../assets/thermal-result-screen-1.webp";
+import thermalResultScreen2 from "../assets/thermal-result-screen-2.webp";
 import caseStudies from "../data/caseStudies";
 import {
   WorkIcon,
@@ -45,7 +47,7 @@ const ThermalCaseStudy = () => {
   // policy — which blocks playback. Set it directly, then start the loop.
   useEffect(() => {
     const v = heroVideoRef.current;
-    if (!v) return;
+    if (!v || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     v.muted = true;
     v.setAttribute("muted", "");
     // Browsers may still refuse (e.g. video-only media in a background tab);
@@ -56,7 +58,7 @@ const ThermalCaseStudy = () => {
 
   useEffect(() => {
     const v = illustrationVideoRef.current;
-    if (!v) return;
+    if (!v || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     v.muted = true;
     v.setAttribute("muted", "");
     const p = v.play();
@@ -108,6 +110,7 @@ const ThermalCaseStudy = () => {
         <span className="thermal-id">CS-03</span>
       </div>
 
+      <CaseOverview slug="thermal" />
       <div className="thermal-body">
         {/* decorative glow — first in the DOM so every section paints over it */}
         <div className="thermal-gradient" aria-hidden="true">
@@ -140,7 +143,6 @@ const ThermalCaseStudy = () => {
             <video
               ref={heroVideoRef}
               className="thermal-hero-card-img"
-              autoPlay
               loop
               muted
               playsInline
@@ -156,9 +158,9 @@ const ThermalCaseStudy = () => {
               Thermal — designing a music discovery experience built around
               feeling, not data
             </h1>
-            <button type="button" className="thermal-hero-btn">
+            <a href="#thermal-problem" className="thermal-hero-btn">
               Read Case Study
-            </button>
+            </a>
           </div>
         </section>
 
@@ -201,7 +203,7 @@ const ThermalCaseStudy = () => {
           What if you could find music by describing how you want to feel?
         </h2>
 
-        <section className="thermal-problem">
+        <section id="thermal-problem" className="thermal-problem">
           <h3 className="thermal-problem-title">./The Problem</h3>
           <div className="thermal-problem-body">
             <p>
@@ -246,7 +248,7 @@ const ThermalCaseStudy = () => {
           </p>
         </section>
 
-        <img
+        <Image
           src={thermalWordmark}
           alt="Thermal"
           className="thermal-concept-wordmark"
@@ -254,19 +256,19 @@ const ThermalCaseStudy = () => {
         />
 
         <div className="thermal-img-row">
-          <img
+          <Image
             src={thermalMockup1}
             alt="Thermal landing page shown on a laptop"
             className="thermal-mockup-1"
             loading="lazy"
           />
-          <img
+          <Image
             src={thermalMockup2}
             alt="Thermal landing page shown on a phone"
             className="thermal-mockup-2"
             loading="lazy"
           />
-          <img
+          <Image
             src={thermalMockup3}
             alt="Thermal landing page"
             className="thermal-mockup-3"
@@ -286,7 +288,7 @@ const ThermalCaseStudy = () => {
             </p>
 
             <div className="thermal-quote">
-              <img
+              <Image
                 src={thermalQuoteMark}
                 alt=""
                 className="thermal-quote-mark thermal-quote-mark-open"
@@ -297,7 +299,7 @@ const ThermalCaseStudy = () => {
                 what if you could find music by describing how you want to feel,
                 not what you already know you like?
               </p>
-              <img
+              <Image
                 src={thermalQuoteMark}
                 alt=""
                 className="thermal-quote-mark thermal-quote-mark-close"
@@ -310,7 +312,6 @@ const ThermalCaseStudy = () => {
           <video
             ref={illustrationVideoRef}
             className="thermal-wheel-group"
-            autoPlay
             loop
             muted
             playsInline
@@ -359,7 +360,7 @@ const ThermalCaseStudy = () => {
 
         <div className="thermal-mood-group">
           <div className="thermal-mood-screen">
-            <img
+            <Image
               src={thermalMoodScreen}
               alt="Thermal mood screen — temperature slider and keyword filters"
               className="thermal-mood-screen-img"
@@ -367,7 +368,7 @@ const ThermalCaseStudy = () => {
             />
           </div>
 
-          <img
+          <Image
             src={thermalVector10}
             alt=""
             className="thermal-mood-vector"
@@ -401,19 +402,19 @@ const ThermalCaseStudy = () => {
         </section>
 
         <section className="thermal-discovery-subsection">
-          <img
+          <Image
             src={thermalSimilarMusic}
             alt="Thermal similar music discovery screen"
             className="thermal-discovery-screen thermal-discovery-music"
             loading="lazy"
           />
-          <img
+          <Image
             src={thermalSimilarArtiste}
             alt="Thermal similar artiste discovery screen"
             className="thermal-discovery-screen thermal-discovery-artiste"
             loading="lazy"
           />
-          <img
+          <Image
             src={thermalVector11}
             alt=""
             aria-hidden="true"
@@ -446,7 +447,7 @@ const ThermalCaseStudy = () => {
         </section>
 
         <div className="thermal-webapp-group">
-          <img
+          <Image
             src={thermalWebApp1}
             alt="Thermal mobile web app — genre selection sidebar"
             className="thermal-webapp-1"
@@ -479,7 +480,7 @@ const ThermalCaseStudy = () => {
         </section>
 
         <div className="thermal-artiste-group">
-          <img
+          <Image
             src={thermalArtistePopularChoices}
             alt="Thermal artiste screen — Popular Choices suggestions"
             className="thermal-artiste-popular"
@@ -511,7 +512,7 @@ const ThermalCaseStudy = () => {
         </section>
 
         <div className="thermal-waveform-group">
-          <img
+          <Image
             src={thermalWaveform}
             alt="Thermal analysis waveform, shifting from warm orange to cool teal"
             className="thermal-waveform-img"
@@ -543,13 +544,13 @@ const ThermalCaseStudy = () => {
         </section>
 
         <div className="thermal-results-group">
-          <img
+          <Image
             src={thermalResultScreen1}
             alt="Thermal results screen — curated playlist set to cool mode"
             className="thermal-results-1"
             loading="lazy"
           />
-          <img
+          <Image
             src={thermalResultScreen2}
             alt="Thermal results header — 30 songs curated set to cool mode"
             className="thermal-results-2"
@@ -576,19 +577,19 @@ const ThermalCaseStudy = () => {
         </section>
 
         <div className="thermal-closing-group">
-          <img
+          <Image
             src={thermalResultScreen1}
             alt="Thermal results screen"
             className="thermal-closing-results"
             loading="lazy"
           />
-          <img
+          <Image
             src={thermalMoodScreen}
             alt="Thermal mood screen"
             className="thermal-closing-mood"
             loading="lazy"
           />
-          <img
+          <Image
             src={thermalMockup3}
             alt="Thermal landing page hero"
             className="thermal-closing-hero"
@@ -633,7 +634,7 @@ const ThermalCaseStudy = () => {
       >
         <span className="thermal-next-label">See Next Case Study</span>
         <div className="thermal-next-card">
-          <img
+          <Image
             src={nextCaseStudy.image}
             alt={`${nextCaseStudy.id} preview`}
             className="thermal-next-image"
@@ -647,3 +648,4 @@ const ThermalCaseStudy = () => {
 };
 
 export default ThermalCaseStudy;
+

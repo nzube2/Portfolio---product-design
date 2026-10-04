@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './MoreOfMyWorks.css';
+
 
 const HeadingBorder = ({ className }) => (
   <svg
@@ -10,7 +10,7 @@ const HeadingBorder = ({ className }) => (
   >
     <path
       d="M90.5 0.5H10.5C4.97715 0.5 0.5 4.97715 0.5 10.5V53.5C0.5 59.0228 4.97715 63.5 10.5 63.5H90.5"
-      stroke="#F3EEE8"
+      stroke="currentColor"
     />
   </svg>
 );
@@ -89,7 +89,7 @@ const useRevealOnScroll = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        node.classList.toggle('more-works-revealed', entry.isIntersecting);
+        if (entry.isIntersecting) { node.classList.add('more-works-revealed'); observer.unobserve(node); }
       },
       { threshold: 0.15 }
     );
@@ -142,27 +142,13 @@ const MoreOfMyWorks = () => {
     let timeoutId;
     const observer = new IntersectionObserver(
       ([entry]) => {
-        if (!entry.isIntersecting || hasPlayedRef.current) return;
+        if (!entry.isIntersecting || hasPlayedRef.current || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
         hasPlayedRef.current = true;
         observer.disconnect();
         timeoutId = setTimeout(() => {
           const playVideo = v.play();
           if (playVideo && typeof playVideo.catch === 'function') playVideo.catch(() => {});
-
-          if (a) {
-            const playAudio = a.play();
-            if (playAudio && typeof playAudio.catch === 'function') {
-              playAudio
-                .then(() => setAudioEnabled(true))
-                // browsers may still block unmuted autoplay without a user
-                // gesture — leave audioEnabled false so the button offers
-                // to start it manually instead of showing a state that
-                // isn't actually playing
-                .catch(() => setAudioEnabled(false));
-            } else {
-              setAudioEnabled(true);
-            }
-          }
+
         }, 600);
       },
       { threshold: 0.15 }
@@ -227,7 +213,7 @@ const MoreOfMyWorks = () => {
             className="more-works-see-more"
             ref={seeMoreRef}
           >
-            See More
+            Explore Dribbble projects
           </a>
         </div>
 
@@ -251,3 +237,6 @@ const MoreOfMyWorks = () => {
 };
 
 export default MoreOfMyWorks;
+
+
+

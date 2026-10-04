@@ -1,5 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
-import './Experience.css';
+
 
 const HeadingBorder = ({ className }) => (
   <svg
@@ -10,7 +10,7 @@ const HeadingBorder = ({ className }) => (
   >
     <path
       d="M90.5 0.5H10.5C4.97715 0.5 0.5 4.97715 0.5 10.5V53.5C0.5 59.0228 4.97715 63.5 10.5 63.5H90.5"
-      stroke="#F3EEE8"
+      stroke="currentColor"
     />
   </svg>
 );
@@ -104,7 +104,7 @@ const Experience = () => {
     >
       <div className="exp-heading-pill">
         <HeadingBorder className="exp-heading-pill-border" />
-        <span>./Experience</span>
+        <h2>Experience</h2>
       </div>
 
       <div className="exp-card">
@@ -168,3 +168,4 @@ const Experience = () => {
 };
 
 export default Experience;
+

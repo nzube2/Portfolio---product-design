@@ -2,7 +2,7 @@ const caseStudies = [
   {
     id: 'CS-01',
     slug: 'markettrack',
-    image: '/images/cs-00.png',
+    image: '/images/cs-00.webp',
     title:
       'MarketTrack — an inventory, sales, and expense tracking system for a small electrical business.',
     brief:
@@ -13,7 +13,7 @@ const caseStudies = [
   {
     id: 'CS-02',
     slug: 'guidely',
-    image: '/images/cs-01.png',
+    image: '/images/cs-01.webp',
     title:
       'A campus companion for Nile University students; Mobile design & development.',
     brief:
@@ -24,7 +24,7 @@ const caseStudies = [
   {
     id: 'CS-03',
     slug: 'thermal',
-    image: '/images/cs-02.png',
+    image: '/images/cs-02.webp',
     title:
       'Thermal — designing a music discovery experience built around feeling, not data',
     brief:
@@ -35,7 +35,7 @@ const caseStudies = [
   {
     id: 'CS-04',
     slug: 'portfolio',
-    image: '/images/cs-03.png',
+    image: '/images/cs-03.webp',
     title:
       'My portfolio as a case study- designing for the readers attention',
     brief:

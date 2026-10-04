@@ -1,5 +1,6 @@
+import Image from './Image.jsx';
 import React, { useEffect, useRef } from 'react';
-import './Skills.css';
+
 import graphicUiux from '../assets/graphic-uiux.svg';
 import graphicWireframe from '../assets/graphic-wireframe.svg';
 import graphicResearch from '../assets/graphic-research.svg';
@@ -19,7 +20,7 @@ const HeadingBorder = ({ className }) => (
   >
     <path
       d="M90.5 0.5H10.5C4.97715 0.5 0.5 4.97715 0.5 10.5V53.5C0.5 59.0228 4.97715 63.5 10.5 63.5H90.5"
-      stroke="#F3EEE8"
+      stroke="currentColor"
     />
   </svg>
 );
@@ -33,7 +34,7 @@ const toolIcons = {
 
 const ToolBadge = ({ label }) => (
   <div className="tool-badge">
-    <img
+    <Image
       src={toolIcons[label]}
       alt=""
       className={`tool-icon tool-icon-${label.toLowerCase()}`}
@@ -52,7 +53,7 @@ const useRevealOnScroll = () => {
 
     const observer = new IntersectionObserver(
       ([entry]) => {
-        node.classList.toggle('sk-revealed', entry.isIntersecting);
+        if (entry.isIntersecting) { node.classList.add('sk-revealed'); observer.unobserve(node); }
       },
       { threshold: 0.15 }
     );
@@ -74,12 +75,12 @@ const Skills = () => {
     <section className="skills-section" id="skills">
       <div className="skills-heading-pill sk-reveal" ref={pillRef}>
         <HeadingBorder className="skills-heading-pill-border" />
-        <span>./Skills</span>
+        <h2>Skills & process</h2>
       </div>
 
       <div className="skills-row-1 sk-reveal" ref={row1Ref}>
         <div className="skill-card-uiux">
-          <img
+          <Image
             src={graphicUiux}
             alt=""
             className="skill-graphic skill-graphic-uiux"
@@ -90,7 +91,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="skill-card-wireframe">
-          <img
+          <Image
             src={graphicWireframe}
             alt=""
             className="skill-graphic skill-graphic-wireframe"
@@ -106,7 +107,7 @@ const Skills = () => {
       <div className="skills-row-2 sk-reveal" ref={row2Ref}>
         <div className="skills-accent-bar-2" />
         <div className="skill-card-research">
-          <img
+          <Image
             src={graphicResearch}
             alt=""
             className="skill-graphic skill-graphic-research"
@@ -117,7 +118,7 @@ const Skills = () => {
           </div>
         </div>
         <div className="skill-card-webdev">
-          <img
+          <Image
             src={graphicWebdev}
             alt=""
             className="skill-graphic skill-graphic-webdev"
@@ -132,7 +133,7 @@ const Skills = () => {
       <div className="tools-section sk-reveal" ref={toolsRef}>
         <div className="tools-heading">
           <span>./Tools In My Workflow</span>
-          <img
+          <Image
             src={workflowArrow}
             alt=""
             className="tools-workflow-arrow"
@@ -146,17 +147,14 @@ const Skills = () => {
           <ToolBadge label="Adobe" />
           <ToolBadge label="Framer" />
         </div>
-        <div className="tools-row tools-row-2">
-          <ToolBadge label="Framer" />
-          <ToolBadge label="Adobe" />
-          <ToolBadge label="Claude" />
-          <ToolBadge label="Figma" />
-        </div>
+
 
         <div className="tools-accent-bar" />
       </div>
+      <div className="process-panel"><h3>My process</h3><ol className="process-steps">{['Define', 'Research', 'Wireframes', 'Design', 'Prototype', 'Test'].map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol></div>
     </section>
   );
 };
 
 export default Skills;
+

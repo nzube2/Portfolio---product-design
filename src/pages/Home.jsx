@@ -1,4 +1,5 @@
-import React from 'react';
+import React, { useEffect, useRef } from 'react';
+import { observeReveals } from '../behaviors/scroll-reveal';
 import Hero from '../components/Hero';
 import CaseStudy from '../components/CaseStudy';
 import Skills from '../components/Skills';
@@ -8,15 +9,17 @@ import MoreOfMyWorks from '../components/MoreOfMyWorks';
 import Contact from '../components/Contact';
 
 const Home = () => {
+  const root = useRef(null);
+  useEffect(() => observeReveals(root.current), []);
   return (
-    <div className="hero-reveal">
+    <div className="home" ref={root}>
       <Hero />
       <CaseStudy />
-      <Skills />
       <div className="stack-about-experience">
         <About />
-        <Experience />
       </div>
+      <Skills />
+      <Experience />
       <MoreOfMyWorks />
       <Contact />
     </div>

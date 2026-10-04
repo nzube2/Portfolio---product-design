@@ -85,7 +85,7 @@ const caseStudyContent = {
     id: 'CS-01',
     prevSlug: null,
     nextSlug: 'guidely',
-    bodyBg: '#292E3E',
+    bodyBg: 'var(--color-surface)',
     glassCards: true,
     hero: {
       eyebrow: 'UI/UX case study',
@@ -108,7 +108,7 @@ const caseStudyContent = {
         title: './Problem',
         narrow: true,
         icon: 'problem',
-        iconSize: 144,
+        iconSize: 'large',
         body: [
           "Ifythel Lights & Accessories, a small electrical business, was running its entire operation on paper. Stock counts were scattered across notebooks with no consistent system, expenses were tracked from memory, and receipts were handwritten and kept as hardcopies, making it time-consuming to find past records or understand actual profit. Warehouse items had no SKU system, so locating specific stock meant physically searching shelves.",
           "The business had no reliable way to answer basic questions like what's actually selling, what they're spending, and what stock they have and where it is. Every answer required digging through handwritten records or relying on memory, which meant decisions were being made without real data.",
@@ -130,7 +130,7 @@ const caseStudyContent = {
           title: '01 — The Product Page',
           body: 'The product page tracks stock, order history, and supplier names, not just a simple inventory list.',
           image: {
-            src: '/images/markettrack-product-page.png',
+            src: '/images/markettrack-product-page.webp',
             alt: 'MarketTrack product page — stock list with buy/sell price, margin, and status',
           },
         },
@@ -141,7 +141,7 @@ const caseStudyContent = {
         subheading: true,
         body: 'The sales page lets the business record sales, print receipts, and generate sales reports.',
         image: {
-          src: '/images/markettrack-sales-page.png',
+          src: '/images/markettrack-sales-page.webp',
           alt: 'MarketTrack sales page — revenue summary cards and a table of recorded sales with gross profit',
         },
       },
@@ -151,7 +151,7 @@ const caseStudyContent = {
         subheading: true,
         body: 'The expense page tracks spending and generates expense reports.',
         image: {
-          src: '/images/markettrack-expense-page.png',
+          src: '/images/markettrack-expense-page.webp',
           alt: 'MarketTrack expense page — today/week/month/year totals, category breakdown, and profit summary',
         },
       },
@@ -161,7 +161,7 @@ const caseStudyContent = {
         subheading: true,
         body: 'The dashboard brings it together as the entry point into the system.',
         image: {
-          src: '/images/markettrack-dashboard.png',
+          src: '/images/markettrack-dashboard.webp',
           alt: 'MarketTrack dashboard — revenue, cost of goods, expenses, net profit, top selling products, and low stock alerts',
         },
       },

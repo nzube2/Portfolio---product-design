@@ -1,3 +1,5 @@
+import CaseOverview from '../components/CaseOverview';
+import Image from '../components/Image.jsx';
 import React, { useEffect, useRef } from 'react';
 import { Link, Navigate, useParams } from 'react-router-dom';
 import {
@@ -33,7 +35,7 @@ const SECTION_ICONS = {
   problem: problemIcon,
   // the MarketTrack brand mark itself, not a bundled asset — already
   // living in public/images/ as the homepage carousel card image
-  mlogo: '/images/cs-00.png',
+  mlogo: '/images/cs-00.webp',
 };
 
 // Hero background video (sits inset within the hero section behind the
@@ -48,7 +50,7 @@ const HeroVideo = ({ src }) => {
   // (same fix used for Thermal's and MoreOfMyWorks' hero videos).
   useEffect(() => {
     const v = videoRef.current;
-    if (!v) return;
+    if (!v || window.matchMedia('(prefers-reduced-motion: reduce)').matches) return;
     v.muted = true;
     v.setAttribute('muted', '');
     const p = v.play();
@@ -83,9 +85,9 @@ const HeroCta = ({ href, children }) =>
       {children}
     </a>
   ) : (
-    <button type="button" className="portfolio-hero-btn">
+    <a href="#project-overview" className="portfolio-hero-btn">
       {children}
-    </button>
+    </a>
   );
 
 const MetaItem = ({ icon, index, label, value }) => {
@@ -119,7 +121,7 @@ const SectionMedia = ({ list, image, images, imagePlaceholder }) => (
     {images && images.length > 0 ? (
       <div className="portfolio-section-gallery">
         {images.map((img) => (
-          <img
+          <Image
             key={img.src}
             src={img.src}
             alt={img.alt}
@@ -128,7 +130,7 @@ const SectionMedia = ({ list, image, images, imagePlaceholder }) => (
         ))}
       </div>
     ) : image ? (
-      <img src={image.src} alt={image.alt} className="portfolio-section-image" />
+      <Image src={image.src} alt={image.alt} className="portfolio-section-image" />
     ) : (
       imagePlaceholder && (
         <div className="portfolio-section-image-placeholder">
@@ -159,19 +161,6 @@ const Section = ({
 }) => {
   const paragraphs = Array.isArray(body) ? body : [body];
   const IconSrc = icon && SECTION_ICONS[icon];
-  // Icon stays centered in the narrow card's ~473px side gap even when
-  // iconSize overrides the default 120px — the CSS left/right offset was
-  // only tuned for that default, so recentre explicitly here instead.
-  const iconStyle =
-    IconSrc && iconSize && narrow
-      ? {
-          width: iconSize,
-          height: iconSize,
-          [accent === 'left' ? 'left' : 'right']: `calc(100% + ${(473 - iconSize) / 2}px)`,
-        }
-      : IconSrc && iconSize
-      ? { width: iconSize, height: iconSize }
-      : undefined;
   return (
     <section
       className={`portfolio-section portfolio-section-accent-${accent}${
@@ -182,12 +171,11 @@ const Section = ({
     >
       <span className="portfolio-section-line" aria-hidden="true" />
       {IconSrc && (
-        <img
+        <Image
           src={IconSrc}
           alt=""
           aria-hidden="true"
-          style={iconStyle}
-          className={`portfolio-section-icon${
+          className={`portfolio-section-icon${iconSize === 'large' ? ' portfolio-section-icon-large' : ''}${
             iconRounded ? ' portfolio-section-icon-rounded' : ''
           }`}
         />
@@ -308,7 +296,7 @@ const CaseStudyTemplate = () => {
               <h1 className="portfolio-hero-heading">{hero.heading}</h1>
               <HeroCta href={hero.ctaHref}>{hero.ctaLabel}</HeroCta>
               {hero.image && (
-                <img
+                <Image
                   src={hero.image.src}
                   alt={hero.image.alt}
                   className="portfolio-hero-image"
@@ -329,6 +317,8 @@ const CaseStudyTemplate = () => {
             />
           ))}
         </div>
+
+        <CaseOverview slug={slug} />
 
         {sections.map((section) => (
           <Section
@@ -358,7 +348,7 @@ const CaseStudyTemplate = () => {
         >
           <span className="portfolio-next-label">See Next Case Study</span>
           <div className="portfolio-next-card">
-            <img
+            <Image
               src={nextCaseStudy.image}
               alt={`${nextCaseStudy.id} preview`}
               className="portfolio-next-image"

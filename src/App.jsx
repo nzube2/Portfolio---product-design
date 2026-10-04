@@ -1,10 +1,10 @@
-import React, { Suspense, lazy } from 'react';
-import { Routes, Route } from 'react-router-dom';
+import React, { Suspense, lazy, useEffect } from 'react';
+import { Routes, Route, useLocation } from 'react-router-dom';
+import { updateMetadata } from './behaviors/metadata';
+import { observeMotionPreference } from './behaviors/motion-preference';
 import Header from './components/Header';
-import Loader from './components/Loader';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
-import './App.css';
 
 // Code-split per case-study route: each one's JS/CSS (and the images/videos
 // it imports) only downloads when that route is actually visited, instead
@@ -19,19 +19,22 @@ const ThermalCaseStudy = lazy(() => import('./pages/ThermalCaseStudy'));
 const CaseStudyTemplate = lazy(() => import('./pages/CaseStudyTemplate'));
 
 function App() {
+  const location = useLocation();
+  useEffect(() => updateMetadata(location.pathname), [location.pathname]);
+  useEffect(() => observeMotionPreference(document.getElementById('main-content')), []);
   return (
     <div className="app">
-      <Loader />
+      <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
       <ScrollToTop />
-      <Suspense fallback={<div className="route-fallback" />}>
+      <main id="main-content" tabIndex="-1"><Suspense fallback={<div className="route-fallback" />}>
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/case-studies/guidely" element={<GuidelyCaseStudy />} />
           <Route path="/case-studies/thermal" element={<ThermalCaseStudy />} />
           <Route path="/case-studies/:slug" element={<CaseStudyTemplate />} />
         </Routes>
-      </Suspense>
+      </Suspense></main>
     </div>
   );
 }

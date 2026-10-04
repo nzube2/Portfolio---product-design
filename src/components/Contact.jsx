@@ -1,5 +1,6 @@
 import React from 'react';
-import './Contact.css';
+import { RESUME_URL, EMAIL, LINKEDIN } from '../data/links';
+
 
 const MailIcon = ({ className }) => (
   <svg
@@ -55,15 +56,6 @@ const GithubIcon = ({ className }) => (
   </svg>
 );
 
-const PROCESS_STEPS = [
-  { number: '01', label: 'Define' },
-  { number: '02', label: 'Research' },
-  { number: '03', label: 'Wireframes' },
-  { number: '04', label: 'Design' },
-  { number: '05', label: 'Prototype' },
-  { number: '06', label: 'Test' },
-];
-
 const Contact = () => {
   return (
     <section className="contact-section" id="contact">
@@ -73,32 +65,21 @@ const Contact = () => {
           Open To Product Design Roles And Freelance Work.
         </p>
 
-        <div className="contact-process">
-          <div className="contact-process-line" aria-hidden="true" />
-          <div className="contact-process-steps">
-            {PROCESS_STEPS.map((step) => (
-              <div className="contact-process-step" key={step.number}>
-                <div className="contact-process-circle">{step.number}</div>
-                <span className="contact-process-label">{step.label}</span>
-              </div>
-            ))}
-          </div>
-        </div>
-
         <h2 className="contact-heading">Ready To Build Something Epic?</h2>
 
         <a
           className="contact-email-btn"
-          href="mailto:nzubemolokwu5@gmail.com"
+          href={EMAIL}
         >
           <MailIcon className="contact-email-icon" />
           <span>nzubemolokwu5@gmail.com</span>
         </a>
 
         <div className="contact-socials">
+          <a className="contact-social-link" href={RESUME_URL} target="_blank" rel="noopener noreferrer">Download resume ↗</a>
           <a
             className="contact-social-link contact-social-linkedin"
-            href="https://www.linkedin.com/in/valentina-molokwu-730236278/"
+            href={LINKEDIN}
             target="_blank"
             rel="noopener noreferrer"
           >
@@ -126,13 +107,15 @@ const Contact = () => {
         </div>
       </div>
 
-      <div className="contact-footer-bar">
+      <footer className="contact-footer-bar">
+        <nav className="footer-links" aria-label="Footer contact links"><a href={EMAIL}>Email</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={RESUME_URL} target="_blank" rel="noopener noreferrer">Resume</a></nav>
         <p className="contact-footer-text">
           Designed And Developed By Valentina. All Rights Reserved.
         </p>
-      </div>
+      </footer>
     </section>
   );
 };
 
 export default Contact;
+
