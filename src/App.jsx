@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { updateMetadata } from './behaviors/metadata';
 import { observeMotionPreference } from './behaviors/motion-preference';
 import Header from './components/Header';
+import { enableCaseStudyInteractions } from './behaviors/case-study-interactions';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
 
@@ -22,6 +23,7 @@ const CaseStudyTemplate = lazy(() => import('./pages/CaseStudyTemplate'));
 
 function App() {
   const location = useLocation();
+  useEffect(() => { if (location.pathname.startsWith('/case-studies/')) return enableCaseStudyInteractions(document.getElementById('main-content')); }, [location.pathname]);
   useEffect(() => updateMetadata(location.pathname), [location.pathname]);
   useEffect(() => observeMotionPreference(document.getElementById('main-content')), []);
   return (
@@ -44,5 +46,6 @@ function App() {
 }
 
 export default App;
+
 
 

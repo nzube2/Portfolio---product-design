@@ -442,3 +442,10 @@ a:focus-visible { outline: var(--focus-width) solid var(--color-accent); outline
   .mt-next:hover .mt-next-title, .portfolio-next-case:hover .portfolio-next-title { color: var(--color-accent); }
   .project-media:hover img { transform: scale(1.03); }
 }
+img[data-zoomable] { cursor: zoom-in; }
+img[data-zoomable]:focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--space-1); }
+.screenshot-dialog { position: fixed; margin: auto; width: calc(100% - var(--gutter) * 2); max-width: var(--container); max-height: 90vh; padding: var(--space-3); border: var(--border-width) solid var(--color-border-alpha); border-radius: var(--radius-medium); background: var(--color-bg); color: var(--color-text-primary); }
+.screenshot-dialog::backdrop { background: var(--case-scrim); }
+.screenshot-close { display: block; min-height: var(--space-6); margin-left: auto; margin-bottom: var(--space-2); padding-inline: var(--space-2); border-radius: var(--radius-small); background: var(--color-surface); }
+.screenshot-expanded { display: block; width: 100%; height: auto; }
+.mt-chapters a[aria-current="location"] { color: var(--color-text-primary); box-shadow: 0 var(--focus-width) 0 var(--color-accent); }

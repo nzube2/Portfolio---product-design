@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 import Image from '../components/Image';
 import caseStudyContent from '../data/caseStudyContent';
 import caseStudies from '../data/caseStudies';
+import { observeChapters } from '../behaviors/case-study-interactions';
 import { observeReveals } from '../behaviors/scroll-reveal';
 import './MarketTrackCaseStudy.css';
 
@@ -24,6 +25,7 @@ const Media = ({ image, images }) => (images || (image ? [image] : [])).map((ite
 export default function MarketTrackCaseStudy() {
   const root = useRef(null);
   useEffect(() => observeReveals(root.current), []);
+  useEffect(() => observeChapters(root.current), []);
   return (
     <article className="mt-page" ref={root}>
       <div className="mt-container">
@@ -90,3 +92,4 @@ export default function MarketTrackCaseStudy() {
     </article>
   );
 }
+
