@@ -1,6 +1,6 @@
 import React from "react";
 import { RESUME_URL } from "../data/links";
-import portrait from "../assets/valentina-portrait.webp";
+import portrait from "../assets/valentina-portrait-torn.webp";
 const Hero = () => (
   <section className="hero" aria-labelledby="hero-title">
     <div className="hero-body">
@@ -34,7 +34,7 @@ const Hero = () => (
           src={portrait}
           alt="Valentina Molokwu, product designer"
           width="776"
-          height="1065"
+          height="1064"
           loading="eager"
           decoding="async"
         />

@@ -64,3 +64,7 @@ The chosen accent is warm coral and the font is Manrope. One alternative is a co
 Added the owner's supplied portrait as a 59.5KB WebP asset imported through Vite. `Hero.jsx` now pairs the photo with the existing introduction and CTAs. A coral “Tested & trusted” badge lands once with a short scale/rotation press animation; reduced-motion users see its settled state immediately. The portrait stays beside the headline on mobile with a smaller badge, without covering the face.
 
 Files: `src/assets/valentina-portrait.webp`, `src/components/Hero.jsx`, and the existing tokens/layout/components/animations CSS files. Verification: full production build and all prerendered routes passed; homepage preview checked at 360, 768, 1024, and 1440px with no horizontal overflow or page errors; reduced-motion animation disabled and CSS token compliance passed. Recheck Lighthouse on deployment after media changes; the earlier scores above describe the pre-portrait audit.
+
+## Torn-paper portrait follow-up
+
+Replaced the hero's rectangular portrait with a transparent silhouette and an irregular off-white torn-paper edge, using the built-in imagegen edit tool. The stamp remains. The original photo asset is retained; the new asset is `src/assets/valentina-portrait-torn.webp`. Prompt, generation mode, and verification details are in `artifacts/portrait-edit.md`. Production build and responsive preview checks passed.

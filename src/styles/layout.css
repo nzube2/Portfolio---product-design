@@ -378,8 +378,6 @@ main,
 .hero-portrait img {
   width: 100%;
   height: auto;
-  border-radius: var(--radius-large);
-  border: var(--border-width) solid var(--color-border-alpha);
 }
 @media (max-width: 768px) {
   .hero-body {
@@ -414,3 +412,4 @@ main,
     grid-column: 1 / -1;
   }
 }
+
