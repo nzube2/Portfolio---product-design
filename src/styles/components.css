@@ -426,3 +426,5 @@
 
 .hero-composition .hero-half-first { color: var(--color-text-primary); }
 @media(max-width:768px) { .hero-composition .hero-stamp { width: var(--hero-center-stamp-mobile); font-size: var(--hero-center-stamp-text); } }
+.project-media-guidely { padding: var(--space-4) var(--space-3); }
+.project-media-guidely img { height: auto; max-width: 100%; }
