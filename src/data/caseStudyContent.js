@@ -125,10 +125,14 @@ const caseStudyContent = {
       {
         accent: 'left',
         title: './Design Decisions',
-        body: "With Claude's help, I mapped out a system architecture first, which I used to define user flows and wireframes before moving into high fidelity design. The system centers on four main pages:",
+        body: "With Claude's help, I mapped out a system architecture first, which I used to define user flows and wireframes before moving into high fidelity design. I organized the system around the decisions the store needed to make: find stock, record a sale, understand spending, and review business performance. The four pages below show how those needs shaped the interface:",
         subItem: {
-          title: '01 — The Product Page',
-          body: 'The product page tracks stock, order history, and supplier names, not just a simple inventory list.',
+          title: '01 — Make stock easier to find',
+          body: [
+            'Testing exposed that product-name-only search was too limited, so I added SKU search alongside it. The decision was to support another way to locate a product without forcing the user to know its exact name.',
+            'I kept stock, order history, and supplier information together to support inventory decisions. When testing exposed details missing from the main table, I added a “more info” action rather than expanding every row and making the list harder to scan.',
+          ],
+          evidence: 'Testing identified the search and missing-information gaps; SKU search and the more-info action were added in response. The product screen below shows the inventory context. It does not, by itself, demonstrate a successful search.',
           image: {
             src: '/images/markettrack-product-page.webp',
             alt: 'MarketTrack product page — stock list with buy/sell price, margin, and status',
@@ -137,9 +141,13 @@ const caseStudyContent = {
       },
       {
         accent: 'right',
-        title: '02 — The Sales Page',
+        title: '02 — Support exceptions in the sales workflow',
         subheading: true,
-        body: 'The sales page lets the business record sales, print receipts, and generate sales reports.',
+        body: [
+          'The initial sales flow assumed every item already existed in inventory. Testing showed that new items could arrive before they had been entered, so I added manual entry to let a sale proceed in that situation.',
+          'A recorded sale also needed to accommodate a customer changing their selection. I added editing to the recorded sale rather than treating the first entry as permanent. Receipts and reports remain part of the same sales workflow.',
+        ],
+        evidence: 'Testing surfaced both exceptions, and the existing project record documents the manual-entry and editing changes. This overview screen shows recorded sales; it does not show the entry or editing interaction.',
         image: {
           src: '/images/markettrack-sales-page.webp',
           alt: 'MarketTrack sales page — revenue summary cards and a table of recorded sales with gross profit',
@@ -147,9 +155,10 @@ const caseStudyContent = {
       },
       {
         accent: 'left',
-        title: '03 — The Expense Page',
+        title: '03 — Make spending visible alongside profit',
         subheading: true,
-        body: 'The expense page tracks spending and generates expense reports.',
+        body: 'Expenses had been tracked from memory, which made actual profit hard to understand. I gave spending its own page with time-based totals, a category breakdown, and a profit summary, so the business could review recorded costs rather than rely on recollection.',
+        evidence: 'The screen shows totals for different periods, spending categories, and a profit summary. The documented outcome is adoption of digital expense records; no measured improvement in reporting speed is recorded.',
         image: {
           src: '/images/markettrack-expense-page.webp',
           alt: 'MarketTrack expense page — today/week/month/year totals, category breakdown, and profit summary',
@@ -157,9 +166,10 @@ const caseStudyContent = {
       },
       {
         accent: 'right',
-        title: '04 — The Dashboard',
+        title: '04 — Bring the business picture into one view',
         subheading: true,
-        body: 'The dashboard brings it together as the entry point into the system.',
+        body: 'The store could not easily answer what was selling, what it was spending, or what stock was running low. I made the dashboard the entry point, bringing revenue, cost of goods, expenses, net profit, top-selling products, and low-stock alerts into one view. The aim was to make the next operational question easier to identify before opening a detailed page.',
+        evidence: 'The dashboard screen shows these summaries together. MarketTrack is documented as actively used by the business; the case study does not claim a quantified gain in decision speed or profit.',
         image: {
           src: '/images/markettrack-dashboard.webp',
           alt: 'MarketTrack dashboard — revenue, cost of goods, expenses, net profit, top selling products, and low stock alerts',

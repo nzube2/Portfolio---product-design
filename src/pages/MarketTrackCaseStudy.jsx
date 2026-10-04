@@ -70,7 +70,7 @@ export default function MarketTrackCaseStudy() {
                 <div className="mt-prose" data-reveal><Paragraphs body={section.body} /></div>
                 {section.list && <ul className="mt-iterations">{section.list.map((item, i) => <li key={item} data-reveal><span aria-hidden="true">0{i + 1}</span><p>{item}</p></li>)}</ul>}
                 <Media image={section.image} images={section.images} />
-                {section.pages.map((page) => <div className="mt-subsection" key={page.title} id={sectionId(page.title)}><h3>{page.title}</h3><div className="mt-prose"><Paragraphs body={page.body} /></div><Media image={page.image} images={page.images} /></div>)}
+                {section.pages.map((page) => <div className="mt-subsection" key={page.title} id={sectionId(page.title)}><h3>{page.title}</h3><div className="mt-prose"><Paragraphs body={page.body} /></div><Media image={page.image} images={page.images} />{page.evidence && <aside className="mt-evidence"><h4>Evidence & verification</h4><p>{page.evidence}</p></aside>}</div>)}
               </div>
             </section>
           ))}
