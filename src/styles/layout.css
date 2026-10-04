@@ -552,3 +552,25 @@ main,
   .skill-card-uiux, .skill-card-wireframe, .skill-card-research, .skill-card-webdev { padding: var(--space-3); }
   .hero-copy .hero-subhead { margin-bottom: var(--space-2); }
 }
+/* Hero refinement: a clear introduction beside the personal portrait. */
+.hero-body { padding-top: var(--space-6); padding-bottom: var(--space-8); }
+.hero-copy { position: relative; text-align: left; }
+.hero-eyebrow { max-width: var(--hero-copy); }
+.hero-composition { display: block; margin: var(--space-4) 0; padding-right: var(--hero-redesign-reserve); min-height: var(--hero-redesign-height); }
+.hero-composition .display-text { display: block; max-width: var(--hero-redesign-measure); margin: 0; font-size: var(--hero-redesign-title); }
+.hero-composition .hero-half { display: inline; font-size: inherit; line-height: var(--line-heading); text-align: left; }
+.hero-composition .hero-half br { display: none; }
+.hero-composition .hero-half-last { display: block; }
+.hero-composition .hero-portrait { position: absolute; right: var(--space-3); top: var(--space-4); width: var(--hero-redesign-photo); margin: 0; }
+.hero-copy .hero-subhead { max-width: var(--hero-redesign-copy); margin: 0 0 var(--space-3); }
+.hero-copy .cta-buttons { justify-content: flex-start; }
+@media(max-width:768px) {
+  .hero-body { padding-top: var(--space-4); padding-bottom: var(--space-6); }
+  .hero-copy { text-align: center; }
+  .hero-composition { display: flex; flex-direction: column; align-items: center; gap: var(--space-4); min-height: 0; padding-right: 0; margin-block: var(--space-3) var(--space-4); }
+  .hero-composition .display-text { font-size: var(--hero-redesign-mobile-title); text-align: center; }
+  .hero-composition .hero-half { text-align: center; }
+  .hero-composition .hero-portrait { position: relative; top: auto; right: auto; width: var(--hero-stacked-portrait); }
+  .hero-copy .hero-subhead { margin-inline: auto; }
+  .hero-copy .cta-buttons { justify-content: center; margin-top: 0; }
+}

@@ -581,3 +581,4 @@
 /* Shared page rhythm: major groups breathe; related text stays together. */
 :root { --section-space: 120px; --section-inner-space: 60px; }
 @media(max-width:768px) { :root { --section-space: 72px; --section-inner-space: 32px; } }
+:root { --hero-redesign-title: clamp(2.5rem, 6vw, 5.25rem); --hero-redesign-mobile-title: clamp(2rem, 8vw, 3rem); --hero-redesign-photo: clamp(200px, 26vw, 320px); --hero-redesign-reserve: clamp(248px, 32vw, 400px); --hero-redesign-height: 260px; --hero-redesign-measure: 14ch; --hero-redesign-copy: 56ch; }
