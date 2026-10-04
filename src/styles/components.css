@@ -454,3 +454,13 @@ img[data-zoomable]:focus-visible { outline: var(--focus-width) solid var(--color
 .about-outside p:last-child { margin-bottom: 0; }
 .about-heading-pill span { font-size: var(--text-title); font-weight: 600; letter-spacing: normal; }
 @media(max-width:768px) { .about-heading-pill span { font-size: var(--text-h4); } }
+.theme-palette { display: flex; align-items: center; justify-content: center; flex-wrap: wrap; gap: var(--space-2); margin-top: var(--space-4); }
+.theme-palette > span { font-size: var(--text-small); color: var(--color-text-secondary); }
+.theme-swatches { display: flex; gap: var(--space-1); }
+.theme-swatch { width: var(--space-6); height: var(--space-6); border-radius: 50%; border: var(--focus-width) solid var(--color-border-alpha); color: var(--swatch-check); transition: transform var(--motion-fast) var(--ease-out); }
+.theme-swatch[aria-pressed="true"] { outline: var(--focus-width) solid var(--color-text-primary); outline-offset: var(--hero-stamp-inset); }
+.theme-swatch:hover { transform: translateY(var(--lift)); }
+.theme-swatch-rose { background: var(--swatch-rose); }
+.theme-swatch-sage { background: var(--swatch-sage); }
+.theme-swatch-lavender { background: var(--swatch-lavender); }
+.theme-swatch-paper { background: var(--swatch-paper); }
