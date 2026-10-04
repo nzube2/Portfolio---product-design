@@ -2387,3 +2387,9 @@
 .guidely-page {padding-top: var(--header-height);}
 .guidely-hero-btn {color: var(--color-ink); min-height: var(--space-6);}
 #guidely-problem {scroll-margin-top: var(--space-3);}
+/* Keep the desktop composition while letting its paper background grow. */
+@media (min-width: 1201px) {
+  .guidely-body { height: auto; }
+  .guidely-content { position: relative; top: auto; padding-top: var(--layout-detail-86); }
+}
+.guidely-next-case { position: relative; }
