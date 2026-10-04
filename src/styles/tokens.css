@@ -3,7 +3,7 @@
   --color-surface: #222320;
   --color-text-primary: #f5f2eb;
   --color-text-secondary: #c1c1b7;
-  --color-accent: #9a6666;
+  --color-accent: #b89595;
   --color-ink: #222320;
   --color-paper: #f5f2eb;
   --color-muted-ink: #575b52;
@@ -573,3 +573,4 @@
 :root { --tools-loop-duration: 36s; --tools-badge-width: 152px; }
 
 :root { --mt-title: clamp(2.25rem, 4vw, 3.5rem); --mt-anchor-offset: 112px; }
+
