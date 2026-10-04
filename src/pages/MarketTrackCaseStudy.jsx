@@ -6,6 +6,10 @@ import { observeReveals } from '../behaviors/scroll-reveal';
 import './MarketTrackCaseStudy.css';
 
 const data = caseStudyContent.markettrack;
+const storySections = data.sections.filter((section) => !section.subheading).map((section) => ({
+  ...section,
+  pages: section.subItem ? [section.subItem, ...data.sections.filter((item) => item.subheading)] : [],
+}));
 const sectionId = (title) => title.replace(/^\.\//, '').toLowerCase().replace(/[^a-z0-9]+/g, '-').replace(/-$/, '');
 const Paragraphs = ({ body }) => (Array.isArray(body) ? body : [body]).filter(Boolean).map((text) => <p key={text}>{text}</p>);
 const Media = ({ image, images }) => (images || (image ? [image] : [])).map((item) => (
@@ -51,11 +55,11 @@ export default function MarketTrackCaseStudy() {
           <span className="mt-note">Internal business tool · Not publicly accessible</span>
         </aside>
         <nav className="mt-chapters" aria-label="On this page">
-          {data.sections.filter((section) => !section.subheading).map((section) => <a href={`#${sectionId(section.title)}`} key={section.title}>{section.title.replace('./', '')}</a>)}
+          {storySections.map((section) => <a href={`#${sectionId(section.title)}`} key={section.title}>{section.title.replace('./', '')}</a>)}
         </nav>
         <div className="mt-story">
-          {data.sections.map((section, index) => (
-            <section className={`mt-section${section.subheading ? ' mt-detail' : ''}`} id={sectionId(section.title)} key={section.title}>
+          {storySections.map((section, index) => (
+            <section className="mt-section" id={sectionId(section.title)} key={section.title}>
               <div className="mt-section-heading" data-reveal>
                 <span className="mt-number" aria-hidden="true">{String(index + 1).padStart(2, '0')}</span>
                 <h2>{section.title.startsWith('./') ? section.title : `./${section.title}`}</h2>
@@ -64,7 +68,7 @@ export default function MarketTrackCaseStudy() {
                 <div className="mt-prose" data-reveal><Paragraphs body={section.body} /></div>
                 {section.list && <ul className="mt-iterations">{section.list.map((item, i) => <li key={item} data-reveal><span aria-hidden="true">0{i + 1}</span><p>{item}</p></li>)}</ul>}
                 <Media image={section.image} images={section.images} />
-                {section.subItem && <div className="mt-subsection"><h3>{section.subItem.title}</h3><div className="mt-prose"><Paragraphs body={section.subItem.body} /></div><Media image={section.subItem.image} images={section.subItem.images} /></div>}
+                {section.pages.map((page) => <div className="mt-subsection" key={page.title} id={sectionId(page.title)}><h3>{page.title}</h3><div className="mt-prose"><Paragraphs body={page.body} /></div><Media image={page.image} images={page.images} /></div>)}
               </div>
             </section>
           ))}
