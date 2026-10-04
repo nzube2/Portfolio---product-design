@@ -123,7 +123,7 @@
   font-weight: 500;
   font-size: var(--text-body);
   line-height: var(--layout-detail-40);
-  color: var(--color-on-accent);
+  color: var(--color-text-primary);
   cursor: pointer;
   transition: none;
 }
@@ -709,4 +709,4 @@
 .portfolio-hero-video-scrim {background: var(--case-scrim);}
 
 .portfolio-page {padding-top: var(--header-height);}
-.portfolio-hero-btn {color: var(--color-on-accent); min-height: var(--space-6);}
+.portfolio-hero-btn {color: var(--color-ink); min-height: var(--space-6);}

@@ -68,7 +68,3 @@ Files: `src/assets/valentina-portrait.webp`, `src/components/Hero.jsx`, and the 
 ## Torn-paper portrait follow-up
 
 Replaced the hero's rectangular portrait with a transparent silhouette and an irregular off-white torn-paper edge, using the built-in imagegen edit tool. The stamp remains. The original photo asset is retained; the new asset is `src/assets/valentina-portrait-torn.webp`. Prompt, generation mode, and verification details are in `artifacts/portrait-edit.md`. Production build and responsive preview checks passed.
-
-## Original palette restored
-
-Restored the original deep maroon (`#5d0606`), warm dark backgrounds, and off-white foregrounds at the owner's request. This supersedes the initial coral choice described above. Buttons, stamp, selection, case-study CTAs, and the share image use the restored theme. Off-white accent text keeps links and headings readable on dark surfaces; a related red focus indicator works on light and dark surfaces. Layout, portrait, and motion are retained. Full build/prerender, four-width hero preview, reduced motion, CSS token compliance, and solid-background text contrast checks passed.

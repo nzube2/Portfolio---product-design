@@ -247,7 +247,7 @@
   font-weight: 500;
   font-size: var(--text-body);
   line-height: var(--layout-detail-40);
-  color: var(--color-on-accent);
+  color: var(--color-text-primary);
   cursor: pointer;
   transition: none;
 }
@@ -2177,5 +2177,5 @@
 }
 
 .thermal-page {padding-top: var(--header-height);}
-.thermal-hero-btn {color: var(--color-on-accent); min-height: var(--space-6);}
+.thermal-hero-btn {color: var(--color-ink); min-height: var(--space-6);}
 #thermal-problem {scroll-margin-top: var(--space-3);}

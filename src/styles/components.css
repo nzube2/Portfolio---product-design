@@ -22,7 +22,7 @@
   letter-spacing: var(--tracking-heading);
 }
 .logo span {
-  color: var(--color-accent-text);
+  color: var(--color-accent);
 }
 .nav-desktop {
   display: flex;
@@ -38,7 +38,7 @@
 }
 .nav-link:hover,
 .nav-link[aria-current] {
-  color: var(--color-accent-text);
+  color: var(--color-accent);
   text-decoration: underline;
   text-underline-offset: var(--space-1);
 }
@@ -60,7 +60,7 @@
 .btn-primary,
 .contact-email-btn {
   background: var(--color-accent);
-  color: var(--color-on-accent);
+  color: var(--color-ink);
 }
 .btn-secondary {
   border: var(--border-width) solid var(--color-border-alpha);
@@ -100,7 +100,7 @@
   margin-bottom: var(--space-3);
 }
 .display-text span {
-  color: var(--color-accent-text);
+  color: var(--color-accent);
 }
 .hero-subhead {
   font-size: var(--text-lead);
@@ -186,7 +186,7 @@
   gap: var(--space-3);
   align-items: center;
   min-height: var(--space-6);
-  color: var(--color-accent-text);
+  color: var(--color-accent);
   font-size: var(--text-body);
   font-weight: 600;
   margin-top: auto;
@@ -203,7 +203,7 @@
   margin-top: var(--space-4);
   min-height: var(--space-6);
   align-items: center;
-  color: var(--color-accent-text);
+  color: var(--color-accent);
 }
 .portfolio-context {
   max-width: var(--measure);
@@ -314,7 +314,7 @@
 }
 .case-overview .eyebrow {
   font-size: var(--text-small);
-  color: var(--color-accent-text);
+  color: var(--color-accent);
   margin-bottom: var(--space-2);
 }
 .case-outcome {
@@ -369,7 +369,7 @@
   font-size: var(--text-h3);
 }
 .more-works-see-more {
-  color: var(--color-on-accent);
+  color: var(--color-ink);
 }
 .more-works-video-wrap:focus-within .more-works-see-more {
   opacity: 1;
@@ -389,11 +389,11 @@
   width: var(--hero-stamp-size);
   aspect-ratio: 1;
   border-radius: 50%;
-  border: var(--hero-stamp-border) solid var(--color-on-accent);
-  outline: var(--border-width) dashed var(--color-on-accent);
+  border: var(--hero-stamp-border) solid var(--color-ink);
+  outline: var(--border-width) dashed var(--color-ink);
   outline-offset: calc(var(--hero-stamp-inset) * -1);
   background: var(--color-accent);
-  color: var(--color-on-accent);
+  color: var(--color-ink);
   box-shadow: var(--hero-stamp-shadow);
   display: flex;
   flex-direction: column;
