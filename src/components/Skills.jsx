@@ -153,7 +153,7 @@ const Skills = () => {
         </div>
         <button type="button" className="tools-pause" aria-pressed={toolsPaused} onClick={() => setToolsPaused(!toolsPaused)}>{toolsPaused ? 'Resume tools animation' : 'Pause tools animation'}</button>
       </div>
-      <div className="process-panel"><h3>./My process</h3><p>From understanding the problem to testing what works.</p><ol className="process-steps">{['Define', 'Research', 'Wireframes', 'Design', 'Prototype', 'Test'].map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol></div>
+      <div className="process-panel"><h3>./My process</h3><ol className="process-steps">{['Define', 'Research', 'Wireframes', 'Design', 'Prototype', 'Test'].map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol></div>
     </section>
   );
 };
