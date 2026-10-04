@@ -37,11 +37,11 @@ const caseStudies = [
     slug: 'portfolio',
     image: '/images/cs-03.webp',
     title:
-      'My portfolio as a case study- designing for the readers attention',
+      'My portfolio — designing around the reader’s attention',
     brief:
       "Most junior portfolios fail the same way, they show the work but not the thinking behind it, or they look like a template with the names swapped out. I didn't want to build a page that displayed my projects. I wanted to build a page that behaved like one of my projects, something that proved my design instincts before a recruiter even opened a case study.",
     whatIDid:
-      "I built my personal portfolio with its own built in live case study for it - telling a story through the progression of the design, shifting colours & utilising minimal motion to bring it to life - it operates with pacing closer to a film. It's organised in such a way, where the imagery hooks you before any words are ever read.",
+      'I refined the portfolio around a clear recruiter journey: featured work first, personal portraits, consistent section labels, a muted rose palette, accessible motion, responsive layouts, and direct paths to case studies, my resume, and contact.',
   },
 ];
 

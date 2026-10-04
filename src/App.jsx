@@ -17,6 +17,7 @@ import Home from './pages/Home';
 const GuidelyCaseStudy = lazy(() => import('./pages/GuidelyCaseStudy'));
 const ThermalCaseStudy = lazy(() => import('./pages/ThermalCaseStudy'));
 const MarketTrackCaseStudy = lazy(() => import('./pages/MarketTrackCaseStudy'));
+const PortfolioStory = lazy(() => import('./pages/PortfolioStory'));
 const CaseStudyTemplate = lazy(() => import('./pages/CaseStudyTemplate'));
 
 function App() {
@@ -34,6 +35,7 @@ function App() {
           <Route path="/case-studies/markettrack" element={<MarketTrackCaseStudy />} />
           <Route path="/case-studies/guidely" element={<GuidelyCaseStudy />} />
           <Route path="/case-studies/thermal" element={<ThermalCaseStudy />} />
+          <Route path="/case-studies/portfolio" element={<PortfolioStory />} />
           <Route path="/case-studies/:slug" element={<CaseStudyTemplate />} />
         </Routes>
       </Suspense></main>
@@ -42,4 +44,5 @@ function App() {
 }
 
 export default App;
+
 

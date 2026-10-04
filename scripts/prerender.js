@@ -50,7 +50,7 @@ const routes = [
   { url: '/case-studies/markettrack', waitFor: '.mt-intro h1' },
   { url: '/case-studies/guidely', waitFor: '.guidely-hero-heading' },
   { url: '/case-studies/thermal', waitFor: '.thermal-hero-heading' },
-  { url: '/case-studies/portfolio', waitFor: '.portfolio-hero-heading' },
+  { url: '/case-studies/portfolio', waitFor: '.ps-hero h1' },
 ];
 
 const outputPathFor = (routeUrl) =>
@@ -128,4 +128,5 @@ main()
     process.exitCode = 1;
   })
   .finally(() => clearTimeout(watchdog));
+
 

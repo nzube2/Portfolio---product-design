@@ -200,49 +200,26 @@ const caseStudyContent = {
     prevSlug: 'thermal',
     nextSlug: null,
     hero: {
-      eyebrow: 'UI/UX case study',
-      heading:
-        'My Portfolio As A Case Study- Designing For The Readers Attention',
-      ctaLabel: 'Read Case Study',
+      eyebrow: './Portfolio / Design & development',
+      heading: 'Designing a portfolio around the reader’s attention.',
+      ctaLabel: 'Explore the decisions',
     },
     meta: [
-      { icon: 'work', label: 'Project Type', value: 'Portfolio' },
-      { icon: 'person', label: 'My Role', value: 'Designer, Developer' },
+      { icon: 'work', label: 'Project Type', value: 'Personal portfolio' },
+      { icon: 'person', label: 'My Role', value: 'Design & development' },
       { icon: 'team', label: 'Team', value: 'Solo' },
       { icon: 'hourglass', label: 'Timeline', value: 'Ongoing' },
-      { icon: 'tools', label: 'Tools', value: 'Figma, Adobe' },
+      { icon: 'tools', label: 'Tools', value: 'Figma, Adobe, React, Vite' },
     ],
     sections: [
-      {
-        accent: 'left',
-        title: './Introduction',
-        body: "A portfolio isn't really a gallery. It's more like a pitch that has about thirty seconds to convince someone before they scroll past and forget you existed. With that, rather than just designing a website to display some work, i wanted the portfolio itself to BE the project, just like id design based around a clients brief. Being able to design something to engage them, with no work yet loading, just design choices, would be good evidence",
-      },
-      {
-        accent: 'right',
-        title: './Storyteling With Visuals',
-        body: "You can see this most clearly in the About section, the illustration of a girl stepping onto a mountain sits right where I'm talking about foundation. It's not decoration, it's the same idea said twice, once in the image and once in the words. Same thing happens in the hero. The floating mockups start with Figma, then move into actual designs – the tool first, then what it becomes. That order wasn't random. It's the story of how I actually work, shown before I've said a single word about it.",
-      },
-      {
-        accent: 'left',
-        title: './Colour and visuals for a cinematic feel',
-        body: "The dark colour scheme on the site wasn't merely a matter of style; it was intended to have a cinematic effect, making the experience more like watching something than simply scrolling through it. The animations adhere to this principle as well. I wanted each section to unfold in the way a scene does in a presentation, rather than just appearing when you've scrolled far enough. This is also the reason why there is a video preview of previous work at the end instead of another series of screenshots and text; a thirty-second clip conveys more and quicker than someone scrolling past five static images in an attempt to work out what a project actually does.",
-      },
-      {
-        accent: 'right',
-        title: ',/Visual hierarchy',
-        body: "When you look at an image on screen, it captures attention more readily than text does, so I added micro visuals along with all text elements on the page. Prior to anyone even starting to consume a block of text, it gives some kind of context using an image, icon or a visual representation of the content on hand - you're essentially reading an endorsement of what you already see.",
-      },
-      {
-        accent: 'left',
-        title: './Never leaving someone without a next step',
-        body: 'Every section has somewhere to go next. "View Case Studies" and "View Resume" sit right in the hero. "Read more" and "See next" live on the case study cards. The contact button stays visible in the nav the entire time you scroll. And the page closes by circling all the way back to a direct email link. At no point should someone have to go hunting for what to do next – there\'s always something offered.',
-      },
-      {
-        accent: 'right',
-        title: './Where this leaves things',
-        body: "This portfolio is not done and the goal is not for it to feel done- -it's live in the same way that any real product evolves after meeting real users. That being said, everything on this page was thoughtfully decided, even the parts that I'm still refining. If this case study did its job, of some what I just described already worked on you before you got here.",
-      },
+      { title: './The brief', body: 'I wanted a recruiter to understand my work, my engineering foundation, and how to contact me without having to piece the story together. I treated the portfolio as a product: establish who I am, show relevant work early, explain my decisions, and offer a clear next step.' },
+      { title: './A person behind the work', body: 'The hero pairs a direct introduction with a portrait edged like torn paper. A “Tested & trusted” stamp lands once, adding a personal visual signature. The About section uses a separate headshot beside my background, with the paragraphs aligned to the title so the story reads as one column.' },
+      { title: './A hierarchy built for scanning', body: 'Three featured projects lead the page. Each introduces the problem and my contribution before linking to the full case study. Consistent ./ section labels, readable text widths, and shared gutters help the reader move between work, background, skills, experience, and contact. The portfolio’s own story sits alongside the featured work as additional context.' },
+      { title: './Colour and motion with purpose', body: 'A warm dark background, off-white text, and the muted rose accent #B89595 give the site a consistent identity. Off-white makes the hero stamp distinct. Sections reveal once as they enter the viewport; the tools row loops to show the workflow on the page. The loop has a pause control, and reduced-motion settings disable decorative animation.' },
+      { title: './Making the case studies easier to read', body: 'MarketTrack now opens with the working product and its shipped outcome. Section links make the story easier to scan. Product, Sales, Expense, and Dashboard belong together under Design Decisions, while testing findings show the changes prompted by real use. Screenshots support the decisions, and the next-project thumbnail keeps the journey going.' },
+      { title: './Designing for the smaller screen', body: 'The hero keeps a compact portrait beside the headline on mobile. Longer layouts stack into readable columns, metadata keeps consistent label-to-value spacing, and the tools remain within the page width. Images use WebP where practical, include dimensions, and load lazily below the fold. The existing React and Vite structure remains in place.' },
+      { title: './A clear next step', body: 'The hero offers case studies and a resume. The navigation keeps Contact within reach, case studies link to the next project, and the page closes with direct email and professional links. These choices support the reader’s next action without asking them to search for it.' },
+      { title: './What I learned', body: 'The refinement made consistency as important as individual visual moments. A strong hero needs equally considered sections below it; a case study needs a clear relationship between its headings and supporting screens. I continue to refine the site through layout, accessibility, and build checks. Its success as a recruiter tool still needs real feedback rather than an assumed conversion claim.' },
     ],
   },
 };
