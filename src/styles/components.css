@@ -430,3 +430,15 @@
 .project-media-guidely img { height: auto; max-width: 100%; }
 .menu-toggle { justify-content: center; }
 .menu-icon { width: var(--space-3); height: var(--space-3); }
+/* Shared link feedback; existing card and button motion remains in place. */
+a { transition: color var(--motion-fast) ease, background-color var(--motion-fast) ease, border-color var(--motion-fast) ease, transform var(--motion-fast) var(--ease-out); }
+a:focus-visible { outline: var(--focus-width) solid var(--color-accent); outline-offset: var(--space-1); }
+@media (hover: hover) {
+  a:not(.btn-primary):not(.btn-contact):not(.contact-email-btn):not(.project-media):not(.project-link):not(.mt-next):not(.portfolio-next-case):not(.more-works-see-more):not(.logo):hover { color: var(--color-accent); text-decoration: underline; text-underline-offset: var(--space-detail-7); }
+  .btn-primary:hover, .btn-contact:hover, .contact-email-btn:hover, .more-works-see-more:hover { background: var(--color-paper); color: var(--color-ink); }
+  .btn-secondary:hover { border-color: var(--color-accent); background: var(--color-surface); }
+  .project-link:hover { color: var(--color-accent); text-decoration: underline; text-underline-offset: var(--space-detail-7); }
+  .logo:hover { color: var(--color-accent); }
+  .mt-next:hover .mt-next-title, .portfolio-next-case:hover .portfolio-next-title { color: var(--color-accent); }
+  .project-media:hover img { transform: scale(1.03); }
+}
