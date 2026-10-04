@@ -278,7 +278,7 @@ main,
 .process-steps li {
   border-left: var(--border-width) solid var(--color-border-alpha);
   padding-left: var(--space-2);
-  font-size: var(--text-body);
+  font-size: var(--text-h4); font-weight: 600;
 }
 .process-steps span {
   display: block;
@@ -457,3 +457,4 @@ main,
 @media(prefers-reduced-motion:reduce) { .tools-track .tool-badge[aria-hidden] { display: none; } }
 
 @media(max-width:768px) { .process-panel { padding: var(--space-3); } .process-steps { grid-template-columns: repeat(2, minmax(0, 1fr)); gap: var(--space-3); } }
+
