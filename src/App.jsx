@@ -3,6 +3,7 @@ import { Routes, Route, useLocation } from 'react-router-dom';
 import { updateMetadata } from './behaviors/metadata';
 import { observeMotionPreference } from './behaviors/motion-preference';
 import Header from './components/Header';
+import ThemePalette from './components/ThemePalette';
 import { enableCaseStudyInteractions } from './behaviors/case-study-interactions';
 import ScrollToTop from './components/ScrollToTop';
 import Home from './pages/Home';
@@ -30,6 +31,7 @@ function App() {
     <div className="app">
       <a className="skip-link" href="#main-content">Skip to content</a>
       <Header />
+      <ThemePalette />
       <ScrollToTop />
       <main id="main-content" tabIndex="-1"><Suspense fallback={<div className="route-fallback" />}>
         <Routes>
@@ -46,6 +48,7 @@ function App() {
 }
 
 export default App;
+
 
 
 

@@ -1,4 +1,3 @@
-import ThemePalette from './ThemePalette';
 import React from 'react';
 import { RESUME_URL, EMAIL, LINKEDIN } from '../data/links';
 
@@ -76,7 +75,7 @@ const Contact = () => {
           <span>nzubemolokwu5@gmail.com</span>
         </a>
 
-        <ThemePalette />
+        
         <div className="contact-socials">
           <a className="contact-social-link" href={RESUME_URL} target="_blank" rel="noopener noreferrer">Download resume ↗</a>
           <a
@@ -120,6 +119,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
 
 

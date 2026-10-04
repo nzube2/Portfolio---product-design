@@ -464,3 +464,6 @@ img[data-zoomable]:focus-visible { outline: var(--focus-width) solid var(--color
 .theme-swatch-sage { background: var(--swatch-sage); }
 .theme-swatch-lavender { background: var(--swatch-lavender); }
 .theme-swatch-paper { background: var(--swatch-paper); }
+.theme-palette { position: fixed; z-index: 20; right: var(--space-3); bottom: var(--space-3); margin: 0; padding: var(--space-2); border: var(--border-width) solid var(--color-border-alpha); border-radius: var(--radius-large); background: var(--color-surface); box-shadow: var(--hero-stamp-shadow); }
+.theme-swatch { width: var(--space-5); height: var(--space-5); }
+@media(max-width:768px) { .theme-palette { right: var(--space-2); bottom: var(--space-2); gap: var(--space-1); padding: var(--space-1); } .theme-palette > span { display: none; } }
