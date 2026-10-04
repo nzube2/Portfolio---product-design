@@ -8,8 +8,8 @@ const Hero = () => (
         <p className="hero-eyebrow">Valentina Molokwu / Product designer</p>
         <div className="hero-composition">
           <h1 id="hero-title" className="display-text">
-            <span className="hero-half hero-half-first">I design<br />in systems,</span>
-            <span className="hero-half hero-half-last">not just<br />pixels.</span>
+            <span className="hero-half hero-half-first">I design <br />in systems,</span>
+            <span className="hero-half hero-half-last">not just <br />pixels.</span>
           </h1>
       <figure className="hero-portrait">
         <img
@@ -55,4 +55,5 @@ const Hero = () => (
   </section>
 );
 export default Hero;
+
 
