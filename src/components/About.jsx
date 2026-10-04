@@ -68,17 +68,24 @@ const About = () => {
         </h2>
       <div className="about-text">
         <p>
-          My engineering foundation taught me to think in systems before
-          screens: components, states, and the relationships between them.
-          The same logic that makes good code makes good design. I design
-          for scale with an understanding of what is feasible to ship.
+          I bring an engineering lens to product design: clear systems,
+          thoughtful interactions, and an understanding of what can ship.
+          I start with the person using the product and turn their needs
+          into interfaces that work in practice.
         </p>
-        <p>
-          The technical lens is only half of it. I care about the person
-          using the product: what they need, how the experience works,
-          and how it makes them feel. That is why I value product thinking
-          as much as the interface itself.
-        </p>
+        <div className="about-outside">
+          <h3>Outside work</h3>
+          <p>
+            I&apos;m building a small coloring book brand, with printed books
+            designed to pull people off their screens for a while. It&apos;s
+            where I practice product thinking with real customers, a real
+            price, and real printing costs.
+          </p>
+          <p>
+            I also train at home with weights and bands. I like anything
+            where you set a goal, track it, and get a little better each week.
+          </p>
+        </div>
       </div>
         </div>
       </div>
