@@ -132,7 +132,7 @@ const caseStudyContent = {
             'Testing exposed that product-name-only search was too limited, so I added SKU search alongside it. The decision was to support another way to locate a product without forcing the user to know its exact name.',
             'I kept stock, order history, and supplier information together to support inventory decisions. When testing exposed details missing from the main table, I added a “more info” action rather than expanding every row and making the list harder to scan.',
           ],
-          evidence: 'Testing identified the search and missing-information gaps; SKU search and the more-info action were added in response. The product screen below shows the inventory context. It does not, by itself, demonstrate a successful search.',
+          evidence: 'After adding SKU search, I searched using a product’s SKU and confirmed that the matching product appeared. The product screen below shows the inventory context for this change.',
           image: {
             src: '/images/markettrack-product-page.webp',
             alt: 'MarketTrack product page — stock list with buy/sell price, margin, and status',
@@ -144,10 +144,10 @@ const caseStudyContent = {
         title: '02 — Support exceptions in the sales workflow',
         subheading: true,
         body: [
-          'The initial sales flow assumed every item already existed in inventory. Testing showed that new items could arrive before they had been entered, so I added manual entry to let a sale proceed in that situation.',
+          'The initial sales flow assumed every item already existed in inventory. Testing showed that new items could arrive before they had been entered, so I added a manual-sale-entry option at the top of the product dropdown, before the existing products. This made the alternative available at the point where the user would otherwise need to select an inventory item.',
           'A recorded sale also needed to accommodate a customer changing their selection. I added editing to the recorded sale rather than treating the first entry as permanent. Receipts and reports remain part of the same sales workflow.',
         ],
-        evidence: 'Testing surfaced both exceptions, and the existing project record documents the manual-entry and editing changes. This overview screen shows recorded sales; it does not show the entry or editing interaction.',
+        evidence: 'I checked that the manual-sale-entry option was included at the top of the dropdown, before the product list. This confirms that the alternative entry path was available; a completed manual-sale transaction and a sales-editing retest are not documented here. The screen below shows the recorded-sales overview.',
         image: {
           src: '/images/markettrack-sales-page.webp',
           alt: 'MarketTrack sales page — revenue summary cards and a table of recorded sales with gross profit',
