@@ -159,7 +159,7 @@ const ThermalCaseStudy = () => {
               feeling, not data
             </h1>
             <a href="#thermal-problem" className="thermal-hero-btn">
-              Read Case Study
+              Read case study
             </a>
           </div>
         </section>
@@ -204,7 +204,7 @@ const ThermalCaseStudy = () => {
         </h2>
 
         <section id="thermal-problem" className="thermal-problem">
-          <h3 className="thermal-problem-title">./The Problem</h3>
+          <h3 className="thermal-problem-title">./The problem</h3>
           <div className="thermal-problem-body">
             <p>
               There was a time when shuffling your Spotify library or hitting
@@ -230,7 +230,7 @@ const ThermalCaseStudy = () => {
         </section>
 
         <section className="thermal-concept">
-          <h3 className="thermal-concept-title">./The Concept</h3>
+          <h3 className="thermal-concept-title">./The concept</h3>
           <p className="thermal-concept-body">
             Thermal began with a natural phenomenon I considered while growing
             up in Nigeria. There are places where hot and cold water meet in the
@@ -343,11 +343,11 @@ const ThermalCaseStudy = () => {
         </section>
 
         <section className="thermal-design-decisions">
-          <h3 className="thermal-design-decisions-title">./Design Decisions</h3>
+          <h3 className="thermal-design-decisions-title">./Design decisions</h3>
 
           <div className="thermal-decision-item">
             <h4 className="thermal-decision-title">
-              01- The Temperature Slider
+              01 — The temperature slider
             </h4>
             <p className="thermal-decision-body">
               The main feature in Thermal is a slider that goes from hot to
@@ -467,7 +467,7 @@ const ThermalCaseStudy = () => {
             <p className="thermal-decision-body">
               Before a user has even started typing on the Similar Artist
               screen, a row of starting point suggestions shows up: Rihanna,
-              Kendrick Lamar, Lana Del Ray, Bad Bunny, with an icon to shuffle
+              Kendrick Lamar, Lana Del Rey, Bad Bunny, with an icon to shuffle
               through those suggestions. An empty search field places the entire
               burden on the user to know what they&apos;re looking for before
               they even get a chance to touch the product; The Popular Choices
@@ -632,7 +632,7 @@ const ThermalCaseStudy = () => {
         to={`/case-studies/${nextCaseStudy.slug}`}
         className="thermal-next-case"
       >
-        <span className="thermal-next-label">See Next Case Study</span>
+        <span className="thermal-next-label">See next case study</span>
         <div className="thermal-next-card">
           <Image
             src={nextCaseStudy.image}
@@ -648,4 +648,5 @@ const ThermalCaseStudy = () => {
 };
 
 export default ThermalCaseStudy;
+
 

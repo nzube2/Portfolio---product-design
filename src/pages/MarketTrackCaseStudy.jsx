@@ -80,7 +80,7 @@ export default function MarketTrackCaseStudy() {
           <video src={data.hero.video} controls playsInline preload="none" poster="/images/markettrack-dashboard.webp" aria-label="MarketTrack product preview" />
         </section>
         <Link className="mt-next" to={`/case-studies/${nextProject.slug}`}>
-          <span className="mt-next-label">See Next Case Study</span>
+          <span className="mt-next-label">See next case study</span>
           <div className="mt-next-card">
             <Image src={nextProject.image} alt="Guidely case study preview" className="mt-next-image" />
             <span className="mt-next-title">{nextProject.title}</span>

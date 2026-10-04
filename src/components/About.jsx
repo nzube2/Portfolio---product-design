@@ -63,24 +63,21 @@ const About = () => {
         <h2 className="about-heading">
           Hi, I&apos;m Valentina —{' '}
           <span className="about-heading-accent">
-            A Product Designer With A Software Engineering Background.
+            A product designer with a software engineering background.
           </span>
         </h2>
       <div className="about-text">
         <p>
-          My foundation taught me to think in systems before I think in
-          screens - components, states, the relationships between parts etc.
-          the same logic that makes good code makes good design. It&apos;s
-          why my work isn&apos;t judged on visuals alone; it&apos;s built to
-          scale, with a real understanding of what&apos;s actually feasible
-          to ship.
+          My engineering foundation taught me to think in systems before
+          screens: components, states, and the relationships between them.
+          The same logic that makes good code makes good design. I design
+          for scale with an understanding of what is feasible to ship.
         </p>
         <p>
-          But the technical lens is only half of it . I care just as much
-          about the person on the other side of the screen, and what they
-          need, the experience and how it makes them feel, hence why i value
-          the journey of product thinking as much as the design itself and
-          this is widely represented throughout my works.
+          The technical lens is only half of it. I care about the person
+          using the product: what they need, how the experience works,
+          and how it makes them feel. That is why I value product thinking
+          as much as the interface itself.
         </p>
       </div>
         </div>

@@ -227,7 +227,7 @@
   font-weight: 600;
   font-size: var(--text-section);
   line-height: var(--space-6);
-  text-transform: capitalize;
+  text-transform: none;
   color: var(--brand-color-22);
 }
 
@@ -762,7 +762,7 @@
   font-weight: 600;
   font-size: var(--text-h4);
   line-height: 150%;
-  text-transform: capitalize;
+  text-transform: none;
   color: var(--color-paper);
 }
 
@@ -1443,7 +1443,7 @@
   font-weight: 600;
   font-size: var(--text-body);
   line-height: 1.4;
-  text-transform: capitalize;
+  text-transform: none;
   color: var(--color-text-primary);
 }
 

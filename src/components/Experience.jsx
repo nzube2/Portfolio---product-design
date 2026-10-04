@@ -137,15 +137,15 @@ const Experience = () => {
           <div className="exp-details exp-details-1">
             <BriefcaseIcon className="exp-meta-icon" />
             <div className="exp-meta-text">
-              <span className="exp-meta-label">Company Type:</span>
-              <span className="exp-meta-value">Small Business</span>
+              <span className="exp-meta-label">Company type:</span>
+              <span className="exp-meta-value">Small business</span>
             </div>
           </div>
           <div className="exp-details exp-details-3">
             <PersonIcon className="exp-meta-icon" />
             <div className="exp-meta-text">
               <span className="exp-meta-label">Position:</span>
-              <span className="exp-meta-value">Product Designer</span>
+              <span className="exp-meta-value">Product designer</span>
             </div>
           </div>
         </div>

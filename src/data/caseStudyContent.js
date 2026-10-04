@@ -66,7 +66,7 @@
 //                images?, imagePlaceholder? } — a numbered sub-decision
 //                merged into THIS section's card instead of getting its own
 //                (e.g. "01 — The Product Page" living inside the
-//                "./Design Decisions" card, matching Thermal's first
+//                "./Design decisions" card, matching Thermal's first
 //                decision sitting inside its parent section). Always
 //                rendered with the smaller subheading title style.
 //                list is optional: an array of strings rendered as a
@@ -177,7 +177,7 @@ const caseStudyContent = {
       },
       {
         accent: 'left',
-        title: './Testing & Iteration',
+        title: './Testing & iteration',
         narrow: true,
         icon: 'computer-check',
         body: 'During testing, a few real gaps showed up and shaped further decisions:',
@@ -227,7 +227,7 @@ const caseStudyContent = {
       { title: './A hierarchy built for scanning', body: 'Three featured projects lead the page. Each introduces the problem and my contribution before linking to the full case study. Consistent ./ section labels, readable text widths, and shared gutters help the reader move between work, background, skills, experience, and contact. The portfolio’s own story sits alongside the featured work as additional context.' },
       { title: './Colour and motion with purpose', body: 'A warm dark background, off-white text, and the muted rose accent #B89595 give the site a consistent identity. Off-white makes the hero stamp distinct. Sections reveal once as they enter the viewport; the tools row loops to show the workflow on the page. The loop has a pause control, and reduced-motion settings disable decorative animation.' },
       { title: './Making the case studies easier to read', body: 'MarketTrack now opens with the working product and its shipped outcome. Section links make the story easier to scan. Product, Sales, Expense, and Dashboard belong together under Design Decisions, while testing findings show the changes prompted by real use. Screenshots support the decisions, and the next-project thumbnail keeps the journey going.' },
-      { title: './Designing for the smaller screen', body: 'The hero keeps a compact portrait beside the headline on mobile. Longer layouts stack into readable columns, metadata keeps consistent label-to-value spacing, and the tools remain within the page width. Images use WebP where practical, include dimensions, and load lazily below the fold. The existing React and Vite structure remains in place.' },
+      { title: './Designing for the smaller screen', body: 'The mobile hero stacks the full headline above a compact portrait. Longer layouts stack into readable columns, metadata keeps consistent label-to-value spacing, and the tools remain within the page width. Images use WebP where practical, include dimensions, and load lazily below the fold. The existing React and Vite structure remains in place.' },
       { title: './A clear next step', body: 'The hero offers case studies and a resume. The navigation keeps Contact within reach, case studies link to the next project, and the page closes with direct email and professional links. These choices support the reader’s next action without asking them to search for it.' },
       { title: './What I learned', body: 'The refinement made consistency as important as individual visual moments. A strong hero needs equally considered sections below it; a case study needs a clear relationship between its headings and supporting screens. I continue to refine the site through layout, accessibility, and build checks. Its success as a recruiter tool still needs real feedback rather than an assumed conversion claim.' },
     ],

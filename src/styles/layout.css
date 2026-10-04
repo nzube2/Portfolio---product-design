@@ -523,3 +523,7 @@ main,
   .hero-copy .hero-subhead { margin-bottom: var(--space-2); }
   .hero-copy .cta-buttons { margin-top: 0; }
 }
+.process-steps { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+.process-steps a { display: block; margin-top: var(--space-2); font-size: var(--text-small); font-weight: 400; color: var(--color-text-secondary); text-decoration: underline; }
+@media(min-width:769px) { .hero-composition { gap: var(--space-2); } .hero-composition .hero-half { font-size: var(--hero-split-refined); } }
+@media(max-width:768px) { .process-steps { grid-template-columns: 1fr; } }

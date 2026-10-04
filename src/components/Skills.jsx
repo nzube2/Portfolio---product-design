@@ -87,8 +87,8 @@ const Skills = () => {
             className="skill-graphic skill-graphic-uiux"
           />
           <div className="skill-card-text skill-card-text-uiux">
-            <h3>Ui/Ux Design.</h3>
-            <p>Mobile And Web Design</p>
+            <h3>UI/UX design</h3>
+            <p>User flows and interfaces for mobile and web</p>
           </div>
         </div>
         <div className="skill-card-wireframe">
@@ -98,8 +98,8 @@ const Skills = () => {
             className="skill-graphic skill-graphic-wireframe"
           />
           <div className="skill-card-text skill-card-text-wireframe">
-            <h3>Wireframe &amp; Prototyping</h3>
-            <p>Scalable Prototypes For Web And Mobile</p>
+            <h3>Wireframing &amp; prototyping</h3>
+            <p>Wireframes, high-fidelity UI, and interactive prototypes</p>
           </div>
         </div>
         <div className="skills-accent-bar-1" />
@@ -114,8 +114,8 @@ const Skills = () => {
             className="skill-graphic skill-graphic-research"
           />
           <div className="skill-card-text skill-card-text-research">
-            <h3>Ux Research.</h3>
-            <p>Deep Research</p>
+            <h3>UX research</h3>
+            <p>Workflow analysis and usability testing</p>
           </div>
         </div>
         <div className="skill-card-webdev">
@@ -125,8 +125,8 @@ const Skills = () => {
             className="skill-graphic skill-graphic-webdev"
           />
           <div className="skill-card-text skill-card-text-webdev">
-            <h3>Web Development &amp; Automation</h3>
-            <p>Live Functional Websites &amp; Automated Workflows</p>
+            <h3>Web development &amp; automation</h3>
+            <p>Design-to-code workflows and working web products</p>
           </div>
         </div>
       </div>
@@ -153,7 +153,11 @@ const Skills = () => {
         </div>
         <button type="button" className="tools-pause" aria-pressed={toolsPaused} onClick={() => setToolsPaused(!toolsPaused)}>{toolsPaused ? 'Resume tools animation' : 'Pause tools animation'}</button>
       </div>
-      <div className="process-panel"><h3>./My process</h3><ol className="process-steps">{['Define', 'Research', 'Wireframes', 'Design', 'Prototype', 'Test'].map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol></div>
+      <div className="process-panel"><h3>./My process</h3><ol className="process-steps">
+        <li><span>01</span>Understand the workflow<a href="/case-studies/markettrack#research">MarketTrack research ↗</a></li>
+        <li><span>02</span>Design the system<a href="/case-studies/markettrack#design-decisions">Flows and interface decisions ↗</a></li>
+        <li><span>03</span>Test and refine<a href="/case-studies/markettrack#testing-iteration">SKU search and sales iteration ↗</a></li>
+      </ol></div>
     </section>
   );
 };

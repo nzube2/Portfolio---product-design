@@ -41,7 +41,7 @@ const DribbbleIcon = ({ className }) => (
   </svg>
 );
 
-const GithubIcon = ({ className }) => (
+const GitHubIcon = ({ className }) => (
   <svg
     className={className}
     viewBox="0 0 20 20"
@@ -62,10 +62,10 @@ const Contact = () => {
       <div className="contact-content">
         <span className="contact-label">./Let&apos;s work together</span>
         <p className="contact-text">
-          Open To Product Design Roles And Freelance Work.
+          Open to product design roles and freelance work.
         </p>
 
-        <h2 className="contact-heading">Ready To Build Something Epic?</h2>
+        <h2 className="contact-heading">Ready to build something together?</h2>
 
         <a
           className="contact-email-btn"
@@ -84,7 +84,7 @@ const Contact = () => {
             rel="noopener noreferrer"
           >
             <LinkedInIcon className="contact-social-icon" />
-            <span>Linkedin</span>
+            <span>LinkedIn</span>
           </a>
           <a
             className="contact-social-link contact-social-dribbble"
@@ -93,7 +93,7 @@ const Contact = () => {
             rel="noopener noreferrer"
           >
             <DribbbleIcon className="contact-social-icon" />
-            <span>Dribble</span>
+            <span>Dribbble</span>
           </a>
           <a
             className="contact-social-link contact-social-github"
@@ -101,8 +101,8 @@ const Contact = () => {
             target="_blank"
             rel="noopener noreferrer"
           >
-            <GithubIcon className="contact-social-icon" />
-            <span>Github</span>
+            <GitHubIcon className="contact-social-icon" />
+            <span>GitHub</span>
           </a>
         </div>
       </div>
@@ -110,7 +110,7 @@ const Contact = () => {
       <footer className="contact-footer-bar">
         <nav className="footer-links" aria-label="Footer contact links"><a href={EMAIL}>Email</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={RESUME_URL} target="_blank" rel="noopener noreferrer">Resume</a></nav>
         <p className="contact-footer-text">
-          Designed And Developed By Valentina. All Rights Reserved.
+          Designed and developed by Valentina. All rights reserved.
         </p>
       </footer>
     </section>
@@ -118,4 +118,5 @@ const Contact = () => {
 };
 
 export default Contact;
+
 

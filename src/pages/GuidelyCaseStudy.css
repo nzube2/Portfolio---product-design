@@ -130,7 +130,7 @@
   font-weight: 600;
   font-size: var(--text-section);
   line-height: var(--space-6);
-  text-transform: capitalize;
+  text-transform: none;
   color: var(--brand-color-22);
 }
 
@@ -1135,7 +1135,7 @@
   top: 0;
   width: var(--layout-detail-136);
   margin: 0;
-  text-transform: capitalize;
+  text-transform: none;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--text-h4);
@@ -1193,7 +1193,7 @@
   top: var(--layout-detail-209);
   width: var(--layout-detail-210);
   margin: 0;
-  text-transform: capitalize;
+  text-transform: none;
   font-family: var(--font-body);
   font-weight: 600;
   font-size: var(--text-h4);
@@ -1581,7 +1581,7 @@
   font-weight: 600;
   font-size: var(--text-body);
   line-height: 1.4;
-  text-transform: capitalize;
+  text-transform: none;
   color: var(--color-text-primary);
 }
 

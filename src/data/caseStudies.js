@@ -15,7 +15,7 @@ const caseStudies = [
     slug: 'guidely',
     image: '/images/cs-01.webp',
     title:
-      'A campus companion for Nile University students; Mobile design & development.',
+      'A campus companion for Nile University students; mobile design & development.',
     brief:
       "Nile University's portal efficiently manages academic functions like grades and course registration but fails to support student life activities. This has led to a fragmented student experience, where events and clubs rely on informal communication channels. New students often feel disconnected due to the absence of a centralized resource for campus life.",
     whatIDid:
@@ -30,7 +30,7 @@ const caseStudies = [
     brief:
       "Spotify's recommendation engine has evolved to reflect users' existing tastes rather than promoting new discoveries. This shift has led to a form of musical confirmation, making it difficult for listeners to encounter genuinely new music without intentional effort.",
     whatIDid:
-      'I designed Thermal - an AI music discovery web app inspired by a hot-to-cold temperature analogy relating to energy and emotion. I designed the end to end customer journey from: the landing page, input form, the vibe settings, an AI anlysis in between and final results, building a unified experience where temperature affects everything not only the music choice itself.',
+      'I designed Thermal, an AI music discovery concept that uses temperature to represent energy and emotion. I designed the complete journey: landing page, input form, vibe settings, AI analysis, and results, creating a consistent interaction model across the experience.',
   },
   {
     id: 'CS-04',

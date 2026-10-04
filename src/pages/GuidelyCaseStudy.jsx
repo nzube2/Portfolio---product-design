@@ -220,11 +220,11 @@ const GuidelyCaseStudy = () => {
           <div className="guidely-hero-title">
             <span className="guidely-hero-eyebrow">UI/UX case study</span>
             <h1 className="guidely-hero-heading">
-              A campus companion for Nile University students; Mobile design
+              A campus companion for Nile University students; mobile design
               &amp; development.
             </h1>
             <a href="#guidely-problem" className="guidely-hero-btn">
-              Read Case Study
+              Read case study
             </a>
           </div>
 
@@ -276,7 +276,7 @@ const GuidelyCaseStudy = () => {
 
         <section id="guidely-problem" className="guidely-section-1">
             <div className="guidely-section-1-text">
-              <h2 className="guidely-section-1-title">./The Problem</h2>
+              <h2 className="guidely-section-1-title">./The problem</h2>
               <p className="guidely-section-1-body">
                 Nile University&apos;s official portal does one thing well:
                 academics. Grades, course registration, timetables. What it
@@ -309,7 +309,7 @@ const GuidelyCaseStudy = () => {
 
             <div className="guidely-section-2-text">
               <h2 className="guidely-section-2-title">
-                ./Reframing The Problem
+                ./Reframing the problem
               </h2>
               <p className="guidely-section-2-body-1">
                 The brief started broad: improve non-academic student life. The
@@ -383,7 +383,7 @@ const GuidelyCaseStudy = () => {
           </section>
 
           <section className="guidely-section-3-2">
-            <h2 className="guidely-section-3-2-title">./Design Decisions</h2>
+            <h2 className="guidely-section-3-2-title">./Design decisions</h2>
 
             <span className="guidely-branding-label">Branding - 01</span>
             <p className="guidely-branding-body">
@@ -561,7 +561,7 @@ const GuidelyCaseStudy = () => {
 
           <section className="guidely-section-3-4">
             <h2 className="guidely-section-3-4-title">
-              Guest vs Student Access - 03
+              Guest vs student access - 03
             </h2>
 
             <p className="guidely-access-body">
@@ -595,7 +595,7 @@ const GuidelyCaseStudy = () => {
           </section>
 
           <section className="guidely-section-3-5">
-            <h2 className="guidely-section-3-5-title">The Virtual Tour - 04</h2>
+            <h2 className="guidely-section-3-5-title">The virtual tour - 04</h2>
 
             <Image
               src={tourGuideImg}
@@ -698,7 +698,7 @@ const GuidelyCaseStudy = () => {
           </section>
 
           <section className="guidely-section-4">
-            <h2 className="guidely-section-4-title">./Scope Management</h2>
+            <h2 className="guidely-section-4-title">./Scope management</h2>
 
             <p className="guidely-section-4-body">
               We made strategic compromises throughout the project, not due to a
@@ -841,7 +841,7 @@ const GuidelyCaseStudy = () => {
         to={`/case-studies/${nextCaseStudy.slug}`}
         className="guidely-next-case"
       >
-        <span className="guidely-next-label">See Next Case Study</span>
+        <span className="guidely-next-label">See next case study</span>
         <div className="guidely-next-card">
           <Image
             src={nextCaseStudy.image}
@@ -857,3 +857,4 @@ const GuidelyCaseStudy = () => {
 };
 
 export default GuidelyCaseStudy;
+
