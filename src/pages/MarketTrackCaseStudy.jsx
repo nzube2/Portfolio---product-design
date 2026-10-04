@@ -2,10 +2,12 @@ import React, { useEffect, useRef } from 'react';
 import { Link } from 'react-router-dom';
 import Image from '../components/Image';
 import caseStudyContent from '../data/caseStudyContent';
+import caseStudies from '../data/caseStudies';
 import { observeReveals } from '../behaviors/scroll-reveal';
 import './MarketTrackCaseStudy.css';
 
 const data = caseStudyContent.markettrack;
+const nextProject = caseStudies.find((project) => project.slug === data.nextSlug);
 const storySections = data.sections.filter((section) => !section.subheading).map((section) => ({
   ...section,
   pages: section.subItem ? [section.subItem, ...data.sections.filter((item) => item.subheading)] : [],
@@ -77,7 +79,13 @@ export default function MarketTrackCaseStudy() {
           <div><p className="mt-label">./Product walkthrough</p><h2>See the system in motion.</h2></div>
           <video src={data.hero.video} controls playsInline preload="none" poster="/images/markettrack-dashboard.webp" aria-label="MarketTrack product preview" />
         </section>
-        <Link className="mt-next" to="/case-studies/guidely"><span className="mt-label">./Next case study</span><span>Guidely <span aria-hidden="true">↗</span></span><span>Explore the next project</span></Link>
+        <Link className="mt-next" to={`/case-studies/${nextProject.slug}`}>
+          <span className="mt-next-label">See Next Case Study</span>
+          <div className="mt-next-card">
+            <Image src={nextProject.image} alt="Guidely case study preview" className="mt-next-image" />
+            <span className="mt-next-title">{nextProject.title}</span>
+          </div>
+        </Link>
       </div>
     </article>
   );
