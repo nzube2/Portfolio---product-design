@@ -570,3 +570,4 @@
 :root {
   --about-portrait-mobile: 240px;
 }
+:root { --tools-loop-duration: 36s; --tools-badge-width: 152px; }

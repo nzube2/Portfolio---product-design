@@ -85,3 +85,4 @@
     opacity: 1;
   }
 }
+@keyframes tools-scroll { to { transform: translateX(-50%); } }

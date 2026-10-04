@@ -1,5 +1,5 @@
 import Image from './Image.jsx';
-import React, { useEffect, useRef } from 'react';
+import React, { useEffect, useRef, useState } from 'react';
 
 import graphicUiux from '../assets/graphic-uiux.svg';
 import graphicWireframe from '../assets/graphic-wireframe.svg';
@@ -32,8 +32,8 @@ const toolIcons = {
   Framer: iconFramer,
 };
 
-const ToolBadge = ({ label }) => (
-  <div className="tool-badge">
+const ToolBadge = ({ label, duplicate = false }) => (
+  <div className="tool-badge" aria-hidden={duplicate ? 'true' : undefined}>
     <Image
       src={toolIcons[label]}
       alt=""
@@ -66,6 +66,7 @@ const useRevealOnScroll = () => {
 };
 
 const Skills = () => {
+  const [toolsPaused, setToolsPaused] = useState(false);
   const pillRef = useRevealOnScroll();
   const row1Ref = useRevealOnScroll();
   const row2Ref = useRevealOnScroll();
@@ -75,7 +76,7 @@ const Skills = () => {
     <section className="skills-section" id="skills">
       <div className="skills-heading-pill sk-reveal" ref={pillRef}>
         <HeadingBorder className="skills-heading-pill-border" />
-        <h2>Skills & process</h2>
+        <h2>./Skills & process</h2>
       </div>
 
       <div className="skills-row-1 sk-reveal" ref={row1Ref}>
@@ -132,7 +133,7 @@ const Skills = () => {
 
       <div className="tools-section sk-reveal" ref={toolsRef}>
         <div className="tools-heading">
-          <span>./Tools In My Workflow</span>
+          <h3>./Tools in my workflow</h3>
           <Image
             src={workflowArrow}
             alt=""
@@ -141,20 +142,22 @@ const Skills = () => {
           />
         </div>
 
-        <div className="tools-row tools-row-1">
-          <ToolBadge label="Figma" />
-          <ToolBadge label="Claude" />
-          <ToolBadge label="Adobe" />
-          <ToolBadge label="Framer" />
+        <div className={`tools-marquee${toolsPaused ? ' is-paused' : ''}`}>
+          <div className="tools-track">
+            {[0, 1].map((copy) => (
+              <div className="tools-row" key={copy} aria-hidden={copy === 1 ? 'true' : undefined}>
+                {['Figma', 'Claude', 'Adobe', 'Framer', 'Figma', 'Claude', 'Adobe', 'Framer'].map((label, index) => <ToolBadge label={label} key={index} duplicate={index >= 4} />)}
+              </div>
+            ))}
+          </div>
         </div>
-
-
-        <div className="tools-accent-bar" />
+        <button type="button" className="tools-pause" aria-pressed={toolsPaused} onClick={() => setToolsPaused(!toolsPaused)}>{toolsPaused ? 'Resume tools animation' : 'Pause tools animation'}</button>
       </div>
-      <div className="process-panel"><h3>My process</h3><ol className="process-steps">{['Define', 'Research', 'Wireframes', 'Design', 'Prototype', 'Test'].map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol></div>
+      <div className="process-panel"><h3>./My process</h3><ol className="process-steps">{['Define', 'Research', 'Wireframes', 'Design', 'Prototype', 'Test'].map((step, i) => <li key={step}><span>0{i + 1}</span>{step}</li>)}</ol></div>
     </section>
   );
 };
 
 export default Skills;
+
 

@@ -35,7 +35,7 @@ const CaseStudy = () => (
   >
     <div className="section-heading">
       <div>
-        <p className="eyebrow">01 / Selected work</p>
+        <p className="eyebrow">./Selected work</p>
         <h2 id="work-heading">Systems made tangible.</h2>
       </div>
       <p>

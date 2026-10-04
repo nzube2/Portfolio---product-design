@@ -178,7 +178,7 @@ const MoreOfMyWorks = () => {
     <section className="more-works-section" id="more-of-my-works">
       <div className="more-works-pill more-works-reveal" ref={pillRef}>
         <HeadingBorder className="more-works-pill-border" />
-        <span>./More of My Works(Preview)</span>
+        <span>./More of my works (preview)</span>
         <a
           href="https://dribbble.com/nzube-molokwu"
           target="_blank"

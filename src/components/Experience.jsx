@@ -104,7 +104,7 @@ const Experience = () => {
     >
       <div className="exp-heading-pill">
         <HeadingBorder className="exp-heading-pill-border" />
-        <h2>Experience</h2>
+        <h2>./Experience</h2>
       </div>
 
       <div className="exp-card">

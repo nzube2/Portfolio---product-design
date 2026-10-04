@@ -60,7 +60,7 @@ const Contact = () => {
   return (
     <section className="contact-section" id="contact">
       <div className="contact-content">
-        <span className="contact-label">Let&apos;s Work Together</span>
+        <span className="contact-label">./Let&apos;s work together</span>
         <p className="contact-text">
           Open To Product Design Roles And Freelance Work.
         </p>
