@@ -1,5 +1,5 @@
 import React from 'react';
-import { RESUME_URL, EMAIL, LINKEDIN } from '../data/links';
+import { RESUME_URL, EMAIL, LINKEDIN, WHATSAPP } from '../data/links';
 
 
 const MailIcon = ({ className }) => (
@@ -109,7 +109,7 @@ const Contact = () => {
       </div>
 
       <footer className="contact-footer-bar">
-        <nav className="footer-links" aria-label="Footer contact links"><a href={EMAIL}>Email</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={RESUME_URL} target="_blank" rel="noopener noreferrer">Resume</a></nav>
+        <nav className="footer-links" aria-label="Footer contact links"><a href={EMAIL}>Email</a><a href={WHATSAPP} target="_blank" rel="noopener noreferrer">WhatsApp</a><a href={LINKEDIN} target="_blank" rel="noopener noreferrer">LinkedIn</a><a href={RESUME_URL} target="_blank" rel="noopener noreferrer">Resume</a></nav>
         <p className="contact-footer-text">
           Designed and developed by Valentina. All rights reserved.
         </p>
@@ -119,6 +119,7 @@ const Contact = () => {
 };
 
 export default Contact;
+
 
 
 
