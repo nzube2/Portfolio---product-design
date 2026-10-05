@@ -51,7 +51,7 @@ const About = () => {
       </div>
 
       <div className="about-top-row">
-<div className="about-portrait"><Image src={aboutPortrait} alt="Valentina Molokwu in her graduation gown" className="about-photo" width={1200} height={1600} /></div>
+<div className="about-portrait"><Image src={aboutPortrait} alt="Valentina Molokwu in her graduation gown" className="about-photo" width={1920} height={2560} /></div>
 
         <div className="about-copy">
         <h2 className="about-heading">
@@ -88,6 +88,7 @@ const About = () => {
 };
 
 export default About;
+
 
 
 
