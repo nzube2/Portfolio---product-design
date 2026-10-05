@@ -30,16 +30,16 @@ const Header = () => {
   }, [open]);
   const links = (
     <>
-      <Link to="/#case-studies" className="nav-link">
+      <Link to={location.pathname === "/" ? "#case-studies" : "/#case-studies"} className="nav-link">
         Work
       </Link>
-      <Link to="/#about" className="nav-link">
+      <Link to={location.pathname === "/" ? "#about" : "/#about"} className="nav-link">
         About
       </Link>
-      <Link to="/#skills" className="nav-link">
+      <Link to={location.pathname === "/" ? "#skills" : "/#skills"} className="nav-link">
         Skills
       </Link>
-      <Link to="/#contact" className="btn-contact">
+      <Link to={location.pathname === "/" ? "#contact" : "/#contact"} className="btn-contact">
         Contact <span aria-hidden="true">↗</span>
       </Link>
     </>
@@ -81,3 +81,4 @@ const Header = () => {
   );
 };
 export default Header;
+

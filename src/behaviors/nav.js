@@ -11,10 +11,10 @@ export function observeNavigation(header) {
       for (const entry of entries) {
         if (
           !entry.isIntersecting ||
-          !header.querySelector(`a[href="/#${entry.target.id}"]`)
+          !header.querySelector(`a[href="/#${entry.target.id}"], a[href="#${entry.target.id}"]`)
         )
           continue;
-        header.querySelectorAll('a[href^="/#"]').forEach((link) => {
+        header.querySelectorAll('a[href^="/#"], a[href^="#"]').forEach((link) => {
           if (link.hash === `#${entry.target.id}`)
             link.setAttribute("aria-current", "location");
           else link.removeAttribute("aria-current");
@@ -28,3 +28,4 @@ export function observeNavigation(header) {
     .forEach((section) => observer.observe(section));
   return () => observer.disconnect();
 }
+

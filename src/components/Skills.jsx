@@ -153,7 +153,7 @@ const Skills = () => {
         </div>
         <button type="button" className="tools-pause" aria-pressed={toolsPaused} onClick={() => setToolsPaused(!toolsPaused)}>{toolsPaused ? 'Resume tools animation' : 'Pause tools animation'}</button>
       </div>
-      <div className="process-panel"><h3>./My process</h3><ol className="process-steps">
+      <div className="process-panel" id="process"><h3>./My process</h3><ol className="process-steps">
         <li><span>01</span>Understand the workflow<a href="/case-studies/markettrack#research">MarketTrack research ↗</a></li>
         <li><span>02</span>Design the system<a href="/case-studies/markettrack#design-decisions">Flows and interface decisions ↗</a></li>
         <li><span>03</span>Test and refine<a href="/case-studies/markettrack#testing-iteration">SKU search and sales iteration ↗</a></li>
@@ -163,5 +163,6 @@ const Skills = () => {
 };
 
 export default Skills;
+
 
 
