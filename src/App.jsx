@@ -1,5 +1,5 @@
 import React, { Suspense, lazy, useEffect } from 'react';
-import { Routes, Route, useLocation } from 'react-router-dom';
+import { Routes, Route, Navigate, useLocation } from 'react-router-dom';
 import { updateMetadata } from './behaviors/metadata';
 import { observeMotionPreference } from './behaviors/motion-preference';
 import Header from './components/Header';
@@ -36,11 +36,13 @@ function App() {
       <main id="main-content" tabIndex="-1"><Suspense fallback={<div className="route-fallback" />}>
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/case-studies" element={<Navigate to="/#case-studies" replace />} />
           <Route path="/case-studies/markettrack" element={<MarketTrackCaseStudy />} />
           <Route path="/case-studies/guidely" element={<GuidelyCaseStudy />} />
           <Route path="/case-studies/thermal" element={<ThermalCaseStudy />} />
           <Route path="/case-studies/portfolio" element={<PortfolioStory />} />
           <Route path="/case-studies/:slug" element={<CaseStudyTemplate />} />
+          <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
       </Suspense></main>
     </div>
@@ -48,6 +50,7 @@ function App() {
 }
 
 export default App;
+
 
 
 
