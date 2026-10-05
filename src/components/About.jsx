@@ -1,7 +1,7 @@
 import Image from './Image.jsx';
 import React, { useEffect, useRef, useState } from 'react';
 
-import aboutPortrait from '../assets/valentina-about.webp';
+import aboutPortrait from '../assets/valentina-about-graduation.webp';
 
 const HeadingBorder = ({ className }) => (
   <svg
@@ -51,13 +51,7 @@ const About = () => {
       </div>
 
       <div className="about-top-row">
-        <Image
-          src={aboutPortrait}
-          alt="Valentina Molokwu, product designer"
-          className="about-portrait"
-          width={591}
-          height={683}
-        />
+<div className="about-portrait"><Image src={aboutPortrait} alt="Valentina Molokwu in her graduation gown" className="about-photo" width={1200} height={1600} /></div>
 
         <div className="about-copy">
         <h2 className="about-heading">
@@ -94,4 +88,6 @@ const About = () => {
 };
 
 export default About;
+
+
 
