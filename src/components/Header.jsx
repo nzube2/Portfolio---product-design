@@ -28,20 +28,21 @@ const Header = () => {
       document.removeEventListener("click", onClick);
     };
   }, [open]);
+  const HomeLink = ({ id, children, ...props }) => location.pathname === '/' ? <a href={`#${id}`} {...props}>{children}</a> : <Link to={`/#${id}`} {...props}>{children}</Link>;
   const links = (
     <>
-      <Link to={location.pathname === "/" ? "#case-studies" : "/#case-studies"} className="nav-link">
+      <HomeLink id="case-studies" className="nav-link">
         Work
-      </Link>
-      <Link to={location.pathname === "/" ? "#about" : "/#about"} className="nav-link">
+      </HomeLink>
+      <HomeLink id="about" className="nav-link">
         About
-      </Link>
-      <Link to={location.pathname === "/" ? "#skills" : "/#skills"} className="nav-link">
+      </HomeLink>
+      <HomeLink id="skills" className="nav-link">
         Skills
-      </Link>
-      <Link to={location.pathname === "/" ? "#contact" : "/#contact"} className="btn-contact">
+      </HomeLink>
+      <HomeLink id="contact" className="btn-contact">
         Contact <span aria-hidden="true">↗</span>
-      </Link>
+      </HomeLink>
     </>
   );
   return (
