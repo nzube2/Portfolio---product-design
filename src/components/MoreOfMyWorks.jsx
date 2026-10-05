@@ -110,17 +110,6 @@ const MoreOfMyWorks = () => {
   const hasPlayedRef = useRef(false);
   const [audioEnabled, setAudioEnabled] = useState(false);
 
-  // Positions the "See More" pill at the cursor directly via the DOM node
-  // rather than React state, so it tracks smoothly without re-rendering on
-  // every mousemove.
-  const handleVideoMouseMove = (event) => {
-    const el = seeMoreRef.current;
-    if (!el) return;
-    const rect = event.currentTarget.getBoundingClientRect();
-    el.style.left = `${event.clientX - rect.left}px`;
-    el.style.top = `${event.clientY - rect.top}px`;
-  };
-
   useEffect(() => {
     const v = videoRef.current;
     if (!v) return;
@@ -194,7 +183,7 @@ const MoreOfMyWorks = () => {
         <div
           className="more-works-video-wrap more-works-reveal"
           ref={videoWrapRef}
-          onMouseMove={handleVideoMouseMove}
+
         >
           <video
             ref={videoRef}
@@ -204,6 +193,9 @@ const MoreOfMyWorks = () => {
             loop
             playsInline
             preload="metadata"
+            controls
+            poster="/images/more-works-poster.webp"
+            aria-label="More of my work video preview"
           />
 
           <a
@@ -237,6 +229,8 @@ const MoreOfMyWorks = () => {
 };
 
 export default MoreOfMyWorks;
+
+
 
 
 
