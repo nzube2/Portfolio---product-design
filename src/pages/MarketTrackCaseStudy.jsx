@@ -36,7 +36,7 @@ export default function MarketTrackCaseStudy() {
         </nav>
         <header className="mt-hero">
           <div className="mt-intro">
-            <p className="mt-label">./MarketTrack / Product design & development</p>
+            <p className="mt-label">./MarketTrack / Product ownership, design &amp; development</p>
             <h1>From paper records to a clearer picture of the business.</h1>
             <p className="mt-lead">An inventory, sales, and expense tracking system built for Ifythel Lights &amp; Accessories, a small electrical business.</p>
             <div className="mt-actions">
