@@ -12,7 +12,6 @@ export default defineConfig({
   build: {
     outDir: 'dist',
     sourcemap: false,
-    minify: 'esbuild',
   },
   preview: {
     port: 4173,
