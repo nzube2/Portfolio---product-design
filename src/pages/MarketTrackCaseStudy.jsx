@@ -55,6 +55,14 @@ export default function MarketTrackCaseStudy() {
         <aside className="mt-outcome" id="project-overview" data-reveal>
           <p className="mt-label">./Shipped outcome</p>
           <h2>Built for a real store. In active use.</h2>
+          <div className="mt-outcome-metric">
+            <p className="mt-outcome-metric-label">Recording monthly sales and balancing accounts</p>
+            <p className="mt-outcome-metric-value">
+              <span className="mt-metric-circle"><strong>5</strong> hours</span>{' '}
+              <span className="mt-metric-arrow" aria-hidden="true">→</span>{' '}
+              <span className="mt-metric-circle mt-metric-circle-after"><strong>~30</strong> minutes</span>
+            </p>
+          </div>
           <p>MarketTrack replaced a fully paper-based system with digital records, giving the business visibility into inventory, sales, and expenses. The time it took to record monthly sales and balance accounts dropped from 5 hours to roughly 30 minutes.</p>
           <span className="mt-note">Internal business tool · Not publicly accessible</span>
         </aside>

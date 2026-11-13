@@ -19,6 +19,13 @@
 .mt-outcome .mt-label, .mt-outcome .mt-note { color: var(--color-muted-ink); }
 .mt-outcome h2, .mt-demo h2 { font-size: var(--text-h3); margin: 0 0 var(--space-2); }
 .mt-outcome p { max-width: var(--measure); }
+.mt-outcome-metric { margin-block: var(--space-3); }
+.mt-outcome-metric-label { margin: 0 0 var(--space-1); font-size: var(--text-small); color: var(--color-muted-ink); }
+.mt-outcome-metric-value { display: flex; flex-wrap: wrap; align-items: center; gap: var(--space-1); margin: 0; }
+.mt-metric-circle { display: flex; flex-direction: column; align-items: center; justify-content: center; width: var(--space-12); aspect-ratio: 1; border: var(--border-width) solid var(--color-muted-ink); border-radius: 50%; font-size: var(--text-small); line-height: var(--line-heading); }
+.mt-metric-circle strong { font-size: var(--text-h3); }
+.mt-metric-circle-after { border: var(--focus-width) solid var(--color-accent); background: color-mix(in srgb, var(--color-paper) 82%, var(--color-accent)); }
+.mt-metric-arrow { color: var(--color-muted-ink); font-size: var(--text-h4); }
 .mt-note { font-size: var(--text-small); }
 .mt-chapters { display: flex; flex-wrap: wrap; gap: var(--space-2) var(--space-3); padding-bottom: var(--space-4); border-bottom: var(--border-width) solid var(--color-border-alpha); }
 .mt-chapters a { font-size: var(--text-small); color: var(--color-text-secondary); padding-block: var(--space-1); }
