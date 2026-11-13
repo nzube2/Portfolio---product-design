@@ -63,7 +63,7 @@ export default function MarketTrackCaseStudy() {
               <span className="mt-metric-circle mt-metric-circle-after"><strong>~30</strong> minutes</span>
             </p>
           </div>
-          <p>MarketTrack replaced a fully paper-based system with digital records, giving the business visibility into inventory, sales, and expenses. The time it took to record monthly sales and balance accounts dropped from 5 hours to roughly 30 minutes.</p>
+          <p>Before MarketTrack, the store had to put together handwritten records to balance its accounts. With sales, stock, and expenses recorded in one place, staff can review the month’s activity without searching through paper records.</p>
           <span className="mt-note">Internal business tool · Not publicly accessible</span>
         </aside>
         <nav className="mt-chapters" aria-label="On this page">
