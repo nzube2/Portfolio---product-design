@@ -180,7 +180,11 @@ const caseStudyContent = {
         title: './Testing & iteration',
         narrow: true,
         icon: 'computer-check',
-        body: 'During testing, a few real gaps showed up and shaped further decisions:',
+        body: 'The store owner and two employees tested MarketTrack. Their feedback led to four iterations:',
+        stats: [
+          { label: 'Testers', value: 3 },
+          { label: 'Iterations', value: 4 },
+        ],
         list: [
           'Search on the product page only worked by product name, so I added SKU search as well',
           'Some product info wasn\'t visible on the main table, so I added a "more info" button to surface it without cluttering the table',

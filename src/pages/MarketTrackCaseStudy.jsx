@@ -55,7 +55,7 @@ export default function MarketTrackCaseStudy() {
         <aside className="mt-outcome" id="project-overview" data-reveal>
           <p className="mt-label">./Shipped outcome</p>
           <h2>Built for a real store. In active use.</h2>
-          <p>MarketTrack replaced a fully paper-based system with digital records, giving the business visibility into inventory, sales, and expenses. The time it took to record monthly sales dropped from 5 hours to roughly 30 minutes.</p>
+          <p>MarketTrack replaced a fully paper-based system with digital records, giving the business visibility into inventory, sales, and expenses. Recording monthly sales and balancing accounts took roughly 30 minutes, down from 5 hours.</p>
           <span className="mt-note">Internal business tool · Not publicly accessible</span>
         </aside>
         <nav className="mt-chapters" aria-label="On this page">
@@ -70,6 +70,16 @@ export default function MarketTrackCaseStudy() {
               </div>
               <div className="mt-section-content">
                 <div className="mt-prose" data-reveal><Paragraphs body={section.body} /></div>
+                {section.stats && (
+                  <dl className="mt-testing-stats" data-reveal>
+                    {section.stats.map(({ label, value }) => (
+                      <div className="mt-testing-stat" key={label}>
+                        <dt>{label}</dt>
+                        <dd>{value}</dd>
+                      </div>
+                    ))}
+                  </dl>
+                )}
                 {section.list && <ul className="mt-iterations">{section.list.map((item, i) => <li key={item} data-reveal><span aria-hidden="true">0{i + 1}</span><p>{item}</p></li>)}</ul>}
                 <Media image={section.image} images={section.images} />
                 {section.pages.map((page) => <div className="mt-subsection" key={page.title} id={sectionId(page.title)}><h3>{page.title}</h3><div className="mt-prose"><Paragraphs body={page.body} /></div><Media image={page.image} images={page.images} />{page.evidence && <aside className="mt-evidence"><h4>Evidence & verification</h4><p>{page.evidence}</p></aside>}</div>)}
